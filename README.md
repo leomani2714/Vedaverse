@@ -1,0 +1,2 @@
+# Vedaverse
+Vedic quotes

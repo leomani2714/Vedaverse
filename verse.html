@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Geetha Daily Verse + Book</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f2eb;
+    }
+
+    /* Hero section with background image */
+    .hero {
+      width: auto;
+      height: auto;
+      background: url("krishna-arjuna.jpg.png") no-repeat center center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: white;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .hero-title {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .verse-box {
+      background: rgba(0,0,0,0.6); /* transparent overlay */
+      border-radius: 12px;
+      padding: 15px 20px;
+      text-align: center;
+      max-width: 600px;
+    }
+    .verse-sanskrit {
+      font-size: 18px;
+      font-style: italic;
+      margin-bottom: 8px;
+    }
+    .verse-meaning {
+      font-size: 15px;
+    }
+
+    .book-link {
+      margin: 30px auto;
+      text-align: center;
+    }
+    .book-link a {
+      text-decoration: none;
+      color: #fff;
+      background: #4a2f1f;
+      padding: 12px 22px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: 0.2s;
+      font-weight: bold;
+    }
+    .book-link a:hover {
+      background: #2b1f16;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section with Krishna–Arjuna Image -->
+  <div class="hero">
+    <div class="hero-title">Bhagavad Gita — Krishna’s Teachings to Arjuna</div>
+    <div class="verse-box">
+      <div class="verse-sanskrit" id="verseText"></div>
+      <div class="verse-meaning" id="verseMeaning"></div>
+    </div>
+  </div>
+
+  <!-- Book Link -->
+  <div class="book-link">
+    <a href="https://www.gutenberg.org/files/2388/2388-h/2388-h.htm" target="_blank">
+      📖 Read Full Bhagavad Gita
+    </a>
+  </div>
+
+  <script>
+    const verses = [
+      { text: "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन", meaning: "You have the right to action, but not to the fruits." },
+      { text: "योगः कर्मसु कौशलम्", meaning: "Yoga is skill in action." },
+      { text: "समत्वं योग उच्यते", meaning: "Equanimity is called yoga." },
+      { text: "अहिंसा परमो धर्मः", meaning: "Non-violence is the highest duty." },
+      { text: "ज्ञानेन तु तदज्ञानं येषां नाशितमात्मनः", meaning: "Through knowledge, ignorance is destroyed." }
+    ];
+
+    function getDailyVerse() {
+      const today = new Date();
+      const dayOfYear = Math.floor(
+        (today - new Date(today.getFullYear(), 0, 0)) / 86400000
+      );
+      return verses[dayOfYear % verses.length];
+    }
+
+    const verse = getDailyVerse();
+    document.getElementById("verseText").textContent = verse.text;
+    document.getElementById("verseMeaning").textContent = verse.meaning;
+  </script>
+</body>
+</html>

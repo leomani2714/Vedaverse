@@ -15,7 +15,7 @@
       width: auto;
       height: auto;
       background: url("krishna-arjuna.jpg.png") no-repeat center center;
-      background-size: cover;
+      background-size: flex;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -27,14 +27,14 @@
     }
 
     .hero-title {
-      font-size: 28px;
+      font-size: 52px;
       font-weight: bold;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       text-align: center;
     }
 
     .verse-box {
-      background: rgba(0,0,0,0.6); /* transparent overlay */
+      background: rgba(0, 0, 0, 0.541); /* transparent overlay */
       border-radius: 12px;
       padding: 15px 20px;
       text-align: center;
@@ -88,12 +88,37 @@
 
   <script>
     const verses = [
-      { text: "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन", meaning: "You have the right to action, but not to the fruits." },
-      { text: "योगः कर्मसु कौशलम्", meaning: "Yoga is skill in action." },
-      { text: "समत्वं योग उच्यते", meaning: "Equanimity is called yoga." },
-      { text: "अहिंसा परमो धर्मः", meaning: "Non-violence is the highest duty." },
-      { text: "ज्ञानेन तु तदज्ञानं येषां नाशितमात्मनः", meaning: "Through knowledge, ignorance is destroyed." }
-    ];
+  { text: "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन", meaning: "You have the right to action, but not to the fruits." },
+  { text: "योगः कर्मसु कौशलम्", meaning: "Yoga is skill in action." },
+  { text: "समत्वं योग उच्यते", meaning: "Equanimity is called yoga." },
+  { text: "अहिंसा परमो धर्मः", meaning: "Non-violence is the highest duty." },
+  { text: "ज्ञानेन तु तदज्ञानं येषां नाशितमात्मनः", meaning: "Through knowledge, ignorance is destroyed." },
+  
+  { text: "वासांसि जीर्णानि यथा विहाय", meaning: "As a person discards old clothes, so the soul discards old bodies." },
+  { text: "न जायते म्रियते वा कदाचित्", meaning: "The soul is never born, nor does it ever die." },
+  { text: "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत", meaning: "Whenever righteousness declines, I manifest Myself." },
+  { text: "धर्मसंस्थापनार्थाय सम्भवामि युगे युगे", meaning: "To protect dharma, I appear in every age." },
+  { text: "ममैवांशो जीवलोके जीवभूतः सनातनः", meaning: "Living beings are My eternal fragments." },
+  
+  { text: "ज्ञानी त्वात्मैव मे मतम्", meaning: "The wise are considered as My very self." },
+  { text: "अनन्याश्चिन्तयन्तो मां ये जनाः पर्युपासते", meaning: "Those who worship Me with exclusive devotion, I protect." },
+  { text: "मृत्युः सर्वहरश्चाहम्", meaning: "I am death, the destroyer of all." },
+  { text: "विद्यां चाविद्यां च यस्तद्वेदोभयंसह", meaning: "One who knows both knowledge and ignorance transcends death." },
+  { text: "उद्धरेदात्मनाऽऽत्मानं", meaning: "Let a man lift himself by his own self." },
+  
+  { text: "न त्वेवाहं जातु नासं न त्वं नेमे जनाधिपाः", meaning: "Never was there a time when I did not exist, nor you, nor these kings." },
+  { text: "न हि कश्चित्क्षणमपि जातु तिष्ठत्यकर्मकृत्", meaning: "No one can remain without action even for a moment." },
+  { text: "श्रद्धावान् लभते ज्ञानम्", meaning: "The faithful attain knowledge." },
+  { text: "नासतो विद्यते भावो नाभावो विद्यते सतः", meaning: "The unreal never is; the real never ceases to be." },
+  { text: "त्रैगुण्यविषया वेदा निस्त्रैगुण्यो भव अर्जुन", meaning: "The Vedas deal with the three gunas; be beyond these, O Arjuna." },
+  
+  { text: "यत्र योगेश्वरः कृष्णो यत्र पार्थो धनुर्धरः", meaning: "Wherever Krishna and Arjuna are, there is victory." },
+  { text: "यः सर्वत्रानभिस्नेहस्तत्तत्प्राप्य शुभाशुभम्", meaning: "He who is unattached to outcomes attains peace." },
+  { text: "निराशीर्यतचित्तात्मा त्यक्तसर्वपरिग्रहः", meaning: "The one without desires, self-controlled, free from possessions, attains peace." },
+  { text: "श्रेयान्स्वधर्मो विगुणः परधर्मात्स्वनुष्ठितात्", meaning: "Better one’s own duty without merit than another’s duty well performed." },
+  { text: "मन्मना भव मद्भक्तो मद्याजी मां नमस्कुरु", meaning: "Think of Me, be devoted to Me, sacrifice to Me, bow to Me." }
+];
+
 
     function getDailyVerse() {
       const today = new Date();

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horoscope & Blog App</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header { background: #6200ea; color: white; padding: 15px; text-align: center; }
+    nav { display: flex; justify-content: space-around; background: #eee; padding: 10px; }
+    nav button { background: none; border: none; font-size: 16px; cursor: pointer; }
+    section { padding: 20px; }
+    .blog-item { margin-bottom: 15px; cursor: pointer; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Horoscope & Blogs</h1>
+  </header>
+
+  <nav>
+    <button onclick="showSection('horoscope')">Horoscope</button>
+    <button onclick="showSection('blogs')">Blogs</button>
+  </nav>
+
+  <!-- Horoscope Section -->
+  <section id="horoscope">
+    <h2>Today's Horoscope</h2>
+    <select id="zodiac" onchange="getHoroscope()">
+      <option value="aries">Aries</option>
+      <option value="taurus">Taurus</option>
+      <option value="gemini">Gemini</option>
+      <option value="cancer">Cancer</option>
+      <option value="leo">Leo</option>
+      <option value="virgo">Virgo</option>
+      <option value="libra">Libra</option>
+      <option value="scorpio">Scorpio</option>
+      <option value="sagittarius">Sagittarius</option>
+      <option value="capricorn">Capricorn</option>
+      <option value="aquarius">Aquarius</option>
+      <option value="pisces">Pisces</option>
+    </select>
+    <div id="horoscope-result" style="margin-top:15px;"></div>
+  </section>
+
+  <!-- Blogs Section -->
+  <section id="blogs" class="hidden">
+    <h2>Latest Blogs</h2>
+    <div id="blog-list"></div>
+    <div id="blog-detail" class="hidden"></div>
+  </section>
+
+  <script>
+    // Navigation
+    function showSection(id) {
+      document.getElementById("horoscope").classList.add("hidden");
+      document.getElementById("blogs").classList.add("hidden");
+      document.getElementById(id).classList.remove("hidden");
+    }
+
+    // Horoscope Fetch
+    async function getHoroscope() {
+      const sign = document.getElementById("zodiac").value;
+      const res = await fetch(`https://aztro.sameerkumar.website/?sign=${sign}&day=today`, { method: "POST" });
+      const data = await res.json();
+      document.getElementById("horoscope-result").innerHTML = `
+        <p><strong>${sign.toUpperCase()}</strong>: ${data.description}</p>
+        <p>Mood: ${data.mood}</p>
+        <p>Lucky Number: ${data.lucky_number}</p>
+        <p>Color: ${data.color}</p>
+      `;
+    }
+
+    // Load Blogs (WordPress API or static JSON)
+    async function loadBlogs() {
+      // Replace with your WordPress site API
+      const res = await fetch("https://wordpress.org/news/wp-json/wp/v2/posts?per_page=5");
+      const blogs = await res.json();
+      const list = document.getElementById("blog-list");
+      list.innerHTML = "";
+      blogs.forEach(blog => {
+        const div = document.createElement("div");
+        div.className = "blog-item";
+        div.innerHTML = `<h3>${blog.title.rendered}</h3>`;
+        div.onclick = () => showBlog(blog);
+        list.appendChild(div);
+      });
+    }
+
+    function showBlog(blog) {
+      document.getElementById("blog-list").classList.add("hidden");
+      const detail = document.getElementById("blog-detail");
+      detail.classList.remove("hidden");
+      detail.innerHTML = `
+        <h2>${blog.title.rendered}</h2>
+        <div>${blog.content.rendered}</div>
+        <button onclick="backToBlogs()">Back</button>
+      `;
+    }
+
+    function backToBlogs() {
+      document.getElementById("blog-detail").classList.add("hidden");
+      document.getElementById("blog-list").classList.remove("hidden");
+    }
+
+    // Init
+    loadBlogs();
+    getHoroscope();
+  </script>
+</body>
+</html>

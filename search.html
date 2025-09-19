@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Scriptures</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    /* Overlay with background image */
+    #overlay {
+      display: flex;
+      justify-content: center;   /* horizontally center popup */
+      align-items: center;       /* vertically center popup */
+      position: fixed;
+      top: 15px; left: 15px; right: 15px;bottom:15px;
+      width: auto; height: auto;
+      background: url("krishna-arjuna.jpg.png") no-repeat center center;
+      background-size: cover;    /* cover full screen */
+    }
+
+    /* Popup card */
+    #popup {
+      background: rgba(255,255,255,0.95); /* slight transparency for better contrast */
+      padding: 20px;
+      width: 500px;
+      max-width: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
+    #closeBtn {
+      float: right;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    /* 🔥 Animation for popupTitle */
+    #popupTitle {
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.5s ease;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    #popupTitle.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <div id="overlay">
+    <div id="popup">
+      <span id="closeBtn" onclick="window.location.href='test.html'">✖</span>
+      <h3 id="popupTitle">Searching...</h3>
+      <div id="popupContent">Please wait...</div>
+    </div>
+  </div>
+
+  <script>
+    // 🔥 Helper to animate title
+    function setPopupTitle(query) {
+      const title = document.getElementById("popupTitle");
+      title.classList.remove("show");   // reset animation
+      void title.offsetWidth;           // force reflow
+      title.innerText = "Searching: " + query;
+      title.classList.add("show");      // trigger fade+slide
+    }
+
+    // Get query from URL
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get("q");
+
+    if (query) {
+      setPopupTitle(query); // use animation instead of direct innerText
+
+      // Call Wikipedia API
+      fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(query)}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data.extract) {
+            document.getElementById("popupContent").innerHTML = `
+              <p>${data.extract}</p>
+              <a href="${data.content_urls.desktop.page}" target="_blank">Read more on Wikipedia</a>
+            `;
+          } else {
+            document.getElementById("popupContent").innerText = "No results found.";
+          }
+        })
+        .catch(() => document.getElementById("popupContent").innerText = "Error fetching data.");
+    } else {
+      document.getElementById("popupContent").innerText = "No search query provided.";
+    }
+  </script>
+</body>
+</html>

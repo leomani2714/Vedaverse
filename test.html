@@ -136,7 +136,7 @@
             border-radius: 10px;
             margin-bottom: 10px;
             background: linear-gradient(180deg, var(--glass), transparent);
-            display: flex;
+            display: block;
             align-items: center;
             justify-content: space-between
         }
@@ -202,6 +202,58 @@
             outline: 3px solid rgba(181, 107, 31, 0.18);
             outline-offset: 3px
         }
+
+
+        ul {
+            list-style: none;
+            padding: 0;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        li {
+            background: #fff;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .accordion-header:hover {
+            background: #f0ebe1;
+        }
+
+        .accordion-title {
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .accordion-meta {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 15px;
+            border-top: 1px solid #eee;
+            background: #fafafa;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .active .accordion-content {
+            display: block;
+        }
+        
     </style>
 </head>
 
@@ -233,9 +285,9 @@
                     <a class="btn" href="#chants"
                         style="background:transparent;border:2px solid var(--accent);color:var(--accent);margin-left:10px">Listen
                         to Chants</a>
-                    <a class="btn" href="verse.html" target="_blank" >Read Daily Verse</a>
+                    <a class="btn" href="verse.html" target="_blank">Read Daily Verse</a>
                 </div>
-                
+
 
                 <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
                     <div class="card tag">Samhita</div>
@@ -270,25 +322,70 @@
                     <div class="scriptures card">
                         <ul>
                             <li>
-                                <div>
-                                    <div style="font-weight:700">Rigveda — Mandala 1.1</div>
-                                    <div class="meta">Hymn to Agni — Excerpt & transliteration</div>
+                                <div class="accordion-header">
+                                    <div>
+                                        <div class="accordion-title">Rigveda — Mandala 1.1</div>
+                                        <div class="accordion-meta">Hymn to Agni — Excerpt & transliteration</div>
+                                    </div>
+                                    <div class="accordion-meta">Read ▼</div>
                                 </div>
-                                <div class="meta">Read</div>
+                                <div class="accordion-content">
+                                    <p><b>Sanskrit Excerpt:</b><br>
+                                        अग्निमीळे पुरोहितं यज्ञस्य देवम् ऋत्विजम् ।<br>
+                                        होतारं रत्नधातमम् ॥</p>
+                                    <p><b>Transliteration:</b><br>
+                                        agnim īḷe purohitaṃ yajñasya devaṃ ṛtvijam<br>
+                                        hotāraṃ ratnadhātamam</p>
+                                    <p><b>Meaning:</b>
+                                        I praise Agni, the household priest, the divine minister of the sacrifice,
+                                        the hotṛ (invoker), bestower of treasures.</p>
+                                </div>
                             </li>
+
                             <li>
-                                <div>
-                                    <div style="font-weight:700">Brihadaranyaka Upanishad — I</div>
-                                    <div class="meta">On truth and the self — clear commentary</div>
+                                <div class="accordion-header">
+                                    <div>
+                                        <div class="accordion-title">Brihadaranyaka Upanishad — I</div>
+                                        <div class="accordion-meta">On truth and the self — clear commentary</div>
+                                    </div>
+                                    <div class="accordion-meta">Read ▼</div>
                                 </div>
-                                <div class="meta">Read</div>
+                                <div class="accordion-content">
+                                    <p><b>Excerpt:</b> "Asato mā sad gamaya, tamaso mā jyotir gamaya, mṛtyor mā amṛtaṃ
+                                        gamaya."</p>
+                                    <p><b>Translation:</b>
+                                        Lead me from the unreal to the real,
+                                        from darkness to light,
+                                        from death to immortality.</p>
+                                    <p><b>Commentary:</b>
+                                        This verse is a prayer for inner awakening, where the self moves beyond
+                                        illusion, ignorance, and mortality towards truth, knowledge, and eternal being.
+                                    </p>
+                                </div>
                             </li>
+
                             <li>
-                                <div>
-                                    <div style="font-weight:700">Taittiriya Upanishad — Shiksha</div>
-                                    <div class="meta">Guidelines for recitation and pronunciation</div>
+                                <div class="accordion-header">
+                                    <div>
+                                        <div class="accordion-title">Taittiriya Upanishad — Shiksha</div>
+                                        <div class="accordion-meta">Guidelines for recitation and pronunciation</div>
+                                    </div>
+                                    <div class="accordion-meta">Read ▼</div>
                                 </div>
-                                <div class="meta">Read</div>
+                                <div class="accordion-content">
+                                    <p><b>Excerpt:</b><br>
+                                        शं नो मित्रः शं वरुणः ।<br>
+                                        शं नो भवत्वर्यमा ।<br>
+                                        शं न इन्द्रो बृहस्पति: ।<br>
+                                        शं नो विष्णुरुरुक्रमः ॥</p>
+                                    <p><b>Translation:</b>
+                                        May Mitra be gracious to us, may Varuṇa be gracious.
+                                        May Aryaman be gracious, may Indra and Bṛhaspati be gracious.
+                                        May Vishnu of wide strides be gracious.</p>
+                                    <p><b>Context:</b>
+                                        The Shiksha Valli emphasizes correct recitation, humility, and blessings from
+                                        the cosmic powers for clarity and wisdom.</p>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -297,6 +394,7 @@
                         <div style="font-weight:700;margin-bottom:8px">Search Scriptures</div>
                         <input id="q" placeholder="Search by word, mantra or author"
                             style="width:100%;padding:10px;border-radius:8px;border:1px solid #eee" />
+
                         <div style="margin-top:10px;color:var(--muted);font-size:13px">Tip: Try "agni" or "satya"</div>
                     </div>
 
@@ -316,8 +414,8 @@
                     <li class="card" style="padding:12px">
                         <div style="font-weight:700">Agni Chant — Short Prapathaka</div>
                         <div class="meta" style="margin-bottom:8px">Duration: 2:10</div>
-                        <audio controls preload="none">
-                            <source src="#" type="audio/mpeg">
+                         <audio controls>
+                            <source src="audio/gayatri.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </li>
@@ -333,6 +431,7 @@
                 </ul>
             </section>
             <section id="chants" class="content">
+                
                 <h2>Vedic Chants</h2>
                 <p>Listen to sacred chants...</p>
                 <div class="chant-list">
@@ -443,7 +542,23 @@
 
         document.getElementById("dailyVerse").textContent = `"${getDailyVerse()}"`;
 
+        document.getElementById('q').addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') {
+                const query = encodeURIComponent(this.value.trim());
+                if (query) {
+                    // Navigate to another page with query
+                    window.location.href = `search.html?q=${query}`;
+                }
+            }
+        });
 
+        const headers = document.querySelectorAll(".accordion-header");
+        headers.forEach(header => {
+            header.addEventListener("click", () => {
+                const item = header.parentElement;
+                item.classList.toggle("active");
+            });
+        });
 
 
     </script>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ta">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sri Rudram – Namakam & Chamakam</title>
+  <style>
+    body { font-family: Inter, sans-serif; background:#f6f3ef; margin:0; padding:20px; line-height:1.6; }
+    h1 { text-align:center; color:#b56b1f; margin-bottom:20px; }
+
+    /* Tabs */
+    .tabs { display:flex; justify-content:center; margin-bottom:20px; gap:10px; flex-wrap:wrap; }
+    .tab { padding:10px 16px; border-radius:8px; background:#eee; cursor:pointer; font-weight:600; }
+    .tab.active { background:#b56b1f; color:#fff; }
+
+    /* Content */
+    .tab-content { display:none; }
+    .tab-content.active { display:block; }
+
+    /* Verses */
+    .verse { background:#fff; padding:16px; border-radius:10px; margin-bottom:12px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+    .tamil { font-weight:600; color:#222; margin-bottom:8px; }
+    .meaning { color:#555; font-size:14px; }
+  </style>
+</head>
+<body>
+  <h1>ஸ்ரீ ருத்ரம் – நமகம் & சாமகம்</h1>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active" onclick="openTab('rig')">Rigveda</div>
+    <div class="tab" onclick="openTab('yajur')">Yajurveda</div>
+    <div class="tab" onclick="openTab('sama')">Samaveda</div>
+    <div class="tab" onclick="openTab('atharva')">Atharvaveda</div>
+  </div>
+
+  <!-- Rigveda -->
+  <div id="rig" class="tab-content active">
+    <div class="verse">
+      <div class="tamil">ॐ नमो रुद्राय</div>
+      <div class="meaning">Salutations to Rudra, the fierce form of Lord Shiva, who grants protection and removes fear.</div>
+    </div>
+    <div class="verse">
+      <div class="tamil">நமஸ்தே அஸ்து பாகவந் விஷ்வேஸ்வராய</div>
+      <div class="meaning">Salutations to You, O Lord of the Universe, protector of all beings.</div>
+    </div>
+  </div>
+
+  <!-- Yajurveda -->
+  <div id="yajur" class="tab-content">
+    <div class="verse">
+      <div class="tamil">நமோ ருத்ராய பாஷுபதாய</div>
+      <div class="meaning">Salutations to Rudra, the Lord of beings (Pashupati), remover of sins and protector of devotees.</div>
+    </div>
+    <div class="verse">
+      <div class="tamil">ॐ நமோ பகவதே ருத்ராய</div>
+      <div class="meaning">Om, salutations to Bhagavan Rudra, the supreme Lord who pervades everything.</div>
+    </div>
+  </div>
+
+  <!-- Samaveda -->
+  <div id="sama" class="tab-content">
+    <div class="verse">
+      <div class="tamil">ருத்ரம் ஜபாமி – சாம வேதம்</div>
+      <div class="meaning">In Samaveda tradition, Rudram is chanted musically, invoking Shiva’s protective and healing aspects.</div>
+    </div>
+    <div class="verse">
+      <div class="tamil">நமோ ஹிரண்யபாக்ஷாய</div>
+      <div class="meaning">Salutations to Rudra with golden arms, symbolizing prosperity and protection.</div>
+    </div>
+  </div>
+
+  <!-- Atharvaveda -->
+  <div id="atharva" class="tab-content">
+    <div class="verse">
+      <div class="tamil">அதர்வ வேத ருத்ரம்</div>
+      <div class="meaning">In Atharvaveda, Rudra is praised as the healer of diseases and guardian of mankind.</div>
+    </div>
+    <div class="verse">
+      <div class="tamil">நமஸ்தே ருத்ர மன்யவ உத்தோதிஷ்ட சவேஸ்வர</div>
+      <div class="meaning">Salutations to Rudra, destroyer of anger and source of divine energy.</div>
+    </div>
+  </div>
+
+  <script>
+    function openTab(tabId) {
+      document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+      document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
+      document.querySelector("." + tabId) ? null : null;
+      document.getElementById(tabId).classList.add("active");
+      event.target.classList.add("active");
+    }
+  </script>
+</body>
+</html>

@@ -99,12 +99,47 @@
 
         .btn {
             display: inline-block;
-            padding: 10px 16px;
-            border-radius: 10px;
-            background: var(--accent);
-            color: white;
+            padding: 10px 20px;
+            margin: 5px 10px 5px 0;
+            font-size: 16px;
             text-decoration: none;
-            font-weight: 700
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--accent, #ff5722);
+            color: #fff;
+            border: 2px solid var(--accent, #ff5722);
+        }
+
+        .btn-primary:hover {
+            background-color: #fff;
+            color: var(--accent, #ff5722);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--accent, #ff5722);
+            border: 2px solid var(--accent, #ff5722);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent, #ff5722);
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background-color: #4caf50;
+            color: #fff;
+            border: 2px solid #4caf50;
+        }
+
+        .btn-secondary:hover {
+            background-color: #fff;
+            color: #4caf50;
         }
 
         .card {
@@ -280,12 +315,10 @@
                 <p class="lead">A gentle, modern place to explore Vedic texts, listen to chants, and discover practices
                     for study and daily life. Curated excerpts, searchable verses and high-quality chant recordings.</p>
                 <div class="cta">
-                    <a class="btn" href="#scriptures">Explore Scriptures</a>
-                    <a class="btn" href="#chants"
-                        style="background:transparent;border:2px solid var(--accent);color:var(--accent);margin-left:10px">Listen
-                        to Chants</a>
-                    <a class="btn" href="verse.html" target="_blank">Read Daily Verse</a>
-                    <a class="btn" href="tamil_poems.html" target="_blank">Tamil Devotional Poems</a>
+                    <a class="btn btn-primary" href="#scriptures">Explore Scriptures</a>
+                    <a class="btn btn-outline" href="#chants">Listen to Chants</a>
+                    <a class="btn btn-secondary" href="verse.html" target="_blank">Read Daily Verse</a>
+                    <a class="btn btn-secondary" href="tamil_poems.html" target="_blank">Tamil Devotional Poems</a>
                 </div>
 
 

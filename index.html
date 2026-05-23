@@ -529,6 +529,161 @@
             margin-bottom: 0.5rem;
         }
 
+        /* ===== SACRED VERSES CARDS ===== */
+        .verse-cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .verse-feature-card {
+            background: rgba(255, 255, 255, 0.6);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .verse-feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .verse-feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(212, 175, 55, 0.2);
+            border-color: var(--gold);
+        }
+
+        .verse-feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .verse-feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .verse-feature-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--deep-sage);
+            margin-bottom: 0.3rem;
+            letter-spacing: 0.5px;
+        }
+
+        .verse-feature-tamil {
+            font-size: 1.2rem;
+            color: var(--rose);
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+        }
+
+        .verse-feature-meaning {
+            color: var(--sage);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .verse-feature-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed rgba(212, 175, 55, 0.3);
+        }
+
+        .meta-item {
+            font-size: 0.9rem;
+            color: var(--sage);
+        }
+
+        .meta-item strong {
+            color: var(--rose);
+        }
+
+        .verse-feature-description {
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .verse-feature-card .btn {
+            align-self: flex-start;
+        }
+
+        /* ===== SACRED BRIDGE ===== */
+        .sacred-bridge {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 2rem;
+            background: rgba(245, 241, 232, 0.5);
+            border: 1px dashed rgba(212, 175, 55, 0.3);
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .bridge-icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            display: block;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.6;
+            }
+        }
+
+        .bridge-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--deep-sage);
+            letter-spacing: 0.5px;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .bridge-divider {
+            width: 120px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--rose), transparent);
+            margin: 1rem auto;
+        }
+
+        .bridge-description {
+            color: var(--sage);
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
         /* ===== FOOTER ===== */
         footer {
             margin-top: 3rem;
@@ -571,6 +726,10 @@
             }
 
             .learn-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .verse-cards-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -853,6 +1012,54 @@
                         <p><i>"We worship the three-eyed one (Lord Shiva) who nourishes all beings; may He liberate us
                                 from death and grant us immortality."</i></p>
                     </div>
+                </div>
+            </section>
+
+            <section id="sacred-verses">
+                <h2>Featured Sacred Texts</h2>
+                <p class="meta">Explore curated collections of divine wisdom composed by Sri Adi Shankara.</p>
+                <div class="verse-cards-grid">
+                    <!-- Soundarya Lahiri Card -->
+                    <div class="verse-feature-card">
+                        <div class="verse-feature-icon">🌸</div>
+                        <h3>Soundarya Lahiri</h3>
+                        <p class="verse-feature-tamil">ஸௌந்தர்ய லஹரீ</p>
+                        <p class="verse-feature-meaning"><strong>Meaning:</strong> Waves of Beauty</p>
+                        <div class="verse-feature-meta">
+                            <span class="meta-item"><strong>Author:</strong> Sri Adi Shankara</span>
+                            <span class="meta-item"><strong>Verses:</strong> 103 (in two parts)</span>
+                        </div>
+                        <p class="verse-feature-description">
+                            A magnificent hymn celebrating the divine feminine energy through the transcendent beauty of the Goddess. This profound spiritual work reveals the interplay between Shiva and Shakti, exploring the mysteries of creation and consciousness through poetic devotion.
+                        </p>
+                        <a href="https://leomani2714.github.io/Soundarya-lahari/" class="btn btn-primary" target="_blank">Explore Now →</a>
+                    </div>
+
+                    <!-- Kanaka Thaara Stotram Card -->
+                    <div class="verse-feature-card">
+                        <div class="verse-feature-icon">✨</div>
+                        <h3>Kanaka Thaara Stotram</h3>
+                        <p class="verse-feature-tamil">கனகதாரா ஸ்தோத்ரம்</p>
+                        <p class="verse-feature-meaning"><strong>Meaning:</strong> Golden Shower of Grace</p>
+                        <div class="verse-feature-meta">
+                            <span class="meta-item"><strong>Author:</strong> Sri Adi Shankara</span>
+                            <span class="meta-item"><strong>Verses:</strong> 18</span>
+                        </div>
+                        <p class="verse-feature-description">
+                            A powerful invocation to Lakshmi Devi, the divine mother of prosperity and grace. This sacred hymn describes an abundant shower of golden blessings, symbolizing both material and spiritual wealth that flows from the compassion of the divine mother.
+                        </p>
+                        <a href="https://leomani2714.github.io/Kanagathara-Stortram/" class="btn btn-primary" target="_blank">Explore Now →</a>
+                    </div>
+                </div>
+
+                <!-- Connection Bridge -->
+                <div class="sacred-bridge">
+                    <div class="bridge-icon">⟷</div>
+                    <p class="bridge-text">Two Sacred Verses, One Divine Truth</p>
+                    <div class="bridge-divider"></div>
+                    <p class="bridge-description">
+                        Both hymns, composed by the great philosopher Sri Adi Shankara, represent the eternal dialogue between the masculine and feminine divine. Soundarya Lahiri celebrates Shakti's transcendent beauty, while Kanaka Thaara Stotram invokes Lakshmi's abundant grace. Together, they illuminate the path to spiritual awakening.
+                    </p>
                 </div>
             </section>
 

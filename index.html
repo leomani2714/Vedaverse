@@ -1463,16 +1463,21 @@
 
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        document.getElementById('q').addEventListener('keydown', function (e) {
-            if (e.key === 'Enter') {
-                const query = encodeURIComponent(this.value.trim());
-                if (query) {
-                    window.location.href = `search.html?q=${query}`;
-                } else {
-                    alert('Please enter a search term');
-                }
+      const searchBox = document.getElementById('q');
+
+if (searchBox) {
+    searchBox.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+            const query = encodeURIComponent(this.value.trim());
+
+            if (query) {
+                window.location.href = `search.html?q=${query}`;
+            } else {
+                alert('Please enter a search term');
             }
-        });
+        }
+    });
+}
         document.addEventListener("DOMContentLoaded", () => {
     const items = document.querySelectorAll(".scriptures li");
 
@@ -2060,11 +2065,22 @@
 
         const headers = document.querySelectorAll(".accordion-header");
         headers.forEach(header => {
-            header.addEventListener("click", () => {
+            header.("click", () => {
                 const item = header.parentElement;
                 item.classList.toggle("active");
             });
         });
+        document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+        const item = header.closest('li');
+
+        document.querySelectorAll('.scriptures li').forEach(li => {
+            if (li !== item) li.classList.remove('active');
+        });
+
+        item.classList.toggle('active');
+    });
+});
     </script>
 </body>
 

@@ -12,60 +12,60 @@
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --gold: #D4AF37;
-            --gold-dark: #AA8C2C;
-            --light-gold: #F4E4B5;
-            --cream: #FDF8F3;
-            --cream-dark: #F5F1E8;
-            --sage: #8B9B7A;
-            --sage-light: #A8BAA0;
-            --deep-sage: #5C6B5B;
-            --rose: #C89B8B;
-            --rose-deep: #A67468;
-            --text-dark: #2C2C2C;
-            --text-light: #FFFFFF;
-            --shadow-soft: rgba(0, 0, 0, 0.08);
-            --shadow-mid: rgba(0, 0, 0, 0.12);
-            --glow: rgba(212, 175, 55, 0.2);
+            --gold#D4AF37;
+            --gold-dark#AA8C2C;
+            --light-gold#F4E4B5;
+            --cream#FDF8F3;
+            --cream-dark#F5F1E8;
+            --sage#8B9B7A;
+            --sage-light#A8BAA0;
+            --deep-sage#5C6B5B;
+            --rose#C89B8B;
+            --rose-deep#A67468;
+            --text-dark#2C2C2C;
+            --text-light#FFFFFF;
+            --shadow-softrgba(0, 0, 0, 0.08);
+            --shadow-midrgba(0, 0, 0, 0.12);
+            --glowrgba(212, 175, 55, 0.2);
         }
 
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            margin0;
+            padding0;
+            box-sizingborder-box;
         }
 
         body {
-            font-family: 'Crimson Text', serif;
-            background: linear-gradient(180deg, #FDF8F3 0%, #F5F1E8 50%, #EEE9E0 100%);
-            color: var(--text-dark);
-            line-height: 1.8;
-            position: relative;
-            overflow-x: hidden;
-            background-attachment: fixed;
+            font-family'Crimson Text', serif;
+            backgroundlinear-gradient(180deg, #FDF8F3 0%, #F5F1E8 50%, #EEE9E0 100%);
+            colorvar(--text-dark);
+            line-height1.8;
+            positionrelative;
+            overflow-xhidden;
+            background-attachmentfixed;
         }
 
         /* Premium background with subtle grain */
         body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
+            content'';
+            positionfixed;
+            top0;
+            left0;
+            width100%;
+            height100%;
+            background
                 radial-gradient(circle at 15% 85%, rgba(212, 175, 55, 0.06) 0%, transparent 45%),
                 radial-gradient(circle at 85% 15%, rgba(139, 155, 122, 0.06) 0%, transparent 45%),
                 radial-gradient(circle at 50% 50%, rgba(200, 155, 139, 0.03) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: -1;
+            pointer-eventsnone;
+            z-index-1;
         }
 
         body::after {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background-image: 
+            content'';
+            positionfixed;
+            inset0;
+            background-image
                 repeating-linear-gradient(
                     90deg,
                     transparent,
@@ -73,822 +73,822 @@
                     rgba(255, 255, 255, 0.02) 2px,
                     rgba(255, 255, 255, 0.02) 4px
                 );
-            pointer-events: none;
-            z-index: -1;
-            opacity: 0.5;
+            pointer-eventsnone;
+            z-index-1;
+            opacity0.5;
         }
 
         .wrap {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 32px;
+            max-width1280px;
+            margin0 auto;
+            padding0 32px;
         }
 
         /* ===== HEADER ===== */
         header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 48px;
-            padding: 3rem 0 2rem;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
-            animation: slideDown 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+            displayflex;
+            align-itemscenter;
+            justify-contentspace-between;
+            gap48px;
+            padding3rem 0 2rem;
+            border-bottom1px solid rgba(212, 175, 55, 0.15);
+            animationslideDown 1s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         @keyframes slideDown {
             from {
-                opacity: 0;
-                transform: translateY(-40px);
+                opacity0;
+                transformtranslateY(-40px);
             }
             to {
-                opacity: 1;
-                transform: translateY(0);
+                opacity1;
+                transformtranslateY(0);
             }
         }
 
         .brand {
-            display: flex;
-            align-items: center;
-            gap: 20px;
+            displayflex;
+            align-itemscenter;
+            gap20px;
         }
 
         .logo {
-            width: 72px;
-            height: 72px;
-            border-radius: 16px;
-            background: linear-gradient(135deg, var(--gold) 0%, var(--light-gold) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.4rem;
-            box-shadow: 0 12px 32px rgba(212, 175, 55, 0.2), inset -1px -1px 3px rgba(0, 0, 0, 0.1);
-            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-            transform-origin: center;
+            width72px;
+            height72px;
+            border-radius16px;
+            backgroundlinear-gradient(135deg, var(--gold) 0%, var(--light-gold) 100%);
+            displayflex;
+            align-itemscenter;
+            justify-contentcenter;
+            font-size2.4rem;
+            box-shadow0 12px 32px rgba(212, 175, 55, 0.2), inset -1px -1px 3px rgba(0, 0, 0, 0.1);
+            transitionall 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform-origincenter;
         }
 
         .logo:hover {
-            transform: translateY(-6px) scale(1.02);
-            box-shadow: 0 20px 48px rgba(212, 175, 55, 0.3), inset -1px -1px 3px rgba(0, 0, 0, 0.1);
+            transformtranslateY(-6px) scale(1.02);
+            box-shadow0 20px 48px rgba(212, 175, 55, 0.3), inset -1px -1px 3px rgba(0, 0, 0, 0.1);
         }
 
         .brand-text {
-            display: flex;
-            flex-direction: column;
+            displayflex;
+            flex-directioncolumn;
         }
 
         .brand-text > div:first-child {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--deep-sage);
-            letter-spacing: 1.5px;
-            line-height: 1;
+            font-family'Playfair Display', serif;
+            font-size2.2rem;
+            font-weight700;
+            colorvar(--deep-sage);
+            letter-spacing1.5px;
+            line-height1;
         }
 
         .brand-text > div:last-child {
-            font-size: 0.95rem;
-            color: var(--sage);
-            font-style: italic;
-            letter-spacing: 0.8px;
-            margin-top: 0.4rem;
-            font-weight: 500;
+            font-size0.95rem;
+            colorvar(--sage);
+            font-styleitalic;
+            letter-spacing0.8px;
+            margin-top0.4rem;
+            font-weight500;
         }
 
         nav {
-            display: flex;
-            gap: 2.8rem;
+            displayflex;
+            gap2.8rem;
         }
 
         nav a {
-            text-decoration: none;
-            color: var(--sage);
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.15rem;
-            font-weight: 600;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            position: relative;
-            letter-spacing: 0.3px;
+            text-decorationnone;
+            colorvar(--sage);
+            font-family'Cormorant Garamond', serif;
+            font-size1.15rem;
+            font-weight600;
+            transitionall 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            positionrelative;
+            letter-spacing0.3px;
         }
 
         nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 0;
-            height: 2.5px;
-            background: linear-gradient(90deg, var(--gold), var(--rose));
-            transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            content'';
+            positionabsolute;
+            bottom-8px;
+            left0;
+            width0;
+            height2.5px;
+            backgroundlinear-gradient(90deg, var(--gold), var(--rose));
+            transitionwidth 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         nav a:hover {
-            color: var(--gold);
-            transform: translateY(-2px);
+            colorvar(--gold);
+            transformtranslateY(-2px);
         }
 
         nav a:hover::after {
-            width: 100%;
+            width100%;
         }
 
         /* ===== HERO SECTION ===== */
         .hero {
-            margin-top: 2.5rem;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.45) 100%);
-            border: 1.5px solid rgba(212, 175, 55, 0.25);
-            border-radius: 20px;
-            padding: 4rem;
-            box-shadow: 
+            margin-top2.5rem;
+            backgroundlinear-gradient(135deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.45) 100%);
+            border1.5px solid rgba(212, 175, 55, 0.25);
+            border-radius20px;
+            padding4rem;
+            box-shadow
                 0 20px 60px rgba(0, 0, 0, 0.08),
                 inset 0 1px 0 rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(12px);
-            display: grid;
-            grid-template-columns: 1fr 340px;
-            gap: 3rem;
-            animation: fadeInUp 1s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s backwards;
-            position: relative;
-            overflow: hidden;
+            backdrop-filterblur(12px);
+            displaygrid;
+            grid-template-columns1fr 340px;
+            gap3rem;
+            animationfadeInUp 1s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s backwards;
+            positionrelative;
+            overflowhidden;
         }
 
         .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
-            pointer-events: none;
+            content'';
+            positionabsolute;
+            top-50%;
+            right-50%;
+            width100%;
+            height100%;
+            backgroundradial-gradient(circle at center, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+            pointer-eventsnone;
         }
 
         .hero > * {
-            position: relative;
-            z-index: 2;
+            positionrelative;
+            z-index2;
         }
 
         @keyframes fadeInUp {
             from {
-                opacity: 0;
-                transform: translateY(30px);
+                opacity0;
+                transformtranslateY(30px);
             }
             to {
-                opacity: 1;
-                transform: translateY(0);
+                opacity1;
+                transformtranslateY(0);
             }
         }
 
         h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.4rem;
-            font-weight: 700;
-            color: var(--deep-sage);
-            margin-bottom: 1rem;
-            letter-spacing: 0.5px;
-            line-height: 1.15;
-            text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.06);
+            font-family'Playfair Display', serif;
+            font-size3.4rem;
+            font-weight700;
+            colorvar(--deep-sage);
+            margin-bottom1rem;
+            letter-spacing0.5px;
+            line-height1.15;
+            text-shadow2px 4px 12px rgba(0, 0, 0, 0.06);
         }
 
         p.lead {
-            color: var(--sage);
-            font-size: 1.15rem;
-            margin-top: 1.2rem;
-            line-height: 1.85;
-            max-width: 85%;
+            colorvar(--sage);
+            font-size1.15rem;
+            margin-top1.2rem;
+            line-height1.85;
+            max-width85%;
         }
 
         .cta {
-            margin-top: 2rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.2rem;
+            margin-top2rem;
+            displayflex;
+            flex-wrapwrap;
+            gap1.2rem;
         }
 
         .btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.05rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 60px;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            border: 2px solid transparent;
-            cursor: pointer;
-            letter-spacing: 0.6px;
-            position: relative;
-            overflow: hidden;
+            displayinline-block;
+            padding1rem 2rem;
+            font-family'Cormorant Garamond', serif;
+            font-size1.05rem;
+            font-weight600;
+            text-decorationnone;
+            border-radius60px;
+            transitionall 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border2px solid transparent;
+            cursorpointer;
+            letter-spacing0.6px;
+            positionrelative;
+            overflowhidden;
         }
 
         .btn::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: inherit;
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            z-index: -1;
+            content'';
+            positionabsolute;
+            inset0;
+            backgroundinherit;
+            transformscaleX(0);
+            transform-originright;
+            transitiontransform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index-1;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--gold) 0%, var(--light-gold) 100%);
-            color: var(--text-dark);
-            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.25);
+            backgroundlinear-gradient(135deg, var(--gold) 0%, var(--light-gold) 100%);
+            colorvar(--text-dark);
+            box-shadow0 8px 24px rgba(212, 175, 55, 0.25);
         }
 
         .btn-primary:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 14px 40px rgba(212, 175, 55, 0.35);
-            letter-spacing: 1px;
+            transformtranslateY(-4px);
+            box-shadow0 14px 40px rgba(212, 175, 55, 0.35);
+            letter-spacing1px;
         }
 
         .btn-outline {
-            background: transparent;
-            color: var(--rose-deep);
-            border: 2px solid var(--rose);
+            backgroundtransparent;
+            colorvar(--rose-deep);
+            border2px solid var(--rose);
         }
 
         .btn-outline:hover {
-            background: var(--rose);
-            color: var(--text-light);
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(200, 155, 139, 0.25);
+            backgroundvar(--rose);
+            colorvar(--text-light);
+            transformtranslateY(-4px);
+            box-shadow0 8px 24px rgba(200, 155, 139, 0.25);
         }
 
         .btn-secondary {
-            background: rgba(139, 155, 122, 0.12);
-            color: var(--deep-sage);
-            border: 2px solid var(--sage);
+            backgroundrgba(139, 155, 122, 0.12);
+            colorvar(--deep-sage);
+            border2px solid var(--sage);
         }
 
         .btn-secondary:hover {
-            background: var(--sage);
-            color: var(--text-light);
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(139, 155, 122, 0.25);
+            backgroundvar(--sage);
+            colorvar(--text-light);
+            transformtranslateY(-4px);
+            box-shadow0 8px 24px rgba(139, 155, 122, 0.25);
         }
 
         .tags {
-            margin-top: 2rem;
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
+            margin-top2rem;
+            displayflex;
+            gap1rem;
+            flex-wrapwrap;
         }
 
         .tag {
-            display: inline-block;
-            padding: 0.7rem 1.5rem;
-            border-radius: 50px;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(200, 155, 139, 0.08) 100%);
-            color: var(--deep-sage);
-            font-size: 0.95rem;
-            font-weight: 600;
-            border: 1.5px solid rgba(212, 175, 55, 0.25);
-            transition: all 0.3s ease;
-            cursor: default;
+            displayinline-block;
+            padding0.7rem 1.5rem;
+            border-radius50px;
+            backgroundlinear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(200, 155, 139, 0.08) 100%);
+            colorvar(--deep-sage);
+            font-size0.95rem;
+            font-weight600;
+            border1.5px solid rgba(212, 175, 55, 0.25);
+            transitionall 0.3s ease;
+            cursordefault;
         }
 
         .tag:hover {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.18) 0%, rgba(200, 155, 139, 0.12) 100%);
-            border-color: rgba(212, 175, 55, 0.4);
-            transform: translateY(-2px);
+            backgroundlinear-gradient(135deg, rgba(212, 175, 55, 0.18) 0%, rgba(200, 155, 139, 0.12) 100%);
+            border-colorrgba(212, 175, 55, 0.4);
+            transformtranslateY(-2px);
         }
 
         /* ===== ASIDE (SIDEBAR) ===== */
         .hero aside {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
+            displayflex;
+            flex-directioncolumn;
+            gap1.5rem;
         }
 
         .card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.55) 100%);
-            border: 1.5px solid rgba(212, 175, 55, 0.2);
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(12px);
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            backgroundlinear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.55) 100%);
+            border1.5px solid rgba(212, 175, 55, 0.2);
+            border-radius16px;
+            padding2rem;
+            box-shadow0 8px 24px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            backdrop-filterblur(12px);
+            transitionall 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5);
-            border-color: rgba(212, 175, 55, 0.35);
+            transformtranslateY(-6px);
+            box-shadow0 16px 40px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            border-colorrgba(212, 175, 55, 0.35);
         }
 
         .card > div:first-child {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            font-size: 1.25rem;
-            color: var(--deep-sage);
-            margin-bottom: 1rem;
-            letter-spacing: 0.3px;
+            font-family'Playfair Display', serif;
+            font-weight700;
+            font-size1.25rem;
+            colorvar(--deep-sage);
+            margin-bottom1rem;
+            letter-spacing0.3px;
         }
 
         .verse-text {
-            font-size: 1.05rem;
-            color: var(--sage);
-            font-style: italic;
-            line-height: 1.85;
+            font-size1.05rem;
+            colorvar(--sage);
+            font-styleitalic;
+            line-height1.85;
         }
 
         .pill {
-            display: inline-block;
-            padding: 0.6rem 1.2rem;
-            border-radius: 50px;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.25) 0%, rgba(200, 155, 139, 0.15) 100%);
-            color: var(--rose-deep);
-            font-weight: 600;
-            font-size: 0.9rem;
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            displayinline-block;
+            padding0.6rem 1.2rem;
+            border-radius50px;
+            backgroundlinear-gradient(135deg, rgba(212, 175, 55, 0.25) 0%, rgba(200, 155, 139, 0.15) 100%);
+            colorvar(--rose-deep);
+            font-weight600;
+            font-size0.9rem;
+            border1px solid rgba(212, 175, 55, 0.3);
         }
 
         /* ===== MAIN SECTIONS ===== */
         main {
-            margin-top: 3rem;
+            margin-top3rem;
         }
 
         section {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.45) 100%);
-            border: 1.5px solid rgba(212, 175, 55, 0.2);
-            border-radius: 16px;
-            padding: 3rem;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(12px);
-            animation: fadeInUp 1s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+            backgroundlinear-gradient(135deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.45) 100%);
+            border1.5px solid rgba(212, 175, 55, 0.2);
+            border-radius16px;
+            padding3rem;
+            margin-bottom2.5rem;
+            box-shadow0 12px 40px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            backdrop-filterblur(12px);
+            animationfadeInUp 1s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
         }
 
-        section:nth-of-type(1) { animation-delay: 0.2s; }
-        section:nth-of-type(2) { animation-delay: 0.3s; }
-        section:nth-of-type(3) { animation-delay: 0.4s; }
+        section:nth-of-type(1) { animation-delay0.2s; }
+        section:nth-of-type(2) { animation-delay0.3s; }
+        section:nth-of-type(3) { animation-delay0.4s; }
 
         section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--deep-sage);
-            margin-bottom: 0.8rem;
-            letter-spacing: 0.5px;
+            font-family'Playfair Display', serif;
+            font-size2.5rem;
+            colorvar(--deep-sage);
+            margin-bottom0.8rem;
+            letter-spacing0.5px;
         }
 
         section > p.meta {
-            color: var(--sage);
-            font-size: 1rem;
-            margin-top: 0.8rem;
-            line-height: 1.7;
+            colorvar(--sage);
+            font-size1rem;
+            margin-top0.8rem;
+            line-height1.7;
         }
 
         .grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 2rem;
-            margin-top: 2rem;
+            displaygrid;
+            grid-template-columns2fr 1fr;
+            gap2rem;
+            margin-top2rem;
         }
 
         /* ===== SCRIPTURE ACCORDION ===== */
         .scriptures ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+            list-stylenone;
+            padding0;
+            margin0;
         }
 
         .scriptures li {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.3) 100%);
-            border: 1.5px solid rgba(212, 175, 55, 0.15);
-            border-radius: 12px;
-            margin-bottom: 1.2rem;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            backgroundlinear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.3) 100%);
+            border1.5px solid rgba(212, 175, 55, 0.15);
+            border-radius12px;
+            margin-bottom1.2rem;
+            overflowhidden;
+            transitionall 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .scriptures li:hover {
-            border-color: rgba(212, 175, 55, 0.35);
-            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.12);
+            border-colorrgba(212, 175, 55, 0.35);
+            box-shadow0 8px 24px rgba(212, 175, 55, 0.12);
         }
 
         .accordion-header {
-            padding: 1.6rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            padding1.6rem;
+            displayflex;
+            justify-contentspace-between;
+            align-itemscenter;
+            cursorpointer;
+            transitionall 0.3s ease;
         }
 
         .accordion-header:hover {
-            background: rgba(212, 175, 55, 0.08);
+            backgroundrgba(212, 175, 55, 0.08);
         }
 
         .accordion-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--deep-sage);
+            font-family'Cormorant Garamond', serif;
+            font-weight700;
+            font-size1.2rem;
+            colorvar(--deep-sage);
         }
 
         .accordion-meta {
-            font-size: 0.9rem;
-            color: var(--sage);
+            font-size0.9rem;
+            colorvar(--sage);
         }
 
         .accordion-content {
-            display: none;
-            padding: 1.6rem;
-            border-top: 1.5px solid rgba(212, 175, 55, 0.15);
-            background: rgba(245, 241, 232, 0.6);
-            font-size: 1rem;
-            line-height: 1.85;
-            color: var(--text-dark);
+            displaynone;
+            padding1.6rem;
+            border-top1.5px solid rgba(212, 175, 55, 0.15);
+            backgroundrgba(245, 241, 232, 0.6);
+            font-size1rem;
+            line-height1.85;
+            colorvar(--text-dark);
         }
 
         .accordion-content p {
-            margin-bottom: 1.2rem;
+            margin-bottom1.2rem;
         }
 
         .accordion-content b {
-            color: var(--rose-deep);
-            font-family: 'Cormorant Garamond', serif;
+            colorvar(--rose-deep);
+            font-family'Cormorant Garamond', serif;
         }
 
         .active .accordion-content {
-            display: block;
-            animation: slideDown 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            displayblock;
+            animationslideDown 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         /* ===== AUDIO & CHANTS ===== */
         .audio-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 1.5rem;
+            list-stylenone;
+            padding0;
+            margin-top1.5rem;
         }
 
         .audio-list li {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.3) 100%);
-            border: 1.5px solid rgba(212, 175, 55, 0.15);
-            border-radius: 12px;
-            padding: 1.8rem;
-            margin-bottom: 1.5rem;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            backgroundlinear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.3) 100%);
+            border1.5px solid rgba(212, 175, 55, 0.15);
+            border-radius12px;
+            padding1.8rem;
+            margin-bottom1.5rem;
+            transitionall 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .audio-list li:hover {
-            border-color: rgba(212, 175, 55, 0.35);
-            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.12);
-            transform: translateY(-2px);
+            border-colorrgba(212, 175, 55, 0.35);
+            box-shadow0 8px 24px rgba(212, 175, 55, 0.12);
+            transformtranslateY(-2px);
         }
 
         .audio-list li > div:first-child {
-            font-weight: 700;
-            font-size: 1.15rem;
-            color: var(--deep-sage);
-            margin-bottom: 0.6rem;
-            font-family: 'Cormorant Garamond', serif;
+            font-weight700;
+            font-size1.15rem;
+            colorvar(--deep-sage);
+            margin-bottom0.6rem;
+            font-family'Cormorant Garamond', serif;
         }
 
         audio {
-            width: 100%;
-            margin-top: 1rem;
-            accent-color: var(--gold);
-            border-radius: 8px;
+            width100%;
+            margin-top1rem;
+            accent-colorvar(--gold);
+            border-radius8px;
         }
 
         /* ===== LEARN SECTION ===== */
         .learn-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 2rem;
+            displaygrid;
+            grid-template-columnsrepeat(3, 1fr);
+            gap2rem;
+            margin-top2rem;
         }
 
         .learn-card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.3) 100%);
-            border: 1.5px solid rgba(212, 175, 55, 0.15);
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            backgroundlinear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.3) 100%);
+            border1.5px solid rgba(212, 175, 55, 0.15);
+            border-radius12px;
+            padding2rem;
+            text-aligncenter;
+            transitionall 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .learn-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(212, 175, 55, 0.35);
-            box-shadow: 0 12px 32px rgba(212, 175, 55, 0.12);
+            transformtranslateY(-6px);
+            border-colorrgba(212, 175, 55, 0.35);
+            box-shadow0 12px 32px rgba(212, 175, 55, 0.12);
         }
 
         .learn-card div:first-child {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            font-size: 1.25rem;
-            color: var(--deep-sage);
-            margin-bottom: 0.8rem;
+            font-family'Playfair Display', serif;
+            font-weight700;
+            font-size1.25rem;
+            colorvar(--deep-sage);
+            margin-bottom0.8rem;
         }
 
         /* ===== SACRED VERSES CARDS ===== */
         .verse-cards-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2.5rem;
-            margin-top: 2.5rem;
-            margin-bottom: 2.5rem;
+            displaygrid;
+            grid-template-columns1fr 1fr;
+            gap2.5rem;
+            margin-top2.5rem;
+            margin-bottom2.5rem;
         }
 
         .verse-feature-card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 100%);
-            border: 2px solid rgba(212, 175, 55, 0.3);
-            border-radius: 18px;
-            padding: 2.5rem;
-            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(12px);
-            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
+            backgroundlinear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 100%);
+            border2px solid rgba(212, 175, 55, 0.3);
+            border-radius18px;
+            padding2.5rem;
+            box-shadow0 16px 48px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            backdrop-filterblur(12px);
+            transitionall 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            positionrelative;
+            overflowhidden;
+            displayflex;
+            flex-directioncolumn;
         }
 
         .verse-feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, var(--gold), transparent);
-            opacity: 0;
-            transition: opacity 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            content'';
+            positionabsolute;
+            top0;
+            left0;
+            right0;
+            height5px;
+            backgroundlinear-gradient(90deg, var(--gold), transparent);
+            opacity0;
+            transitionopacity 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .verse-feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 28px 64px rgba(212, 175, 55, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.6);
-            border-color: var(--gold);
+            transformtranslateY(-10px);
+            box-shadow0 28px 64px rgba(212, 175, 55, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            border-colorvar(--gold);
         }
 
         .verse-feature-card:hover::before {
-            opacity: 1;
+            opacity1;
         }
 
         .verse-feature-icon {
-            font-size: 2.8rem;
-            margin-bottom: 1.2rem;
-            display: inline-block;
-            animation: float 3s ease-in-out infinite;
+            font-size2.8rem;
+            margin-bottom1.2rem;
+            displayinline-block;
+            animationfloat 3s ease-in-out infinite;
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
+            0%, 100% { transformtranslateY(0px); }
+            50% { transformtranslateY(-8px); }
         }
 
         .verse-feature-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            color: var(--deep-sage);
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.5px;
+            font-family'Playfair Display', serif;
+            font-size2rem;
+            colorvar(--deep-sage);
+            margin-bottom0.5rem;
+            letter-spacing0.5px;
         }
 
         .verse-feature-tamil {
-            font-size: 1.3rem;
-            color: var(--rose-deep);
-            font-weight: 500;
-            margin-bottom: 1rem;
+            font-size1.3rem;
+            colorvar(--rose-deep);
+            font-weight500;
+            margin-bottom1rem;
         }
 
-        .verse-feature-meaning {
-            color: var(--sage);
-            font-size: 1rem;
-            margin-bottom: 1.2rem;
-            font-style: italic;
+        .verse-feature- {
+            colorvar(--sage);
+            font-size1rem;
+            margin-bottom1.2rem;
+            font-styleitalic;
         }
 
         .verse-feature-meta {
-            display: flex;
-            flex-direction: column;
-            gap: 0.6rem;
-            margin-bottom: 1.8rem;
-            padding-bottom: 1.2rem;
-            border-bottom: 1.5px dashed rgba(212, 175, 55, 0.25);
+            displayflex;
+            flex-directioncolumn;
+            gap0.6rem;
+            margin-bottom1.8rem;
+            padding-bottom1.2rem;
+            border-bottom1.5px dashed rgba(212, 175, 55, 0.25);
         }
 
         .meta-item {
-            font-size: 0.95rem;
-            color: var(--sage);
+            font-size0.95rem;
+            colorvar(--sage);
         }
 
         .meta-item strong {
-            color: var(--rose-deep);
+            colorvar(--rose-deep);
         }
 
         .verse-feature-description {
-            color: var(--text-dark);
-            font-size: 1rem;
-            line-height: 1.8;
-            margin-bottom: 1.8rem;
-            flex-grow: 1;
+            colorvar(--text-dark);
+            font-size1rem;
+            line-height1.8;
+            margin-bottom1.8rem;
+            flex-grow1;
         }
 
         .verse-feature-card .btn {
-            align-self: flex-start;
+            align-selfflex-start;
         }
 
         /* ===== SACRED BRIDGE ===== */
         .sacred-bridge {
-            text-align: center;
-            margin-top: 2.5rem;
-            padding: 3rem;
-            background: linear-gradient(135deg, rgba(245, 241, 232, 0.6) 0%, rgba(255, 255, 255, 0.4) 100%);
-            border: 2px dashed rgba(212, 175, 55, 0.3);
-            border-radius: 16px;
-            position: relative;
+            text-aligncenter;
+            margin-top2.5rem;
+            padding3rem;
+            backgroundlinear-gradient(135deg, rgba(245, 241, 232, 0.6) 0%, rgba(255, 255, 255, 0.4) 100%);
+            border2px dashed rgba(212, 175, 55, 0.3);
+            border-radius16px;
+            positionrelative;
         }
 
         .bridge-icon {
-            font-size: 2.8rem;
-            color: var(--gold);
-            margin-bottom: 1.5rem;
-            display: block;
-            animation: pulse 2.5s ease-in-out infinite;
+            font-size2.8rem;
+            colorvar(--gold);
+            margin-bottom1.5rem;
+            displayblock;
+            animationpulse 2.5s ease-in-out infinite;
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+            0%, 100% { opacity1; }
+            50% { opacity0.5; }
         }
 
         .bridge-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: var(--deep-sage);
-            letter-spacing: 0.5px;
-            font-style: italic;
-            margin-bottom: 1.2rem;
+            font-family'Playfair Display', serif;
+            font-size1.5rem;
+            colorvar(--deep-sage);
+            letter-spacing0.5px;
+            font-styleitalic;
+            margin-bottom1.2rem;
         }
 
         .bridge-divider {
-            width: 140px;
-            height: 2.5px;
-            background: linear-gradient(90deg, transparent, var(--rose), transparent);
-            margin: 1.5rem auto;
+            width140px;
+            height2.5px;
+            backgroundlinear-gradient(90deg, transparent, var(--rose), transparent);
+            margin1.5rem auto;
         }
 
         .bridge-description {
-            color: var(--sage);
-            max-width: 850px;
-            margin: 0 auto;
-            font-size: 1rem;
-            line-height: 1.8;
+            colorvar(--sage);
+            max-width850px;
+            margin0 auto;
+            font-size1rem;
+            line-height1.8;
         }
 
         /* ===== FOOTER ===== */
         footer {
-            margin-top: 4rem;
-            padding: 3rem;
-            text-align: center;
-            border-top: 1.5px solid rgba(212, 175, 55, 0.2);
-            color: var(--sage);
-            font-size: 0.95rem;
+            margin-top4rem;
+            padding3rem;
+            text-aligncenter;
+            border-top1.5px solid rgba(212, 175, 55, 0.2);
+            colorvar(--sage);
+            font-size0.95rem;
         }
 
         .footer-ornament {
-            font-size: 1.8rem;
-            color: var(--gold);
-            margin-bottom: 1rem;
+            font-size1.8rem;
+            colorvar(--gold);
+            margin-bottom1rem;
         }
 
         /* ===== RESPONSIVE ===== */
-        @media (max-width: 1024px) {
+        @media (max-width1024px) {
             header {
-                flex-direction: column;
-                text-align: center;
-                gap: 1.5rem;
+                flex-directioncolumn;
+                text-aligncenter;
+                gap1.5rem;
             }
 
             nav {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 2rem;
+                flex-wrapwrap;
+                justify-contentcenter;
+                gap2rem;
             }
 
             .hero {
-                grid-template-columns: 1fr;
-                padding: 3rem;
+                grid-template-columns1fr;
+                padding3rem;
             }
 
             .grid {
-                grid-template-columns: 1fr;
+                grid-template-columns1fr;
             }
 
             h1 {
-                font-size: 2.8rem;
+                font-size2.8rem;
             }
 
             .learn-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns1fr;
             }
 
             .verse-cards-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns1fr;
             }
 
             .cta {
-                flex-direction: column;
+                flex-directioncolumn;
             }
 
             .btn {
-                width: 100%;
-                text-align: center;
+                width100%;
+                text-aligncenter;
             }
 
             .wrap {
-                padding: 0 24px;
+                padding0 24px;
             }
 
             p.lead {
-                max-width: 100%;
+                max-width100%;
             }
         }
 
-        @media (max-width: 640px) {
+        @media (max-width640px) {
             h1 {
-                font-size: 2rem;
+                font-size2rem;
             }
 
             .brand-text > div:first-child {
-                font-size: 1.6rem;
+                font-size1.6rem;
             }
 
             nav {
-                gap: 1rem;
-                font-size: 0.95rem;
+                gap1rem;
+                font-size0.95rem;
             }
 
             section, .hero {
-                padding: 2rem;
+                padding2rem;
             }
 
             .wrap {
-                padding: 0 16px;
+                padding0 16px;
             }
         }
 
         /* Additional utility styles */
         .meta {
-            font-size: 0.95rem;
-            color: var(--sage);
+            font-size0.95rem;
+            colorvar(--sage);
         }
 
         ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+            list-stylenone;
+            padding0;
+            margin0;
         }
 
         li {
-            margin-bottom: 0;
+            margin-bottom0;
         }
 
         a {
-            color: var(--rose-deep);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 600;
+            colorvar(--rose-deep);
+            text-decorationnone;
+            transitionall 0.3s ease;
+            font-weight600;
         }
 
         a:hover {
-            color: var(--gold);
+            colorvar(--gold);
         }
 
         .chant {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.3) 100%);
-            border: 1.5px solid rgba(212, 175, 55, 0.15);
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 1.8rem;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            backgroundlinear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.3) 100%);
+            border1.5px solid rgba(212, 175, 55, 0.15);
+            border-radius12px;
+            padding2rem;
+            margin-bottom1.8rem;
+            transitionall 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .chant:hover {
-            border-color: rgba(212, 175, 55, 0.35);
-            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.12);
-            transform: translateY(-2px);
+            border-colorrgba(212, 175, 55, 0.35);
+            box-shadow0 8px 24px rgba(212, 175, 55, 0.12);
+            transformtranslateY(-2px);
         }
 
         .chant h3 {
-            font-family: 'Cormorant Garamond', serif;
-            color: var(--deep-sage);
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
+            font-family'Cormorant Garamond', serif;
+            colorvar(--deep-sage);
+            margin-bottom1rem;
+            font-size1.4rem;
         }
 
         .chant p {
-            margin: 1rem 0;
-            color: var(--sage);
+            margin1rem 0;
+            colorvar(--sage);
         }
 
         .chant i {
-            color: var(--rose-deep);
-            font-style: italic;
+            colorvar(--rose-deep);
+            font-styleitalic;
         }
     </style>
 </head>
@@ -1070,12 +1070,12 @@
                             <b>Sanskrit:</b><br>
                             शं नो मित्रः शं वरुणः ।<br>
                             शं नो भवत्वर्यमा ।<br>
-                            शं न इन्द्रो बृहस्पति: ।<br>
+                            शं न इन्द्रो बृहस्पति।<br>
                             शं नो विष्णुरुरुक्रमः ॥
                         </p>
 
                         <p>
-                            <b>Meaning:</b><br>
+                            <b>:</b><br>
                             May the cosmic powers bless us with harmony,
                             wisdom, strength, and protection.
                         </p>
@@ -1119,7 +1119,7 @@
                 <ul class="audio-list">
                     <li>
                         <div>Agni Chant — Short Prapathaka</div>
-                        <div class="meta">Duration: 2:10</div>
+                        <div class="meta">Duration2:10</div>
                         <audio controls>
                             <source src="audio/gayatri.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
@@ -1127,15 +1127,15 @@
                     </li>
                     <li>
                         <div>Gayatri Mantra — Slow</div>
-                        <div class="meta">Duration: 3:05</div>
+                        <div class="meta">Duration3:05</div>
                         <audio controls preload="none">
                             <source src="#" type="audio/mpeg">
                         </audio>
                     </li>
                 </ul>
 
-                <div style="margin-top: 2rem;">
-                    <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--deep-sage); margin-bottom: 1.5rem; letter-spacing: 0.3px;">More Sacred Chants</h3>
+                <div style="margin-top2rem;">
+                    <h3 style="font-family'Playfair Display', serif; font-size1.5rem; colorvar(--deep-sage); margin-bottom1.5rem; letter-spacing0.3px;">More Sacred Chants</h3>
                     <div class="chant">
                         <h3>Gayatri Mantra</h3>
                         <p><i>Om Bhur Bhuvaḥ Swaḥ, Tat Savitur Vareṇyaṃ, Bhargo Devasya Dhīmahi, Dhiyo Yo Naḥ
@@ -1170,7 +1170,7 @@
                         <div class="verse-feature-icon">🌸</div>
                         <h3>Soundarya Lahiri</h3>
                         <p class="verse-feature-tamil">ஸௌந்தர்ய லஹரீ</p>
-                        <p class="verse-feature-meaning"><strong>Meaning:</strong> Waves of Beauty</p>
+                        <p class="verse-feature-"><strong>:</strong> Waves of Beauty</p>
                         <div class="verse-feature-meta">
                             <span class="meta-item"><strong>Author:</strong> Sri Adi Shankara</span>
                             <span class="meta-item"><strong>Verses:</strong> 103 (in two parts)</span>
@@ -1186,7 +1186,7 @@
                         <div class="verse-feature-icon">✨</div>
                         <h3>Kanaka Thaara Stotram</h3>
                         <p class="verse-feature-tamil">கனகதாரா ஸ்தோத்ரம்</p>
-                        <p class="verse-feature-meaning"><strong>Meaning:</strong> Golden Shower of Grace</p>
+                        <p class="verse-feature-"><strong>:</strong> Golden Shower of Grace</p>
                         <div class="verse-feature-meta">
                             <span class="meta-item"><strong>Author:</strong> Sri Adi Shankara</span>
                             <span class="meta-item"><strong>Verses:</strong> 18</span>
@@ -1202,7 +1202,7 @@
                         <div class="verse-feature-icon">🌸</div>
                         <h3>Shiva Vakkiyam</h3>
                         <p class="verse-feature-tamil">சிவவாக்கியம்</p>
-                        <p class="verse-feature-meaning"><strong>Meaning:</strong> Shiva's Grace</p>
+                        <p class="verse-feature-"><strong>:</strong> Shiva's Grace</p>
                         <div class="verse-feature-meta">
                             <span class="meta-item"><strong>Author:</strong> Shiva Vakkiyae</span>
                             <span class="meta-item"><strong>Verses:</strong> 500 verses</span>
@@ -1219,7 +1219,7 @@
                         <div class="verse-feature-icon">🕉️</div>
                         <h3>Shiva Panchakshara Stotram</h3>
                         <p class="verse-feature-tamil">ஸிவ பஞ்சாக்ஷர ஸ்தோத்ரம்</p>
-                        <p class="verse-feature-meaning"><strong>Meaning:</strong> Hymn of the Five Syllables</p>
+                        <p class="verse-feature-"><strong>:</strong> Hymn of the Five Syllables</p>
                         <div class="verse-feature-meta">
                             <span class="meta-item"><strong>Author:</strong> Sri Adi Shankara</span>
                             <span class="meta-item"><strong>Verses:</strong> 5 + Phalashruti</span>
@@ -1236,7 +1236,7 @@
 
             <section id="learn">
                 <h2>Learn — Courses & Tutorials</h2>
-                <p class="meta">Beginner-friendly tracks: Pronunciation, Chanting, Basic Sanskrit and Text Study.</p>
+                <p class="meta">Beginner-friendly tracksPronunciation, Chanting, Basic Sanskrit and Text Study.</p>
                 <div class="learn-grid">
                     <div class="learn-card">
                         <div>Sanskrit Basics</div>
@@ -1275,13 +1275,13 @@
         function updateDateTime() {
             const now = new Date();
             const options = {
-                weekday: 'short',
-                day: '2-digit',
-                month: 'short',
-                year: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit'
+                weekday'short',
+                day'2-digit',
+                month'short',
+                year'numeric',
+                hour'2-digit',
+                minute'2-digit',
+                second'2-digit'
             };
             document.getElementById("dateTime").textContent =
                 now.toLocaleDateString('en-GB', options);
@@ -1293,15 +1293,107 @@
         document.getElementById('year').textContent = new Date().getFullYear();
 
         const verses = [
-            "Karmanyevadhikaaraste ma faleshu kadachana",
-            "Niyatam kuru karma tvam karma jyayo hy akarmana",
-            "Brahma satya jagan mithya jivo brahmaiva naparah",
-            "Aham brahmasmi ananta atma paramatma sarvadha",
-            "Asatо ма sadgamay, Tamaso ma jyotir gamay",
-            "Vedah samastah sarva artha nishthah param brahma vicharan",
-            "Tat tvam asi mahabhaho brahma akhand caitanyam"
-        ];
-
+    { "Karmanyevadhikaraste Ma Phaleshu Kadachana", "Focus on your actions, not on the results." },
+    { "Yogastha Kuru Karmani", "Perform your duties with a calm and balanced mind." },
+    { "Samatvam Yoga Uchyate", "Equanimity is true yoga." },
+    { "Na Jayate Mriyate Va Kadachin", "The soul is never born and never dies." },
+    { "Vasamsi Jirnani Yatha Vihaya", "The soul changes bodies like old clothes." },
+    { "Nainam Chindanti Shastrani", "Weapons cannot harm the soul." },
+    { "Nainam Dahati Pavakah", "Fire cannot burn the soul." },
+    { "Uddhared Atmanatmanam", "Lift yourself through your own efforts." },
+    { "Atmaiva Hy Atmano Bandhuh", "You are your own best friend." },
+    { "Atmaiva Ripur Atmanah", "You can become your own worst enemy." },
+    { "Niyatam Kuru Karma Tvam", "Perform your prescribed duties." },
+    { "Yad Yad Acharati Shreshthah", "People follow the example of great leaders." },
+    { "Yada Yada Hi Dharmasya", "Whenever righteousness declines, the Divine manifests." },
+    { "Sambhavami Yuge Yuge", "The Divine appears age after age." },
+    { "Paritranaya Sadhunam", "The righteous are always protected." },
+    { "Dharmasamsthapanarthaya", "The purpose is to restore righteousness." },
+    { "Janma Karma Cha Me Divyam", "Divine actions are beyond ordinary understanding." },
+    { "Bahavo Jnana Tapasa Puta", "Knowledge purifies those who seek truth." },
+    { "Aham Sarvasya Prabhavo", "Everything originates from the Divine." },
+    { "Mattah Sarvam Pravartate", "All creation flows from the Supreme." },
+    { "Mayi Sarvam Idam Protam", "Everything is connected to the Divine." },
+    { "Raso Ham Apsu Kaunteya", "The Divine is the essence in water." },
+    { "Pranavah Sarva Vedeshu", "Om is the essence of all sacred knowledge." },
+    { "Jivanam Sarva Bhuteshu", "Life itself is divine." },
+    { "Bijam Mam Sarva Bhutanam", "The Divine is the seed of all beings." },
+    { "Balam Balavatam Chaham", "True strength comes from purity." },
+    { "Yogi Yunjita Satatam", "Practice meditation regularly." },
+    { "Yukta Ahara Viharasya", "Moderation leads to success." },
+    { "Prasanta Atma Vigata Bhih", "A peaceful mind is free from fear." },
+    { "Sukham Atyantikam Yat Tat", "True happiness comes from within." },
+    { "Yasmin Sthito Na Duhkhena", "Spiritual stability overcomes sorrow." },
+    { "Mayy Asakta Manah Partha", "Fix your mind on the Divine." },
+    { "Jnaninas Tu Mam Eva", "The wise see the Divine everywhere." },
+    { "Mattah Parataram Nanyat", "Nothing is higher than the Supreme." },
+    { "Aham Atma Gudakesha", "The Divine resides in every heart." },
+    { "Antakale Cha Mam Eva", "Remember the Divine at all times." },
+    { "Yam Yam Vapi Smaran Bhavam", "Your thoughts shape your future." },
+    { "Tasmat Sarveshu Kaleshu", "Remain spiritually aware always." },
+    { "Ananyas Chintayanto Mam", "Constant devotion brings protection." },
+    { "Yoga Ksemam Vahamyaham", "The Divine provides what devotees need." },
+    { "Ye Yatha Mam Prapadyante", "The Divine responds according to devotion." },
+    { "Aham Hi Sarva Yajnanam", "All worship ultimately reaches the Divine." },
+    { "Bhaktya Mam Abhijanati", "The Divine is known through devotion." },
+    { "Aham Adir Hi Devanam", "The Divine is the source of all celestial beings." },
+    { "Buddhir Jnanam Asammohah", "Wisdom and clarity are divine gifts." },
+    { "Ahimsa Samata Tushtih", "Non-violence and contentment are virtues." },
+    { "Yajnanam Japa Yajnosmi", "Chanting the Divine Name is sacred worship." },
+    { "Sthavaranam Himalayah", "The Himalayas symbolize divine grandeur." },
+    { "Ashvatthah Sarva Vrikshanam", "The sacred Peepal tree represents divinity." },
+    { "Pashya Me Partha Rupani", "See the Divine in countless forms." },
+    { "Sarvato Ananta Rupam", "The Divine is infinite." },
+    { "Tat Tvam Asi", "You are one with the Supreme Reality." },
+    { "Aham Brahmasmi", "My true nature is Divine Consciousness." },
+    { "Samam Sarveshu Bhuteshu", "Treat all beings equally." },
+    { "Kshetrajnam Chapi Mam Viddhi", "The Divine is the knower within all." },
+    { "Amanitvam Adambhitvam", "Humility is true greatness." },
+    { "Ahimsa Kshantir Arjavam", "Practice non-violence, patience, and honesty." },
+    { "Janma Mrityu Jara Vyadhi", "Birth, aging, and death are part of life." },
+    { "Mayi Chananya Yogena", "Single-minded devotion leads to liberation." },
+    { "Jneyam Yat Tat Pravaksyami", "Knowledge leads to immortality." },
+    { "Anadi Mat Param Brahma", "The Supreme Reality has no beginning." },
+    { "Sattvam Rajas Tamas Iti", "Nature functions through three qualities." },
+    { "Sattvam Sukhe Sanjayati", "Purity leads to happiness." },
+    { "Rajas Karmani Bharata", "Passion drives activity." },
+    { "Tamas Ajnanam", "Ignorance creates confusion." },
+    { "Urdhvam Mulam Adhah Sakham", "The world is like an upside-down tree." },
+    { "Na Rupam Asyeha", "Reality is not always visible." },
+    { "Tam Eva Chadyam Purusham", "Seek refuge in the Supreme Being." },
+    { "Purushottama", "The Supreme Person transcends all." },
+    { "Abhayam Sattva Samsuddhih", "Fearlessness is a divine virtue." },
+    { "Danam Damas Cha", "Charity and self-control are noble qualities." },
+    { "Ahimsa Satyam Akrodhah", "Practice truth and freedom from anger." },
+    { "Daya Bhuteshu", "Show compassion to all beings." },
+    { "Tejah Kshama Dhritih", "Strength, forgiveness, and courage are virtues." },
+    { "Kama Krodha Tatha Lobha", "Lust, anger, and greed cause suffering." },
+    { "Tasmat Trayam Tyajet", "Abandon these three destructive tendencies." },
+    { "Sastram Pramanam Te", "Let wisdom guide your actions." },
+    { "Aharah Tri Vidho Bhavati", "Food influences the mind and body." },
+    { "Deva Dvija Guru Prajna Pujanam", "Respect teachers, elders, and the wise." },
+    { "Anudvegakaram Vakyam", "Speak words that do not hurt others." },
+    { "Satyam Priya Hitam Cha Yat", "Speak truth kindly and helpfully." },
+    { "Manah Prasadah Saumyatvam", "Serenity is a sign of inner strength." },
+    { "Tyagah Shantir Anantaram", "Renunciation brings peace." },
+    { "Sarva Karmani Sannyasya", "Offer all actions to the Divine." },
+    { "Ishvarah Sarva Bhutanam Hrddese", "The Divine resides in every heart." },
+    { "Tam Eva Saranam Gaccha", "Seek refuge in the Divine." },
+    { "Tat Prasadat Param Shantim", "Divine grace brings lasting peace." },
+    { "Sarva Dharman Parityajya", "Surrender completely to the Divine." },
+    { "Ma Shuchah", "Do not grieve or fear." },
+    { "Yo Mam Evam Janati", "True understanding leads to freedom." },
+    { "Etad Buddhva Buddhiman Syat", "Wisdom makes life ful." },
+    { "Om Tat Sat", "The Supreme Truth is eternal." },
+    { "Dharma Rakshati Rakshitah", "Protect righteousness and it will protect you." },
+    { "Adharma Vinashayati", "Unrighteousness leads to destruction." },
+    { "Sarva Karman Api Sada", "Always perform your responsibilities." },
+    { "Moksha Margam Adhigacchati", "Wisdom leads to liberation." },
+    { "Atma Atmanam Yogena", "Self-realization comes through discipline." },
+    { "Brahma Satyam Jagan Mithya", "Ultimate reality alone is eternal." },
+    { "Jivo Brahmaiva Na Aparah", "The individual soul is divine in essence." },
+    { "Lokah Samastah Sukhino Bhavantu", "May all beings be happy and free." }
+];
         function getDailyVerse() {
             const today = new Date();
             const dayOfYear = Math.floor(

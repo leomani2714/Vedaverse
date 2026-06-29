@@ -9,753 +9,929 @@
         content="A refined sanctuary for Vedic wisdom, chants, scriptures, and spiritual learning." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet">
     <style>
-    :root {
-        --gold: #D4AF37;
-        --gold-dark: var(--gold);
-        --light-gold: #F4E4B5;
-        --cream: #FDF8F3;
-        --cream-dark: #F5F1E8;
-        --sage: #8B9B7A;
-        --sage-light: #A8BAA0;
-        --deep-sage: #5C6B5B;
-        --rose: #C89B8B;
-        --rose-deep: #A67468;
-        --text-dark: #2C2C2C;
-        --text-light: #FFFFFF;
-        --shadow-soft: rgba(0, 0, 0, 0.08);
-        --shadow-mid: rgba(0, 0, 0, 0.12);
-        --glow: rgba(212, 175, 55, 0.2);
-    }
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        font-family: 'Crimson Text', serif;
-        background: linear-gradient(180deg, #FDF8F3 0%, #F5F1E8 50%, #EEE9E0 100%);
-        color: var(--text-dark);
-        line-height: 1.8;
-        position: relative;
-        overflow-x: hidden;
-        background-attachment: fixed;
-    }
-
-    /* Premium background with subtle grain */
-    body:before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: 
-            radial-gradient(circle at 15% 85%, rgba(212, 175, 55, 0.06) 0%, transparent 45%),
-            radial-gradient(circle at 85% 15%, rgba(139, 155, 122, 0.06) 0%, transparent 45%),
-            radial-gradient(circle at 50% 50%, rgba(200, 155, 139, 0.03) 0%, transparent 50%);
-        pointer-events: none;
-        z-index: -1;
-    }
-
-    body::after {
-        content: '';
-        position: fixed;
-        inset: 0;
-        background-image: repeating-linear-gradient(
-            90deg,
-            transparent,
-            transparent 2px,
-            rgba(255, 255, 255, 0.02) 2px,
-            rgba(255, 255, 255, 0.02) 4px
-        );
-        pointer-events: none;
-        z-index: -1;
-        opacity: 0.5;
-    }
-
-    .wrap {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0 32px;
-    }
-
-    /* ===== HEADER ===== */
-    header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 48px;
-        padding: 3rem 0 2rem;
-        border-bottom: 1px solid rgba(212, 175, 55, 0.15);
-        animation: slideDown 1s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-
-    @keyframes slideDown {
-        from {
-            opacity: 0;
-            transform: translateY(-40px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .brand {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .logo {
-        width: 72px;
-        height: 72px;
-        border-radius: 16px;
-        background: linear-gradient(135deg, var(--gold) 0%, var(--light-gold) 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2.4rem;
-        box-shadow: 0 12px 32px rgba(212, 175, 55, 0.2), inset -1px -1px 3px rgba(0, 0, 0, 0.1);
-        transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-        transform-origin: center;
-    }
-
-    .logo:hover {
-        transform: translateY(-6px) scale(1.02);
-        box-shadow: 0 20px 48px rgba(212, 175, 55, 0.3), inset -1px -1px 3px rgba(0, 0, 0, 0.1);
-    }
-
-    .brand-text {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .brand-text > div:first-child {
-        font-family: 'Playfair Display', serif;
-        font-size: 2.2rem;
-        font-weight: 700;
-        color: var(--deep-sage);
-        letter-spacing: 1.5px;
-        line-height: 1;
-    }
-
-    .brand-text > div:last-child {
-        font-size: 0.95rem;
-        color: var(--sage);
-        font-style: italic;
-        letter-spacing: 0.8px;
-        margin-top: 0.4rem;
-        font-weight: 500;
-    }
-
-    nav {
-        display: flex;
-        gap: 2.8rem;
-    }
-
-    nav a {
-        text-decoration: none;
-        color: var(--sage);
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 1.15rem;
-        font-weight: 600;
-        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        position: relative;
-        letter-spacing: 0.3px;
-    }
-
-    nav a::after {
-        content: '';
-        position: absolute;
-        bottom: -8px;
-        left: 0;
-        width: 0;
-        height: 2.5px;
-        background: linear-gradient(90deg, var(--gold), var(--rose));
-        transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-
-    nav a:hover {
-        color: var(--gold);
-        transform: translateY(-2px);
-    }
-
-    nav a:hover::after {
-        width: 100%;
-    }
-
-    /* ===== HERO SECTION ===== */
-    .hero {
-        margin-top: 2.5rem;
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.45) 100%);
-        border: 1.5px solid rgba(212, 175, 55, 0.25);
-        border-radius: 20px;
-        padding: 4rem;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.6);
-        backdrop-filter: blur(12px);
-        display: grid;
-        grid-template-columns: 1fr 340px;
-        gap: 3rem;
-        animation: fadeInUp 1s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s backwards;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .hero::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        right: -50%;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(circle at center, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
-        pointer-events: none;
-    }
-
-    .hero > * {
-        position: relative;
-        z-index: 2;
-    }
-
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    h1 {
-        font-family: 'Playfair Display', serif;
-        font-size: 3.4rem;
-        font-weight: 700;
-        color: var(--deep-sage);
-        margin-bottom: 1rem;
-        letter-spacing: 0.5px;
-        line-height: 1.15;
-        text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.06);
-    }
-
-    p.lead {
-        color: var(--sage);
-        font-size: 1.15rem;
-        margin-top: 1.2rem;
-        line-height: 1.85;
-        max-width: 85%;
-    }
-
-    .cta {
-        margin-top: 2rem;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.2rem;
-    }
-
-    .btn {
-        display: inline-block;
-        padding: 1rem 2rem;
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 1.05rem;
-        font-weight: 600;
-        text-decoration: none;
-        border-radius: 60px;
-        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        border: 2px solid transparent;
-        cursor: pointer;
-        letter-spacing: 0.6px;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .btn::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: inherit;
-        transform: scaleX(0);
-        transform-origin: right;
-        transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        z-index: -1;
-    }
-
-    .btn-primary {
-        background: linear-gradient(135deg, var(--gold) 0%, var(--light-gold) 100%);
-        color: var(--text-dark);
-        box-shadow: 0 8px 24px rgba(212, 175, 55, 0.25);
-    }
-
-    .btn-primary:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 14px 40px rgba(212, 175, 55, 0.35);
-        letter-spacing: 1px;
-    }
-
-    .btn-outline {
-        background: transparent;
-        color: var(--rose-deep);
-        border: 2px solid var(--rose);
-    }
-
-    .btn-outline:hover {
-        background: var(--rose);
-        color: var(--text-light);
-        transform: translateY(-4px);
-        box-shadow: 0 8px 24px rgba(200, 155, 139, 0.25);
-    }
-
-    .btn-secondary {
-        background: rgba(139, 155, 122, 0.12);
-        color: var(--deep-sage);
-        border: 2px solid var(--sage);
-    }
-
-    .btn-secondary:hover {
-        background: var(--sage);
-        color: var(--text-light);
-        transform: translateY(-4px);
-        box-shadow: 0 8px 24px rgba(139, 155, 122, 0.25);
-    }
-
-    .tags {
-        margin-top: 2rem;
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-    }
-
-    .tag {
-        display: inline-block;
-        padding: 0.7rem 1.5rem;
-        border-radius: 50px;
-        background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(200, 155, 139, 0.08) 100%);
-        color: var(--deep-sage);
-        font-size: 0.95rem;
-        font-weight: 600;
-        border: 1.5px solid rgba(212, 175, 55, 0.25);
-        transition: all 0.3s ease;
-        cursor: default;
-    }
-
-    .tag:hover {
-        background: linear-gradient(135deg, rgba(212, 175, 55, 0.18) 0%, rgba(200, 155, 139, 0.12) 100%);
-        border-color: rgba(212, 175, 55, 0.4);
-        transform: translateY(-2px);
-    }
-
-    /* ===== ASIDE (SIDEBAR) ===== */
-    .hero aside {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .card {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.55) 100%);
-        border: 1.5px solid rgba(212, 175, 55, 0.2);
-        border-radius: 16px;
-        padding: 2rem;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.5);
-        backdrop-filter: blur(12px);
-        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-
-    .card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5);
-        border-color: rgba(212, 175, 55, 0.35);
-    }
-
-    .card > div:first-child {
-        font-family: 'Playfair Display', serif;
-        font-weight: 700;
-        font-size: 1.25rem;
-        color: var(--deep-sage);
-        margin-bottom: 1rem;
-        letter-spacing: 0.3px;
-    }
-
-    .verse-text {
-        font-size: 1.05rem;
-        color: var(--sage);
-        font-style: italic;
-        line-height: 1.85;
-    }
-
-    .pill {
-        display: inline-block;
-        padding: 0.6rem 1.2rem;
-        border-radius: 50px;
-        background: linear-gradient(135deg, rgba(212, 175, 55, 0.25) 0%, rgba(200, 155, 139, 0.15) 100%);
-        color: var(--rose-deep);
-        font-weight: 600;
-        font-size: 0.9rem;
-        border: 1px solid rgba(212, 175, 55, 0.3);
-    }
-
-    /* ===== MAIN SECTIONS ===== */
-    main {
-        margin-top: 3rem;
-    }
-
-    section {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.45) 100%);
-        border: 1.5px solid rgba(212, 175, 55, 0.2);
-        border-radius: 16px;
-        padding: 3rem;
-        margin-bottom: 2.5rem;
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.6);
-        backdrop-filter: blur(12px);
-        animation: fadeInUp 1s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
-    }
-
-    section:nth-of-type(1) { animation-delay: 0.2s; }
-    section:nth-of-type(2) { animation-delay: 0.3s; }
-    section:nth-of-type(3) { animation-delay: 0.4s; }
-
-    section h2 {
-        font-family: 'Playfair Display', serif;
-        font-size: 2.5rem;
-        color: var(--deep-sage);
-        margin-bottom: 0.8rem;
-        letter-spacing: 0.5px;
-    }
-
-    section > p.meta {
-        color: var(--sage);
-        font-size: 1rem;
-        margin-top: 0.8rem;
-        line-height: 1.7;
-    }
-
-    .grid {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 2rem;
-        margin-top: 2rem;
-    }
-
-    /* ===== SCRIPTURE ACCORDION ===== */
-    .scriptures ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .scriptures li {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.3) 100%);
-        border: 1.5px solid rgba(212, 175, 55, 0.15);
-        border-radius: 12px;
-        margin-bottom: 1.2rem;
-        overflow: hidden;
-        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-
-    .scriptures li:hover {
-        border-color: rgba(212, 175, 55, 0.35);
-        box-shadow: 0 8px 24px rgba(212, 175, 55, 0.12);
-    }
-
-    .accordion-header {
-        padding: 1.6rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    .accordion-header:hover {
-        background: rgba(212, 175, 55, 0.08);
-    }
-
-    .accordion-title {
-        font-family: 'Cormorant Garamond', serif;
-        font-weight: 700;
-        font-size: 1.2rem;
-        color: var(--deep-sage);
-    }
-
-    .accordion-meta {
-        font-size: 0.9rem;
-        color: var(--sage);
-    }
-
-    .accordion-content {
-        display: none;
-        padding: 1.6rem;
-        border-top: 1.5px solid rgba(212, 175, 55, 0.15);
-        background: rgba(245, 241, 232, 0.6);
-        font-size: 1rem;
-        line-height: 1.85;
-        color: var(--text-dark);
-    }
-
-    .accordion-content p {
-        margin-bottom: 1.2rem;
-    }
-
-    .accordion-content b {
-        color: var(--rose-deep);
-        font-family: 'Cormorant Garamond', serif;
-    }
-
-    .active .accordion-content {
-        display: block;
-        animation: slideDown 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-
-    /* ===== VERSE CARDS ===== */
-    .verse-cards-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2.5rem;
-        margin-top: 2.5rem;
-        margin-bottom: 2.5rem;
-    }
-
-    .verse-feature-card {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 100%);
-        border: 2px solid rgba(212, 175, 55, 0.3);
-        border-radius: 18px;
-        padding: 2.5rem;
-        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.6);
-        backdrop-filter: blur(12px);
-        transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .verse-feature-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 5px;
-        background: linear-gradient(90deg, var(--gold), transparent);
-        opacity: 0;
-        transition: opacity 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-
-    .verse-feature-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 28px 64px rgba(212, 175, 55, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.6);
-        border-color: var(--gold);
-    }
-
-    .verse-feature-card:hover::before {
-        opacity: 1;
-    }
-
-    .verse-feature-icon {
-        font-size: 2.8rem;
-        margin-bottom: 1.2rem;
-        display: inline-block;
-        animation: float 3s ease-in-out infinite;
-    }
-
-    @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-8px); }
-    }
-
-    .verse-feature-card h3 {
-        font-family: 'Playfair Display', serif;
-        font-size: 2rem;
-        color: var(--deep-sage);
-        margin-bottom: 0.5rem;
-        letter-spacing: 0.5px;
-    }
-
-    .verse-feature-tamil {
-        font-size: 1.3rem;
-        color: var(--rose-deep);
-        font-weight: 500;
-        margin-bottom: 1rem;
-    }
-
-    .verse-feature-meta {
-        display: flex;
-        flex-direction: column;
-        gap: 0.6rem;
-        margin-bottom: 1.8rem;
-        padding-bottom: 1.2rem;
-        border-bottom: 1.5px dashed rgba(212, 175, 55, 0.25);
-    }
-
-    .meta-item {
-        font-size: 0.95rem;
-        color: var(--sage);
-    }
-
-    .meta-item strong {
-        color: var(--rose-deep);
-    }
-
-    .verse-feature-description {
-        color: var(--text-dark);
-        font-size: 1rem;
-        line-height: 1.8;
-        margin-bottom: 1.8rem;
-        flex-grow: 1;
-    }
-
-    .verse-feature-card .btn {
-        align-self: flex-start;
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-        margin-top: 4rem;
-        padding: 3rem;
-        text-align: center;
-        border-top: 1.5px solid rgba(212, 175, 55, 0.2);
-        color: var(--sage);
-        font-size: 0.95rem;
-    }
-
-    .footer-ornament {
-        font-size: 1.8rem;
-        color: var(--gold);
-        margin-bottom: 1rem;
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 1024px) {
-        header {
-            flex-direction: column;
-            text-align: center;
-            gap: 1.5rem;
+        :root {
+            --gold: #D4AF37;
+            --gold-dark: var(--gold);
+            --light-gold: #F4E4B5;
+            --cream: #FDF8F3;
+            --cream-dark: #F5F1E8;
+            --sage: #8B9B7A;
+            --sage-light: #A8BAA0;
+            --deep-sage: #5C6B5B;
+            --rose: #C89B8B;
+            --rose-deep: #A67468;
+            --text-dark: #2C2C2C;
+            --text-light: #FFFFFF;
+            --shadow-soft: rgba(0, 0, 0, 0.08);
+            --shadow-mid: rgba(0, 0, 0, 0.12);
+            --glow: rgba(212, 175, 55, 0.2);
         }
 
-        nav {
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .hero {
-            grid-template-columns: 1fr;
-            padding: 3rem;
+        html {
+            scroll-behavior: smooth;
         }
 
-        .grid {
-            grid-template-columns: 1fr;
+        body {
+            font-family: 'Crimson Text', serif;
+            background: linear-gradient(180deg, #FDF8F3 0%, #F5F1E8 50%, #EEE9E0 100%);
+            color: var(--text-dark);
+            line-height: 1.8;
+            position: relative;
+            overflow-x: hidden;
+            background-attachment: fixed;
         }
 
-        h1 {
-            font-size: 2.8rem;
-        }
-
-        .verse-cards-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .cta {
-            flex-direction: column;
-        }
-
-        .btn {
+        /* Premium background with subtle grain */
+        body:before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            text-align: center;
+            height: 100%;
+            background:
+                radial-gradient(circle at 15% 85%, rgba(212, 175, 55, 0.06) 0%, transparent 45%),
+                radial-gradient(circle at 85% 15%, rgba(139, 155, 122, 0.06) 0%, transparent 45%),
+                radial-gradient(circle at 50% 50%, rgba(200, 155, 139, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: repeating-linear-gradient(90deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255, 255, 255, 0.02) 2px,
+                    rgba(255, 255, 255, 0.02) 4px);
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.5;
         }
 
         .wrap {
-            padding: 0 24px;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 48px;
+            padding: 3rem 0 2rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+            animation: slideDown 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            width: 72px;
+            height: 72px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--light-gold) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.4rem;
+            box-shadow: 0 12px 32px rgba(212, 175, 55, 0.2), inset -1px -1px 3px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform-origin: center;
+        }
+
+        .logo:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 20px 48px rgba(212, 175, 55, 0.3), inset -1px -1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-text>div:first-child {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--deep-sage);
+            letter-spacing: 1.5px;
+            line-height: 1;
+        }
+
+        .brand-text>div:last-child {
+            font-size: 0.95rem;
+            color: var(--sage);
+            font-style: italic;
+            letter-spacing: 0.8px;
+            margin-top: 0.4rem;
+            font-weight: 500;
+        }
+
+        nav {
+            display: flex;
+            gap: 2.8rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--sage);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            letter-spacing: 0.3px;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 2.5px;
+            background: linear-gradient(90deg, var(--gold), var(--rose));
+            transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        nav a:hover {
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            margin-top: 2.5rem;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.45) 100%);
+            border: 1.5px solid rgba(212, 175, 55, 0.25);
+            border-radius: 20px;
+            padding: 4rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 3rem;
+            animation: fadeInUp 1s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s backwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero>* {
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.4rem;
+            font-weight: 700;
+            color: var(--deep-sage);
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+            line-height: 1.15;
+            text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.06);
         }
 
         p.lead {
-            max-width: 100%;
-        }
-    }
-
-    @media (max-width: 640px) {
-        h1 {
-            font-size: 2rem;
+            color: var(--sage);
+            font-size: 1.15rem;
+            margin-top: 1.2rem;
+            line-height: 1.85;
+            max-width: 85%;
         }
 
-        .brand-text > div:first-child {
-            font-size: 1.6rem;
+        .cta {
+            margin-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
         }
 
-        nav {
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 60px;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 2px solid transparent;
+            cursor: pointer;
+            letter-spacing: 0.6px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: inherit;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: -1;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--light-gold) 100%);
+            color: var(--text-dark);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 40px rgba(212, 175, 55, 0.35);
+            letter-spacing: 1px;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--rose-deep);
+            border: 2px solid var(--rose);
+        }
+
+        .btn-outline:hover {
+            background: var(--rose);
+            color: var(--text-light);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(200, 155, 139, 0.25);
+        }
+
+        .btn-secondary {
+            background: rgba(139, 155, 122, 0.12);
+            color: var(--deep-sage);
+            border: 2px solid var(--sage);
+        }
+
+        .btn-secondary:hover {
+            background: var(--sage);
+            color: var(--text-light);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(139, 155, 122, 0.25);
+        }
+
+        .tags {
+            margin-top: 2rem;
+            display: flex;
             gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(200, 155, 139, 0.08) 100%);
+            color: var(--deep-sage);
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: 1.5px solid rgba(212, 175, 55, 0.25);
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .tag:hover {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.18) 0%, rgba(200, 155, 139, 0.12) 100%);
+            border-color: rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* ===== ASIDE (SIDEBAR) ===== */
+        .hero aside {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.55) 100%);
+            border: 1.5px solid rgba(212, 175, 55, 0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(12px);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            border-color: rgba(212, 175, 55, 0.35);
+        }
+
+        .card>div:first-child {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--deep-sage);
+            margin-bottom: 1rem;
+            letter-spacing: 0.3px;
+        }
+
+        .verse-text {
+            font-size: 1.05rem;
+            color: var(--sage);
+            font-style: italic;
+            line-height: 1.85;
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.25) 0%, rgba(200, 155, 139, 0.15) 100%);
+            color: var(--rose-deep);
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        /* ===== MAIN SECTIONS ===== */
+        main {
+            margin-top: 3rem;
+        }
+
+        section {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.45) 100%);
+            border: 1.5px solid rgba(212, 175, 55, 0.2);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            animation: fadeInUp 1s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+        }
+
+        section:nth-of-type(1) {
+            animation-delay: 0.2s;
+        }
+
+        section:nth-of-type(2) {
+            animation-delay: 0.3s;
+        }
+
+        section:nth-of-type(3) {
+            animation-delay: 0.4s;
+        }
+
+        section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--deep-sage);
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+
+        section>p.meta {
+            color: var(--sage);
+            font-size: 1rem;
+            margin-top: 0.8rem;
+            line-height: 1.7;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* ===== SCRIPTURE ACCORDION ===== */
+        .scriptures ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .scriptures li {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.3) 100%);
+            border: 1.5px solid rgba(212, 175, 55, 0.15);
+            border-radius: 12px;
+            margin-bottom: 1.2rem;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .scriptures li:hover {
+            border-color: rgba(212, 175, 55, 0.35);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.12);
+        }
+
+        .accordion-header {
+            padding: 1.6rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background: rgba(212, 175, 55, 0.08);
+        }
+
+        .accordion-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--deep-sage);
+        }
+
+        .accordion-meta {
+            font-size: 0.9rem;
+            color: var(--sage);
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 1.6rem;
+            border-top: 1.5px solid rgba(212, 175, 55, 0.15);
+            background: rgba(245, 241, 232, 0.6);
+            font-size: 1rem;
+            line-height: 1.85;
+            color: var(--text-dark);
+        }
+
+        .accordion-content p {
+            margin-bottom: 1.2rem;
+        }
+
+        .accordion-content b {
+            color: var(--rose-deep);
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .active .accordion-content {
+            display: block;
+            animation: slideDown 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* ===== AUDIO & CHANTS ===== */
+        .audio-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 1.5rem;
+        }
+
+        .audio-list li {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.3) 100%);
+            border: 1.5px solid rgba(212, 175, 55, 0.15);
+            border-radius: 12px;
+            padding: 1.8rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .audio-list li:hover {
+            border-color: rgba(212, 175, 55, 0.35);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .audio-list li>div:first-child {
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--deep-sage);
+            margin-bottom: 0.6rem;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        audio {
+            width: 100%;
+            margin-top: 1rem;
+            accent-color: var(--gold);
+            border-radius: 8px;
+        }
+
+        /* ===== LEARN SECTION ===== */
+        .learn-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .resource-links {
+            margin-top: 1.5rem;
+        }
+
+        .resource-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .resource-item:last-child {
+            border-bottom: none;
+        }
+
+        .chant-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.8rem;
+            margin-top: 2rem;
+        }
+
+        .learn-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.3) 100%);
+            border: 1.5px solid rgba(212, 175, 55, 0.15);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .learn-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(212, 175, 55, 0.35);
+            box-shadow: 0 12px 32px rgba(212, 175, 55, 0.12);
+        }
+
+        .learn-card div:first-child {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--deep-sage);
+            margin-bottom: 0.8rem;
+        }
+
+        /* ===== SACRED VERSES CARDS ===== */
+        .verse-cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            margin-top: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .verse-feature-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 100%);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 18px;
+            padding: 2.5rem;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .verse-feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            opacity: 0;
+            transition: opacity 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .verse-feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 28px 64px rgba(212, 175, 55, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            border-color: var(--gold);
+        }
+
+        .verse-feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .verse-feature-icon {
+            font-size: 2.8rem;
+            margin-bottom: 1.2rem;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        .verse-feature-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--deep-sage);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        .verse-feature-tamil {
+            font-size: 1.3rem;
+            color: var(--rose-deep);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .verse-feature-note {
+            color: var(--sage);
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+            font-style: italic;
+        }
+
+        .verse-feature-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin-bottom: 1.8rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 1.5px dashed rgba(212, 175, 55, 0.25);
+        }
+
+        .meta-item {
+            font-size: 0.95rem;
+            color: var(--sage);
+        }
+
+        .meta-item strong {
+            color: var(--rose-deep);
+        }
+
+        .verse-feature-description {
+            color: var(--text-dark);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1.8rem;
+            flex-grow: 1;
+        }
+
+        .verse-feature-card .btn {
+            align-self: flex-start;
+        }
+
+        /* ===== SACRED BRIDGE ===== */
+        .sacred-bridge {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding: 3rem;
+            background: linear-gradient(135deg, rgba(245, 241, 232, 0.6) 0%, rgba(255, 255, 255, 0.4) 100%);
+            border: 2px dashed rgba(212, 175, 55, 0.3);
+            border-radius: 16px;
+            position: relative;
+        }
+
+        .bridge-icon {
+            font-size: 2.8rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            display: block;
+            animation: pulse 2.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .bridge-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--deep-sage);
+            letter-spacing: 0.5px;
+            font-style: italic;
+            margin-bottom: 1.2rem;
+        }
+
+        .bridge-divider {
+            width: 140px;
+            height: 2.5px;
+            background: linear-gradient(90deg, transparent, var(--rose), transparent);
+            margin: 1.5rem auto;
+        }
+
+        .bridge-description {
+            color: var(--sage);
+            max-width: 850px;
+            margin: 0 auto;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            margin-top: 4rem;
+            padding: 3rem;
+            text-align: center;
+            border-top: 1.5px solid rgba(212, 175, 55, 0.2);
+            color: var(--sage);
             font-size: 0.95rem;
         }
 
-        section, .hero {
+        .footer-ornament {
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 2rem;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 3rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2.8rem;
+            }
+
+            .learn-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .verse-cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .wrap {
+                padding: 0 24px;
+            }
+
+            p.lead {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .brand-text>div:first-child {
+                font-size: 1.6rem;
+            }
+
+            nav {
+                gap: 1rem;
+                font-size: 0.95rem;
+            }
+
+            section,
+            .hero {
+                padding: 2rem;
+            }
+
+            .wrap {
+                padding: 0 16px;
+            }
+        }
+
+        /* Additional utility styles */
+        .meta {
+            font-size: 0.95rem;
+            color: var(--sage);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            color: var(--rose-deep);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        a:hover {
+            color: var(--gold);
+        }
+
+        .chant {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.3) 100%);
+            border: 1.5px solid rgba(212, 175, 55, 0.15);
+            border-radius: 12px;
             padding: 2rem;
+            margin-bottom: 1.8rem;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        .wrap {
-            padding: 0 16px;
+        .chant:hover {
+            border-color: rgba(212, 175, 55, 0.35);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.12);
+            transform: translateY(-2px);
         }
-    }
 
-    /* Additional utility styles */
-    .meta {
-        font-size: 0.95rem;
-        color: var(--sage);
-    }
+        .chant h3 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--deep-sage);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
 
-    ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
+        .chant p {
+            margin: 1rem 0;
+            color: var(--sage);
+        }
 
-    a {
-        color: var(--rose-deep);
-        text-decoration: none;
-        transition: all 0.3s ease;
-        font-weight: 600;
-    }
-
-    a:hover {
-        color: var(--gold);
-    }
-
-    .chant {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.3) 100%);
-        border: 1.5px solid rgba(212, 175, 55, 0.15);
-        border-radius: 12px;
-        padding: 2rem;
-        margin-bottom: 1.8rem;
-        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-
-    .chant:hover {
-        border-color: rgba(212, 175, 55, 0.35);
-        box-shadow: 0 8px 24px rgba(212, 175, 55, 0.12);
-        transform: translateY(-2px);
-    }
-
-    .chant h3 {
-        font-family: 'Cormorant Garamond', serif;
-        color: var(--deep-sage);
-        margin-bottom: 1rem;
-        font-size: 1.4rem;
-    }
-
-    .chant p {
-        margin: 1rem 0;
-        color: var(--sage);
-    }
-
-    .chant i {
-        color: var(--rose-deep);
-        font-style: italic;
-    }
+        .chant i {
+            color: var(--rose-deep);
+            font-style: italic;
+        }
     </style>
 </head>
 
@@ -770,9 +946,11 @@
                 </div>
             </div>
             <nav aria-label="Primary">
-                <a href="#hero">Home</a>
+                <a href="#hero">Hero</a>
                 <a href="#scriptures">Scriptures</a>
+                <a href="#chants">Chants</a>
                 <a href="#sacred-verses">Sacred Verses</a>
+                <a href="#learn">Learn</a>
                 <a href="https://leomani2714.github.io/Rudram/" target="_blank">Sri Rudram</a>
             </nav>
         </header>
@@ -784,18 +962,16 @@
                     for study and daily life. Curated excerpts, searchable verses and high-quality chant recordings.</p>
                 <div class="cta">
                     <a class="btn btn-primary" href="#scriptures">Explore Scriptures</a>
-                    <a class="btn btn-outline" href="https://leomani2714.github.io/Rudram/" target="_blank">Sri Rudram</a>
+                    <a class="btn btn-outline" href="#chants">Listen to Chants</a>
                     <a class="btn btn-secondary" href="verse.html" target="_blank">Read Daily Verse</a>
                     <a class="btn btn-secondary" href="tamil_poems.html" target="_blank">Tamil Devotional Poems</a>
-                    <a class="btn btn-secondary" href="shiva-panchakshara.html" target="_blank">Shiva Panchakshara Stotram</a>
+                    <a class="btn btn-secondary" href="shiva-panchakshara.html" target="_blank">Shiva Panchakshara
+                        Stotram</a>
+                    <a class="btn btn-outline" href="https://leomani2714.github.io/Rudram/" target="_blank">Sri
+                        Rudram</a>
                 </div>
 
-                <div class="tags">
-                    <div class="tag">Samhita</div>
-                    <div class="tag">Brahmana</div>
-                    <div class="tag">Aranyaka</div>
-                    <div class="tag">Upanishad</div>
-                </div>
+               
             </div>
 
             <aside>
@@ -814,79 +990,434 @@
         </section>
 
         <main>
-            <section id="sacred-verses" aria-labelledby="sacredVersesTitle">
-                <h2 id="sacredVersesTitle">Featured Sacred Verses</h2>
-                <p class="meta">Explore some of the most revered spiritual texts and their meanings.</p>
-
-                <div class="verse-cards-grid">
-                    <!-- Soundarya Lahari -->
-                    <div class="verse-feature-card">
-                        <div class="verse-feature-icon">🌊</div>
-                        <h3>ஸௌந்தர்ய லஹரீ</h3>
-                        <div class="verse-feature-tamil">Soundarya Lahari</div>
-                        <div class="verse-feature-meta">
-                            <div class="meta-item"><strong>Author:</strong> Adi Shankara</div>
-                            <div class="meta-item"><strong>Verses:</strong> 103</div>
-                            <div class="meta-item"><strong>Theme:</strong> The Waves of Beauty</div>
-                        </div>
-                        <div class="verse-feature-description">
-                            A hymn to Goddess Shakthi, celebrating the supreme feminine principle and divine beauty. Each verse unveils layers of spiritual wisdom through poetic imagery.
-                        </div>
-                        <a class="btn btn-primary" href="https://leomani2714.github.io/Soundarya-lahari/" target="_blank">Read Full Text</a>
+            <section id="scriptures" aria-labelledby="scripturesTitle">
+                <h2 id="scripturesTitle">Scriptures & Sacred Excerpts</h2>
+                <p class="meta">Journey through Vedic hymns, Upanishadic wisdom, and devotional insight.</p>
+                <div class="grid">
+                    <div class="scriptures">
+                        <ul>
+                            <li>
+                                <div class="accordion-header">
+                                    <div>
+                                        <div class="accordion-title">Rigveda — Agni Sukta (Mandala 1.1)</div>
+                                        <div class="accordion-meta">Hymn to fire as sacred messenger</div>
+                                    </div>
+                                    <div class="accordion-meta">Read ▼</div>
+                                </div>
+                                <div class="accordion-content">
+                                    <p>
+                                        The Rigveda opens with praise to Agni, the divine priest of the sacrifice.
+                                        Agni carries offerings and inspires the inner fire of transformation.
+                                    </p>
+                                    <p>
+                                        <b>Sanskrit:</b><br>
+                                        अग्निमीळे पुरोहितं यज्ञस्य देवम् ऋत्विजम् ।<br>
+                                        होतारं रत्नधातमम् ॥
+                                    </p>
+                                    <p>
+                                        <b>Translation:</b><br>
+                                        I invoke Agni, the sacred priest, the god of the ritual,
+                                        the bestower of treasures.
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="accordion-header">
+                                    <div>
+                                        <div class="accordion-title">Brihadaranyaka Upanishad</div>
+                                        <div class="accordion-meta">A prayer for light and liberation</div>
+                                    </div>
+                                    <div class="accordion-meta">Read ▼</div>
+                                </div>
+                                <div class="accordion-content">
+                                    <p>
+                                        This ancient Upanishad teaches that the Self is the ultimate reality
+                                        and invites the seeker to move from darkness to light.
+                                    </p>
+                                    <p>
+                                        <b>Verse:</b><br>
+                                        असतो मा सद्गमय ।<br>
+                                        तमसो मा ज्योतिर्गमय ।<br>
+                                        मृत्योर्मामृतं गमय ॥
+                                    </p>
+                                    <p>
+                                        <b>Meaning:</b><br>
+                                        Lead me from the unreal to the Real, from darkness to Light,
+                                        from death to Immortality.
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="accordion-header">
+                                    <div>
+                                        <div class="accordion-title">Bhagavad Gita 2.47</div>
+                                        <div class="accordion-meta">Action without attachment</div>
+                                    </div>
+                                    <div class="accordion-meta">Read ▼</div>
+                                </div>
+                                <div class="accordion-content">
+                                    <p>
+                                        The Gita teaches equanimity in action: act with devotion,
+                                        not with anxiety over the result.
+                                    </p>
+                                    <p>
+                                        <b>Sanskrit:</b><br>
+                                        कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ।<br>
+                                        मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि ॥
+                                    </p>
+                                    <p>
+                                        <b>Meaning:</b><br>
+                                        You have the right to work only, but never to its fruits.
+                                        Let not the fruits of action be your motive.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-
-                    <!-- Sri Rudram -->
-                    <div class="verse-feature-card">
-                        <div class="verse-feature-icon">⚡</div>
-                        <h3>ஸ்ரீ ருத्रम्</h3>
-                        <div class="verse-feature-tamil">Sri Rudram</div>
-                        <div class="verse-feature-meta">
-                            <div class="meta-item"><strong>Source:</strong> Yajurveda</div>
-                            <div class="meta-item"><strong>Parts:</strong> Namakam & Chamakam</div>
-                            <div class="meta-item"><strong>Theme:</strong> Lord Shiva</div>
+                    <div>
+                        <div class="card">
+                            <div>Daily Reflection</div>
+                            <p>
+                                "Truth is one; the wise call it by many names."
+                            </p>
+                            <p class="meta">
+                                Rigveda 1.164.46
+                            </p>
                         </div>
-                        <div class="verse-feature-description">
-                            The Śatarudrīya is a powerful litany dedicated to Lord Rudra (Shiva). It brings protection, healing, and spiritual transformation through sacred invocations.
-                        </div>
-                        <a class="btn btn-primary" href="https://leomani2714.github.io/Rudram/" target="_blank">Explore Rudram</a>
+                        <!-- <div class="card" style="margin-top:1.5rem;">
+                            <div>Study Resources</div>
+                            <p>
+                                Access concise commentaries, guided notes, and daily practice prompts
+                                for steady progress.
+                            </p>
+                            <a class="btn btn-primary" href="#learn">
+                                Begin Study
+                            </a>
+                        </div> -->
                     </div>
                 </div>
             </section>
-        </main>
 
-        <footer>
-            <div class="footer-ornament">🕉️</div>
-            <p>&copy; 2024 Vedic Corner. Dedicated to the timeless wisdom of the Vedas.</p>
-            <p style="margin-top: 1rem; font-size: 0.85rem;">Preserving sacred knowledge • Learning • Spiritual Growth</p>
-        </footer>
+            <section id="chants" aria-labelledby="chantsTitle">
+                <h2 id="chantsTitle">Chants & Recordings</h2>
+                <p class="meta">High-quality recitations for daily practice and contemplation.</p>
+                <ul class="audio-list">
+                    <!-- <li>
+                        <div>Gayatri Mantra — Morning Rhythm</div>
+                        <div class="meta">Duration 3:05</div>
+                        <audio controls preload="none">
+                            <source src="audio/gayatri.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </li>
+                    <li>
+                        <div>Maha Mrityunjaya Mantra — Healing Chant</div>
+                        <div class="meta">Duration 3:55</div>
+                        <audio controls preload="none">
+                            <source src="audio/mrityunjaya.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </li> -->
+                </ul>
+                <div class="chant-grid">
+                    <div class="chant">
+                        <h3>Gayatri Mantra</h3>
+                        <p><i>Om Bhur Bhuvaḥ Swaḥ, Tat Savitur Vareṇyaṃ, Bhargo Devasya Dhīmahi, Dhiyo Yo Naḥ
+                                Prachodayāt</i></p>
+                        <p><i>"We meditate on the divine light of Savitar, may it inspire our intellect."</i></p>
+                    </div>
+                    <div class="chant">
+                        <h3>Maha Mrityunjaya Mantra</h3>
+                        <p><i>Om Tryambakam Yajamahe Sugandhim Pushtivardhanam, Urvarukamiva Bandhanan Mrityor Mukshiya
+                                Maamritat</i></p>
+                        <p><i>"May Lord Shiva free us from the fear of death and guide us toward liberation."</i></p>
+                    </div>
+                </div>
+            </section>
+
+    <section id="sacred-verses">
+        <h2>Featured Sacred Texts</h2>
+        <p class="meta">Explore curated collections of divine wisdom composed by Sri Adi Shankara.</p>
+        <div class="verse-cards-grid">
+            <!-- Soundarya Lahiri Card -->
+            <div class="verse-feature-card">
+                <div class="verse-feature-icon">🌸</div>
+                <h3>Soundarya Lahiri</h3>
+                <p class="verse-feature-tamil">ஸௌந்தர்ய லஹரீ</p>
+                <p class="verse-feature-note"><strong>:</strong> Waves of Beauty</p>
+                <div class="verse-feature-meta">
+                    <span class="meta-item"><strong>Author:</strong> Sri Adi Shankara</span>
+                    <span class="meta-item"><strong>Verses:</strong> 103 (in two parts)</span>
+                </div>
+                <p class="verse-feature-description">
+                    A magnificent hymn celebrating the divine feminine energy through the transcendent beauty of the
+                    Goddess. This profound spiritual work reveals the interplay between Shiva and Shakti, exploring the
+                    mysteries of creation and consciousness through poetic devotion.
+                </p>
+                <a href="https://leomani2714.github.io/Soundarya-lahari/" class="btn btn-primary"
+                    target="_blank">Explore Now →</a>
+            </div>
+            <div class="verse-feature-card">
+                <div class="verse-feature-icon">⚡</div>
+                <h3>ஸ்ரீ ருத்ரம்</h3>
+                <div class="verse-feature-tamil">Sri Rudram</div>
+                <div class="verse-feature-meta">
+                    <div class="meta-item"><strong>Source:</strong> Yajurveda</div>
+                    <div class="meta-item"><strong>Parts:</strong> Namakam & Chamakam</div>
+                    <div class="meta-item"><strong>Theme:</strong> Lord Shiva</div>
+                </div>
+                <div class="verse-feature-description">
+                    The Śatarudrīya is a powerful litany dedicated to Lord Rudra (Shiva). It brings protection, healing,
+                    and spiritual transformation through sacred invocations.
+                </div>
+                <a class="btn btn-primary" href="https://leomani2714.github.io/Rudram/" target="_blank">Explore
+                    Rudram</a>
+            </div>
+
+            <!-- Kanaka Thaara Stotram Card -->
+            <div class="verse-feature-card">
+                <div class="verse-feature-icon">✨</div>
+                <h3>Kanaka Thaara Stotram</h3>
+                <p class="verse-feature-tamil">கனகதாரா ஸ்தோத்ரம்</p>
+                <p class="verse-feature-note"><strong>:</strong> Golden Shower of Grace</p>
+                <div class="verse-feature-meta">
+                    <span class="meta-item"><strong>Author:</strong> Sri Adi Shankara</span>
+                    <span class="meta-item"><strong>Verses:</strong> 18</span>
+                </div>
+                <p class="verse-feature-description">
+                    A powerful invocation to Lakshmi Devi, the divine mother of prosperity and grace. This sacred hymn
+                    describes an abundant shower of golden blessings, symbolizing both material and spiritual wealth
+                    that flows from the compassion of the divine mother.
+                </p>
+                <a href="https://leomani2714.github.io/Kanagathara-Stortram/" class="btn btn-primary"
+                    target="_blank">Explore Now →</a>
+            </div>
+
+            <!-- Shiva Vakkiyam Card -->
+            <div class="verse-feature-card">
+                <div class="verse-feature-icon">🌸</div>
+                <h3>Shiva Vakkiyam</h3>
+                <p class="verse-feature-tamil">சிவவாக்கியம்</p>
+                <p class="verse-feature-note"><strong>:</strong> Shiva's Grace</p>
+                <div class="verse-feature-meta">
+                    <span class="meta-item"><strong>Author:</strong> Shiva Vakkiyae</span>
+                    <span class="meta-item"><strong>Verses:</strong> 500 verses</span>
+                </div>
+                <p class="verse-feature-description">
+                    A profound collection of mystical verses by the Siddhar Sivavakkiyar, challenging ritualistic
+                    practices and emphasizing inner realization of the Divine. Through powerful poetry and spiritual
+                    wisdom, this timeless work explores self-knowledge, universal truth, and the path to liberation
+                    beyond caste, creed, and outward forms of worship.
+
+                </p>
+                <a href="https://leomani2714.github.io/siva_vakkiyam" class="btn btn-primary" target="_blank">Explore
+                    Now →</a>
+            </div>
+
+            <!-- Shiva Panchakshara Card -->
+            <div class="verse-feature-card">
+                <div class="verse-feature-icon">🕉️</div>
+                <h3>Shiva Panchakshara Stotram</h3>
+                <p class="verse-feature-tamil">ஸிவ பஞ்சாக்ஷர ஸ்தோத்ரம்</p>
+                <p class="verse-feature-note"><strong>:</strong> Hymn of the Five Syllables</p>
+                <div class="verse-feature-meta">
+                    <span class="meta-item"><strong>Author:</strong> Sri Adi Shankara</span>
+                    <span class="meta-item"><strong>Verses:</strong> 5 + Phalashruti</span>
+                </div>
+                <p class="verse-feature-description">
+                    A powerful and concise hymn glorifying Lord Shiva through the sacred Panchakshara mantra "Namah
+                    Shivaya". Each verse corresponds to one syllable, describing the divine attributes of the Lord.
+                </p>
+                <a href="shiva-panchakshara.html" class="btn btn-primary" target="_blank">Recite Now →</a>
+            </div>
+        </div>
+
+
+    </section>
+
+    <!-- <section id="learn">
+        <h2>Learn — Courses & Tutorials</h2>
+        <p class="meta">Beginner-friendly tracksPronunciation, Chanting, Basic Sanskrit and Text Study.</p>
+        <div class="learn-grid">
+            <div class="learn-card">
+                <div>Sanskrit Basics</div>
+                <p class="meta">Alphabet, sandhi, common roots</p>
+            </div>
+            <div class="learn-card">
+                <div>Chanting Techniques</div>
+                <p class="meta">Breath control, intonation, pace</p>
+            </div>
+            <div class="learn-card">
+                <div>Text Study</div>
+                <p class="meta">How to read and comment on verses</p>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- <section>
+        <h2>Resources & Links</h2>
+        <p class="meta">Curated books, PDFs and external repositories for deep reading.</p>
+        <ul style="margin-top:1.5rem;">
+            <li style="padding:1rem 0;border-bottom:1px solid rgba(212, 175, 55, 0.15);"><a href="#">Classic
+                    translations (sample)</a></li>
+            <li style="padding:1rem 0;border-bottom:1px solid rgba(212, 175, 55, 0.15);"><a href="#">Pronunciation guide
+                    (PDF)</a></li>
+            <li style="padding:1rem 0;"><a href="shiva-panchakshara.html">Shiva Panchakshara Stotram</a></li>
+        </ul>
+    </section> -->
+
+    </main>
+
+    <footer>
+        <div class="footer-ornament">✧ ॐ ✧</div>
+        © <span id="year"></span> Vedic Corner — Built with care • Accessibility minded
+    </footer>
     </div>
 
     <script>
-        // Daily Verse
-        const verses = [
-            "The mind is sharper than the razor's edge, subtler than the atom, vast as the infinite sky.",
-            "Knowledge is not found in books alone, but in the recognition of the Self.",
-            "The wise see the unchanging reality beneath the changing forms."
-        ];
-
-        document.getElementById('dailyVerse').textContent = 
-            verses[Math.floor(Math.random() * verses.length)];
-
-        // DateTime
         function updateDateTime() {
             const now = new Date();
-            const options = { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' };
-            document.getElementById('dateTime').textContent = 
-                now.toLocaleDateString('en-US', options);
+            const options = {
+                weekday: 'short',
+                day: '2-digit',
+                month: 'short',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            };
+            document.getElementById("dateTime").textContent =
+                now.toLocaleDateString('en-GB', options);
         }
-        updateDateTime();
-        setInterval(updateDateTime, 60000);
 
-        // Accordion functionality
-        const accordions = document.querySelectorAll('.scriptures li');
-        accordions.forEach(acc => {
-            acc.querySelector('.accordion-header').addEventListener('click', () => {
-                acc.classList.toggle('active');
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const verses = [
+            { text: "Karmanyevadhikaraste Ma Phaleshu Kadachana", meaning: "Focus on your actions, not on the results." },
+            { text: "Yogastha Kuru Karmani", meaning: "Perform your duties with a calm and balanced mind." },
+            { text: "Samatvam Yoga Uchyate", meaning: "Equanimity is true yoga." },
+            { text: "Na Jayate Mriyate Va Kadachin", meaning: "The soul is never born and never dies." },
+            { text: "Vasamsi Jirnani Yatha Vihaya", meaning: "The soul changes bodies like old clothes." },
+            { text: "Nainam Chindanti Shastrani", meaning: "Weapons cannot harm the soul." },
+            { text: "Nainam Dahati Pavakah", meaning: "Fire cannot burn the soul." },
+            { text: "Uddhared Atmanatmanam", meaning: "Lift yourself through your own efforts." },
+            { text: "Atmaiva Hy Atmano Bandhuh", meaning: "You are your own best friend." },
+            { text: "Atmaiva Ripur Atmanah", meaning: "You can become your own worst enemy." },
+            { text: "Niyatam Kuru Karma Tvam", meaning: "Perform your prescribed duties." },
+            { text: "Yad Yad Acharati Shreshthah", meaning: "People follow the example of great leaders." },
+            { text: "Yada Yada Hi Dharmasya", meaning: "Whenever righteousness declines, the Divine manifests." },
+            { text: "Sambhavami Yuge Yuge", meaning: "The Divine appears age after age." },
+            { text: "Paritranaya Sadhunam", meaning: "The righteous are always protected." },
+            { text: "Dharmasamsthapanarthaya", meaning: "The purpose is to restore righteousness." },
+            { text: "Janma Karma Cha Me Divyam", meaning: "Divine actions are beyond ordinary understanding." },
+            { text: "Bahavo Jnana Tapasa Puta", meaning: "Knowledge purifies those who seek truth." },
+            { text: "Aham Sarvasya Prabhavo", meaning: "Everything originates from the Divine." },
+            { text: "Mattah Sarvam Pravartate", meaning: "All creation flows from the Supreme." },
+            { text: "Mayi Sarvam Idam Protam", meaning: "Everything is connected to the Divine." },
+            { text: "Raso Ham Apsu Kaunteya", meaning: "The Divine is the essence in water." },
+            { text: "Pranavah Sarva Vedeshu", meaning: "Om is the essence of all sacred knowledge." },
+            { text: "Jivanam Sarva Bhuteshu", meaning: "Life itself is divine." },
+            { text: "Bijam Mam Sarva Bhutanam", meaning: "The Divine is the seed of all beings." },
+            { text: "Balam Balavatam Chaham", meaning: "True strength comes from purity." },
+            { text: "Yogi Yunjita Satatam", meaning: "Practice meditation regularly." },
+            { text: "Yukta Ahara Viharasya", meaning: "Moderation leads to success." },
+            { text: "Prasanta Atma Vigata Bhih", meaning: "A peaceful mind is free from fear." },
+            { text: "Sukham Atyantikam Yat Tat", meaning: "True happiness comes from within." },
+            { text: "Yasmin Sthito Na Duhkhena", meaning: "Spiritual stability overcomes sorrow." },
+            { text: "Mayy Asakta Manah Partha", meaning: "Fix your mind on the Divine." },
+            { text: "Jnaninas Tu Mam Eva", meaning: "The wise see the Divine everywhere." },
+            { text: "Mattah Parataram Nanyat", meaning: "Nothing is higher than the Supreme." },
+            { text: "Aham Atma Gudakesha", meaning: "The Divine resides in every heart." },
+            { text: "Antakale Cha Mam Eva", meaning: "Remember the Divine at all times." },
+            { text: "Yam Yam Vapi Smaran Bhavam", meaning: "Your thoughts shape your future." },
+            { text: "Tasmat Sarveshu Kaleshu", meaning: "Remain spiritually aware always." },
+            { text: "Ananyas Chintayanto Mam", meaning: "Constant devotion brings protection." },
+            { text: "Yoga Ksemam Vahamyaham", meaning: "The Divine provides what devotees need." },
+            { text: "Ye Yatha Mam Prapadyante", meaning: "The Divine responds according to devotion." },
+            { text: "Aham Hi Sarva Yajnanam", meaning: "All worship ultimately reaches the Divine." },
+            { text: "Bhaktya Mam Abhijanati", meaning: "The Divine is known through devotion." },
+            { text: "Aham Adir Hi Devanam", meaning: "The Divine is the source of all celestial beings." },
+            { text: "Buddhir Jnanam Asammohah", meaning: "Wisdom and clarity are divine gifts." },
+            { text: "Ahimsa Samata Tushtih", meaning: "Non-violence and contentment are virtues." },
+            { text: "Yajnanam Japa Yajnosmi", meaning: "Chanting the Divine Name is sacred worship." },
+            { text: "Sthavaranam Himalayah", meaning: "The Himalayas symbolize divine grandeur." },
+            { text: "Ashvatthah Sarva Vrikshanam", meaning: "The sacred Peepal tree represents divinity." },
+            { text: "Pashya Me Partha Rupani", meaning: "See the Divine in countless forms." },
+            { text: "Sarvato Ananta Rupam", meaning: "The Divine is infinite." },
+            { text: "Tat Tvam Asi", meaning: "You are one with the Supreme Reality." },
+            { text: "Aham Brahmasmi", meaning: "My true nature is Divine Consciousness." },
+            { text: "Samam Sarveshu Bhuteshu", meaning: "Treat all beings equally." },
+            { text: "Kshetrajnam Chapi Mam Viddhi", meaning: "The Divine is the knower within all." },
+            { text: "Amanitvam Adambhitvam", meaning: "Humility is true greatness." },
+            { text: "Ahimsa Kshantir Arjavam", meaning: "Practice non-violence, patience, and honesty." },
+            { text: "Janma Mrityu Jara Vyadhi", meaning: "Birth, aging, and death are part of life." },
+            { text: "Mayi Chananya Yogena", meaning: "Single-minded devotion leads to liberation." },
+            { text: "Jneyam Yat Tat Pravaksyami", meaning: "Knowledge leads to immortality." },
+            { text: "Anadi Mat Param Brahma", meaning: "The Supreme Reality has no beginning." },
+            { text: "Sattvam Rajas Tamas Iti", meaning: "Nature functions through three qualities." },
+            { text: "Sattvam Sukhe Sanjayati", meaning: "Purity leads to happiness." },
+            { text: "Rajas Karmani Bharata", meaning: "Passion drives activity." },
+            { text: "Tamas Ajnanam", meaning: "Ignorance creates confusion." },
+            { text: "Urdhvam Mulam Adhah Sakham", meaning: "The world is like an upside-down tree." },
+            { text: "Na Rupam Asyeha", meaning: "Reality is not always visible." },
+            { text: "Tam Eva Chadyam Purusham", meaning: "Seek refuge in the Supreme Being." },
+            { text: "Purushottama", meaning: "The Supreme Person transcends all." },
+            { text: "Abhayam Sattva Samsuddhih", meaning: "Fearlessness is a divine virtue." },
+            { text: "Danam Damas Cha", meaning: "Charity and self-control are noble qualities." },
+            { text: "Ahimsa Satyam Akrodhah", meaning: "Practice truth and freedom from anger." },
+            { text: "Daya Bhuteshu", meaning: "Show compassion to all beings." },
+            { text: "Tejah Kshama Dhritih", meaning: "Strength, forgiveness, and courage are virtues." },
+            { text: "Kama Krodha Tatha Lobha", meaning: "Lust, anger, and greed cause suffering." },
+            { text: "Tasmat Trayam Tyajet", meaning: "Abandon these three destructive tendencies." },
+            { text: "Sastram Pramanam Te", meaning: "Let wisdom guide your actions." },
+            { text: "Aharah Tri Vidho Bhavati", meaning: "Food influences the mind and body." },
+            { text: "Deva Dvija Guru Prajna Pujanam", meaning: "Respect teachers, elders, and the wise." },
+            { text: "Anudvegakaram Vakyam", meaning: "Speak words that do not hurt others." },
+            { text: "Satyam Priya Hitam Cha Yat", meaning: "Speak truth kindly and help others." },
+            { text: "Manah Prasadah Saumyatvam", meaning: "Serenity is a sign of inner strength." },
+            { text: "Tyagah Shantir Anantaram", meaning: "Renunciation brings peace." },
+            { text: "Sarva Karmani Sannyasya", meaning: "Offer all actions to the Divine." },
+            { text: "Ishvarah Sarva Bhutanam Hrddese", meaning: "The Divine resides in every heart." },
+            { text: "Tam Eva Saranam Gaccha", meaning: "Seek refuge in the Divine." },
+            { text: "Tat Prasadat Param Shantim", meaning: "Divine grace brings lasting peace." },
+            { text: "Sarva Dharman Parityajya", meaning: "Surrender completely to the Divine." },
+            { text: "Ma Shuchah", meaning: "Do not grieve or fear." },
+            { text: "Yo Mam Evam Janati", meaning: "True understanding leads to freedom." },
+            { text: "Etad Buddhva Buddhiman Syat", meaning: "Wisdom makes life fulfilling." },
+            { text: "Om Tat Sat", meaning: "The Supreme Truth is eternal." },
+            { text: "Dharma Rakshati Rakshitah", meaning: "Protect righteousness and it will protect you." },
+            { text: "Adharma Vinashayati", meaning: "Unrighteousness leads to destruction." },
+            { text: "Sarva Karman Api Sada", meaning: "Always perform your responsibilities." },
+            { text: "Moksha Margam Adhigacchati", meaning: "Wisdom leads to liberation." },
+            { text: "Atma Atmanam Yogena", meaning: "Self-realization comes through discipline." },
+            { text: "Brahma Satyam Jagan Mithya", meaning: "Ultimate reality alone is eternal." },
+            { text: "Jivo Brahmaiva Na Aparah", meaning: "The individual soul is divine in essence." },
+            { text: "Lokah Samastah Sukhino Bhavantu", meaning: "May all beings be happy and free." }
+        ];
+        function getDailyVerse() {
+            const today = new Date();
+            const dayOfYear = Math.floor(
+                (today - new Date(today.getFullYear(), 0, 0)) / 86400000
+            );
+            const verseIndex = dayOfYear % verses.length;
+            return verses[verseIndex];
+        }
+
+        const dailyVerse = getDailyVerse();
+        document.getElementById("dailyVerse").textContent = `${dailyVerse.text} — ${dailyVerse.meaning}`;
+
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.closest('li');
+
+                document.querySelectorAll('.scriptures li').forEach(li => {
+                    if (li !== item) li.classList.remove('active');
+                });
+
+                item.classList.toggle('active');
             });
         });
     </script>

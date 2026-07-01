@@ -2,133 +2,136 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Geetha Daily Verse + Book</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Verse — Bhagavad Gita | Vedic Corner</title>
+  <meta name="description" content="A new Bhagavad Gita verse each day, with Sanskrit text and meaning.">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500&family=Playfair+Display:wght@600;700;800&family=Noto+Sans+Tamil:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/theme.css">
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f2eb;
-    }
-
-    /* Hero section with background image */
-    .hero {
-      width: auto;
-      height: auto;
-      background: url("krishna-arjuna.jpg.png") no-repeat center center;
-      background-size: flex;
+    .verse-hero {
+      background: linear-gradient(rgba(20,15,10,0.35), rgba(20,15,10,0.55)), url("krishna-arjuna.jpg.png") no-repeat center 20%;
+      background-size: cover;
+      min-height: 62vh;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      color: white;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    .hero-title {
-      font-size: 52px;
-      font-weight: bold;
-      margin-bottom: 10px;
+      color: #fff;
       text-align: center;
+      padding: 3rem 1.5rem;
     }
-
+    .verse-hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4.5vw, 3rem);
+      font-weight: 700;
+      text-shadow: 0 3px 12px rgba(0,0,0,0.6);
+      margin-bottom: 1.5rem;
+      max-width: 760px;
+    }
     .verse-box {
-      background: rgba(0, 0, 0, 0.541); /* transparent overlay */
-      border-radius: 12px;
-      padding: 15px 20px;
-      text-align: center;
-      max-width: 600px;
+      background: rgba(15, 12, 10, 0.62);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(212,175,55,0.4);
+      border-radius: 16px;
+      padding: 2rem 2.2rem;
+      max-width: 640px;
+    }
+    .verse-day-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--light-gold);
+      margin-bottom: 0.7rem;
     }
     .verse-sanskrit {
-      font-size: 18px;
-      font-style: italic;
-      margin-bottom: 8px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
     }
-    .verse-meaning {
-      font-size: 15px;
-    }
-
-    .book-link {
-      margin: 30px auto;
-      text-align: center;
-    }
-    .book-link a {
-      text-decoration: none;
-      color: #fff;
-      background: #4a2f1f;
-      padding: 12px 22px;
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      transition: 0.2s;
-      font-weight: bold;
-    }
-    .book-link a:hover {
-      background: #2b1f16;
-    }
+    .verse-meaning { font-size: 1.05rem; opacity: 0.95; }
+    .verse-actions { margin-top: 3rem; text-align: center; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
   </style>
 </head>
-<body>
+<body class="vc-body">
+  <a href="#main" class="vc-skip-link">Skip to content</a>
 
-  <!-- Hero Section with Krishna–Arjuna Image -->
-  <div class="hero">
-    <div class="hero-title">Bhagavad Gita — Krishna’s Teachings to Arjuna</div>
-    <div class="verse-box">
-      <div class="verse-sanskrit" id="verseText"></div>
-      <div class="verse-meaning" id="verseMeaning"></div>
+  <header class="vc-header">
+    <div class="vc-header-inner">
+      <a class="vc-brand" href="index.html"><img src="logo.png" alt=""> Vedic Corner</a>
+      <nav class="vc-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="verse.html">Daily Verse</a>
+        <a href="tamil_poems.html">Tamil Poems</a>
+        <a href="search.html">Search</a>
+      </nav>
     </div>
-  </div>
+  </header>
 
-  <!-- Book Link -->
-  <div class="book-link">
-    <a href="https://www.gutenberg.org/files/2388/2388-h/2388-h.htm" target="_blank">
-      📖 Read Full Bhagavad Gita
-    </a>
-  </div>
+  <main id="main">
+    <div class="verse-hero">
+      <div class="verse-hero-title">Bhagavad Gita — Krishna's Teachings to Arjuna</div>
+      <div class="verse-box">
+        <div class="verse-day-label" id="verseDay"></div>
+        <div class="verse-sanskrit" id="verseText"></div>
+        <div class="verse-meaning" id="verseMeaning"></div>
+      </div>
+    </div>
+
+    <div class="verse-actions">
+      <a class="vc-btn vc-btn-primary" href="https://www.gutenberg.org/files/2388/2388-h/2388-h.htm" target="_blank" rel="noopener">📖 Read the Full Bhagavad Gita</a>
+      <a class="vc-btn vc-btn-outline" href="search.html">🔍 Search More Verses</a>
+    </div>
+  </main>
+
+  <footer class="vc-footer">
+    <div class="vc-footer-ornament">✧ ॐ ✧</div>
+    © <span id="year"></span> Vedic Corner — Built with care
+  </footer>
 
   <script>
-    const verses = [
-  { text: "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन", meaning: "You have the right to action, but not to the fruits." },
-  { text: "योगः कर्मसु कौशलम्", meaning: "Yoga is skill in action." },
-  { text: "समत्वं योग उच्यते", meaning: "Equanimity is called yoga." },
-  { text: "अहिंसा परमो धर्मः", meaning: "Non-violence is the highest duty." },
-  { text: "ज्ञानेन तु तदज्ञानं येषां नाशितमात्मनः", meaning: "Through knowledge, ignorance is destroyed." },
-  
-  { text: "वासांसि जीर्णानि यथा विहाय", meaning: "As a person discards old clothes, so the soul discards old bodies." },
-  { text: "न जायते म्रियते वा कदाचित्", meaning: "The soul is never born, nor does it ever die." },
-  { text: "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत", meaning: "Whenever righteousness declines, I manifest Myself." },
-  { text: "धर्मसंस्थापनार्थाय सम्भवामि युगे युगे", meaning: "To protect dharma, I appear in every age." },
-  { text: "ममैवांशो जीवलोके जीवभूतः सनातनः", meaning: "Living beings are My eternal fragments." },
-  
-  { text: "ज्ञानी त्वात्मैव मे मतम्", meaning: "The wise are considered as My very self." },
-  { text: "अनन्याश्चिन्तयन्तो मां ये जनाः पर्युपासते", meaning: "Those who worship Me with exclusive devotion, I protect." },
-  { text: "मृत्युः सर्वहरश्चाहम्", meaning: "I am death, the destroyer of all." },
-  { text: "विद्यां चाविद्यां च यस्तद्वेदोभयंसह", meaning: "One who knows both knowledge and ignorance transcends death." },
-  { text: "उद्धरेदात्मनाऽऽत्मानं", meaning: "Let a man lift himself by his own self." },
-  
-  { text: "न त्वेवाहं जातु नासं न त्वं नेमे जनाधिपाः", meaning: "Never was there a time when I did not exist, nor you, nor these kings." },
-  { text: "न हि कश्चित्क्षणमपि जातु तिष्ठत्यकर्मकृत्", meaning: "No one can remain without action even for a moment." },
-  { text: "श्रद्धावान् लभते ज्ञानम्", meaning: "The faithful attain knowledge." },
-  { text: "नासतो विद्यते भावो नाभावो विद्यते सतः", meaning: "The unreal never is; the real never ceases to be." },
-  { text: "त्रैगुण्यविषया वेदा निस्त्रैगुण्यो भव अर्जुन", meaning: "The Vedas deal with the three gunas; be beyond these, O Arjuna." },
-  
-  { text: "यत्र योगेश्वरः कृष्णो यत्र पार्थो धनुर्धरः", meaning: "Wherever Krishna and Arjuna are, there is victory." },
-  { text: "यः सर्वत्रानभिस्नेहस्तत्तत्प्राप्य शुभाशुभम्", meaning: "He who is unattached to outcomes attains peace." },
-  { text: "निराशीर्यतचित्तात्मा त्यक्तसर्वपरिग्रहः", meaning: "The one without desires, self-controlled, free from possessions, attains peace." },
-  { text: "श्रेयान्स्वधर्मो विगुणः परधर्मात्स्वनुष्ठितात्", meaning: "Better one’s own duty without merit than another’s duty well performed." },
-  { text: "मन्मना भव मद्भक्तो मद्याजी मां नमस्कुरु", meaning: "Think of Me, be devoted to Me, sacrifice to Me, bow to Me." }
-];
+    document.getElementById('year').textContent = new Date().getFullYear();
 
+    const verses = [
+      { text: "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन", meaning: "You have the right to action, but not to the fruits." },
+      { text: "योगः कर्मसु कौशलम्", meaning: "Yoga is skill in action." },
+      { text: "समत्वं योग उच्यते", meaning: "Equanimity is called yoga." },
+      { text: "अहिंसा परमो धर्मः", meaning: "Non-violence is the highest duty." },
+      { text: "ज्ञानेन तु तदज्ञानं येषां नाशितमात्मनः", meaning: "Through knowledge, ignorance is destroyed." },
+      { text: "वासांसि जीर्णानि यथा विहाय", meaning: "As a person discards old clothes, so the soul discards old bodies." },
+      { text: "न जायते म्रियते वा कदाचित्", meaning: "The soul is never born, nor does it ever die." },
+      { text: "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत", meaning: "Whenever righteousness declines, I manifest Myself." },
+      { text: "धर्मसंस्थापनार्थाय सम्भवामि युगे युगे", meaning: "To protect dharma, I appear in every age." },
+      { text: "ममैवांशो जीवलोके जीवभूतः सनातनः", meaning: "Living beings are My eternal fragments." },
+      { text: "ज्ञानी त्वात्मैव मे मतम्", meaning: "The wise are considered as My very self." },
+      { text: "अनन्याश्चिन्तयन्तो मां ये जनाः पर्युपासते", meaning: "Those who worship Me with exclusive devotion, I protect." },
+      { text: "मृत्युः सर्वहरश्चाहम्", meaning: "I am death, the destroyer of all." },
+      { text: "विद्यां चाविद्यां च यस्तद्वेदोभयंसह", meaning: "One who knows both knowledge and ignorance transcends death." },
+      { text: "उद्धरेदात्मनाऽऽत्मानं", meaning: "Let a man lift himself by his own self." },
+      { text: "न त्वेवाहं जातु नासं न त्वं नेमे जनाधिपाः", meaning: "Never was there a time when I did not exist, nor you, nor these kings." },
+      { text: "न हि कश्चित्क्षणमपि जातु तिष्ठत्यकर्मकृत्", meaning: "No one can remain without action even for a moment." },
+      { text: "श्रद्धावान् लभते ज्ञानम्", meaning: "The faithful attain knowledge." },
+      { text: "नासतो विद्यते भावो नाभावो विद्यते सतः", meaning: "The unreal never is; the real never ceases to be." },
+      { text: "त्रैगुण्यविषया वेदा निस्त्रैगुण्यो भव अर्जुन", meaning: "The Vedas deal with the three gunas; be beyond these, O Arjuna." },
+      { text: "यत्र योगेश्वरः कृष्णो यत्र पार्थो धनुर्धरः", meaning: "Wherever Krishna and Arjuna are, there is victory." },
+      { text: "यः सर्वत्रानभिस्नेहस्तत्तत्प्राप्य शुभाशुभम्", meaning: "He who is unattached to outcomes attains peace." },
+      { text: "निराशीर्यतचित्तात्मा त्यक्तसर्वपरिग्रहः", meaning: "The one without desires, self-controlled, free from possessions, attains peace." },
+      { text: "श्रेयान्स्वधर्मो विगुणः परधर्मात्स्वनुष्ठितात्", meaning: "Better one's own duty without merit than another's duty well performed." },
+      { text: "मन्मना भव मद्भक्तो मद्याजी मां नमस्कुरु", meaning: "Think of Me, be devoted to Me, sacrifice to Me, bow to Me." }
+    ];
 
     function getDailyVerse() {
       const today = new Date();
-      const dayOfYear = Math.floor(
-        (today - new Date(today.getFullYear(), 0, 0)) / 86400000
-      );
-      return verses[dayOfYear % verses.length];
+      const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 86400000);
+      return { verse: verses[dayOfYear % verses.length], dayOfYear };
     }
 
-    const verse = getDailyVerse();
+    const { verse, dayOfYear } = getDailyVerse();
+    document.getElementById("verseDay").textContent = `Verse for Day ${dayOfYear} of the Year`;
     document.getElementById("verseText").textContent = verse.text;
     document.getElementById("verseMeaning").textContent = verse.meaning;
   </script>

@@ -2,99 +2,152 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Search Scriptures</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Scriptures — Vedic Corner</title>
+  <meta name="description" content="Search verses, chants, and hymns across Vedic Corner.">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500&family=Playfair+Display:wght@600;700;800&family=Noto+Sans+Tamil:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/theme.css">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-    }
-
-    /* Overlay with background image */
-    #overlay {
+    .vc-search-bar {
       display: flex;
-      justify-content: center;   /* horizontally center popup */
-      align-items: center;       /* vertically center popup */
-      position: fixed;
-      top: 15px; left: 15px; right: 15px;bottom:15px;
-      width: auto; height: auto;
-      background: url("krishna-arjuna.jpg.png") no-repeat center center;
-      background-size: cover;    /* cover full screen */
+      gap: 0.6rem;
+      max-width: 640px;
+      margin: 0 auto 1rem;
     }
-
-    /* Popup card */
-    #popup {
-      background: rgba(255,255,255,0.95); /* slight transparency for better contrast */
-      padding: 20px;
-      width: 500px;
-      max-width: 90%;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    .vc-search-input {
+      flex: 1;
+      font-family: 'Crimson Text', serif;
+      font-size: 1.1rem;
+      padding: 0.8rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(212,175,55,0.4);
+      background: rgba(255,255,255,0.8);
+      outline: none;
     }
-
-    #closeBtn {
-      float: right;
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 18px;
+    .vc-search-input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px var(--glow); }
+    .vc-filters { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 2rem; }
+    .vc-filter-chip {
+      font-size: 0.85rem; padding: 0.35rem 0.9rem; border-radius: 999px;
+      border: 1px solid rgba(139,155,122,0.4); background: transparent; color: var(--deep-sage);
+      cursor: pointer; font-family: 'Lora', serif;
     }
-
-    /* 🔥 Animation for popupTitle */
-    #popupTitle {
-      opacity: 0;
-      transform: translateY(-10px);
-      transition: all 0.5s ease;
-      font-size: 20px;
-      font-weight: bold;
-    }
-    #popupTitle.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .vc-filter-chip.active { background: var(--sage); color: #fff; border-color: var(--sage); }
+    .vc-result-count { text-align: center; color: var(--deep-sage); margin-bottom: 1.5rem; font-size: 0.95rem; }
+    .vc-empty { text-align: center; color: var(--deep-sage); padding: 3rem 1rem; }
+    mark { background: var(--light-gold); color: var(--text-dark); border-radius: 3px; padding: 0 2px; }
   </style>
 </head>
-<body>
-  <div id="overlay">
-    <div id="popup">
-      <span id="closeBtn" onclick="window.location.href='index.html'">✖</span>
-      <h3 id="popupTitle">Searching...</h3>
-      <div id="popupContent">Please wait...</div>
+<body class="vc-body">
+  <a href="#main" class="vc-skip-link">Skip to content</a>
+
+  <header class="vc-header">
+    <div class="vc-header-inner">
+      <a class="vc-brand" href="index.html"><img src="logo.png" alt=""> Vedic Corner</a>
+      <nav class="vc-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="verse.html">Daily Verse</a>
+        <a href="tamil_poems.html">Tamil Poems</a>
+        <a href="search.html">Search</a>
+      </nav>
     </div>
-  </div>
+  </header>
 
+  <main id="main">
+    <section class="vc-page-hero">
+      <div class="vc-om">🔍</div>
+      <h1 class="vc-page-title">Search Scriptures</h1>
+      <p class="vc-page-sub">Search across the Bhagavad Gita, Shiva Panchakshara, Kantha Sasti Kavasam, Thiruvasagam, and Kanthar Anuboothi — by Sanskrit/Tamil text or English meaning.</p>
+    </section>
+
+    <div class="vc-container">
+      <div class="vc-search-bar">
+        <input id="q" class="vc-search-input" type="search" placeholder="Try “peace”, “Shiva”, “karma”, “grace”…" autocomplete="off">
+      </div>
+      <div id="filters" class="vc-filters"></div>
+      <div id="count" class="vc-result-count" aria-live="polite"></div>
+      <div id="results"></div>
+    </div>
+  </main>
+
+  <footer class="vc-footer">
+    <div class="vc-footer-ornament">✧ ॐ ✧</div>
+    © <span id="year"></span> Vedic Corner — Built with care
+  </footer>
+
+  <script src="assets/content.js"></script>
   <script>
-    // 🔥 Helper to animate title
-    function setPopupTitle(query) {
-      const title = document.getElementById("popupTitle");
-      title.classList.remove("show");   // reset animation
-      void title.offsetWidth;           // force reflow
-      title.innerText = "Searching: " + query;
-      title.classList.add("show");      // trigger fade+slide
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const collections = [...new Set(VC_CONTENT.map(v => v.collection))];
+    let activeCollection = "All";
+
+    const filtersEl = document.getElementById('filters');
+    function renderFilters() {
+      filtersEl.innerHTML = "";
+      ["All", ...collections].forEach(c => {
+        const btn = document.createElement('button');
+        btn.className = 'vc-filter-chip' + (c === activeCollection ? ' active' : '');
+        btn.type = 'button';
+        btn.textContent = c;
+        btn.addEventListener('click', () => { activeCollection = c; renderFilters(); runSearch(); });
+        filtersEl.appendChild(btn);
+      });
+    }
+    renderFilters();
+
+    function highlight(text, terms) {
+      if (!terms.length) return text;
+      let out = text;
+      terms.forEach(t => {
+        if (!t) return;
+        const re = new RegExp('(' + t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+        out = out.replace(re, '<mark>$1</mark>');
+      });
+      return out;
     }
 
-    // Get query from URL
+    function runSearch() {
+      const raw = document.getElementById('q').value.trim();
+      const terms = vcNormalize(raw).split(/\s+/).filter(Boolean);
+      const resultsEl = document.getElementById('results');
+      const countEl = document.getElementById('count');
+
+      let pool = VC_CONTENT.filter(v => activeCollection === "All" || v.collection === activeCollection);
+
+      let matches = pool.filter(v => {
+        if (!terms.length) return true;
+        const hay = vcNormalize(v.text + " " + v.meaning + " " + v.collection);
+        return terms.every(t => hay.includes(t));
+      });
+
+      countEl.textContent = matches.length + (matches.length === 1 ? " verse found" : " verses found");
+
+      if (!matches.length) {
+        resultsEl.innerHTML = `<div class="vc-empty">No verses matched "${raw}". Try a shorter word, or browse a collection above.</div>`;
+        return;
+      }
+
+      resultsEl.innerHTML = matches.slice(0, 60).map(v => `
+        <a href="${v.url}" style="text-decoration:none;color:inherit;">
+          <div class="vc-verse">
+            <div class="vc-verse-index">${v.collection}${v.collectionTa ? " · " + v.collectionTa : ""}</div>
+            <div class="vc-verse-original vc-tamil">${highlight(v.text, terms)}</div>
+            <div class="vc-verse-meaning">${highlight(v.meaning, terms)}</div>
+          </div>
+        </a>
+      `).join("");
+    }
+
+    document.getElementById('q').addEventListener('input', runSearch);
+
+    // Support ?q= from links elsewhere on the site (e.g. old search links)
     const params = new URLSearchParams(window.location.search);
-    const query = params.get("q");
+    if (params.get('q')) document.getElementById('q').value = params.get('q');
 
-    if (query) {
-      setPopupTitle(query); // use animation instead of direct innerText
-
-      // Call Wikipedia API
-      fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(query)}`)
-        .then(res => res.json())
-        .then(data => {
-          if (data.extract) {
-            document.getElementById("popupContent").innerHTML = `
-              <p>${data.extract}</p>
-              <a href="${data.content_urls.desktop.page}" target="_blank">Read more on Wikipedia</a>
-            `;
-          } else {
-            document.getElementById("popupContent").innerText = "No results found.";
-          }
-        })
-        .catch(() => document.getElementById("popupContent").innerText = "Error fetching data.");
-    } else {
-      document.getElementById("popupContent").innerText = "No search query provided.";
-    }
+    runSearch();
   </script>
 </body>
 </html>

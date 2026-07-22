@@ -4,19 +4,137 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Kanthar Anuboothi — கந்தர் அனுபூதி | Vedic Corner</title>
-  <meta name="description" content="Kanthar Anuboothi — verses of surrender and inner experience of Lord Muruga.">
-  <link rel="icon" type="image/png" href="logo.png">
+  <meta name="description" content="The complete Kanthar Anuboothi — 51 verses of Arunagirinathar's inner experience of Lord Muruga, with the Kaappu.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500&family=Playfair+Display:wght@600;700;800&family=Noto+Sans+Tamil:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/theme.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#1a0e08; --ink-deep:#120906;
+      --maroon:#5c1a1f; --maroon-bright:#7a2530;
+      --vel-gold:#c89b3c; --gold-bright:#e6c877;
+      --peacock:#1e5c52; --peacock-bright:#2f8a7a;
+      --parchment:#f4e8cd; --parchment-2:#eeddb9; --parchment-ink:#2c1a10;
+      --ivory:#f6efdd; --rule: rgba(200,155,60,0.35);
+      --shadow: 0 18px 40px -20px rgba(0,0,0,0.55);
+    }
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{animation:none !important; transition:none !important;} }
+
+    body{
+      margin:0;
+      background:
+        radial-gradient(1200px 600px at 50% -10%, rgba(200,155,60,0.10), transparent 60%),
+        linear-gradient(180deg, var(--ink) 0%, var(--ink-deep) 100%);
+      color:var(--ivory); font-family:'Crimson Text', serif; font-size:1.05rem; line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:var(--gold-bright);}
+    a:focus-visible, button:focus-visible{ outline:2px solid var(--gold-bright); outline-offset:3px; }
+    .vc-skip-link{ position:absolute; left:-999px; top:0; background:var(--maroon); color:var(--ivory); padding:0.6rem 1rem; z-index:100; }
+    .vc-skip-link:focus{ left:1rem; top:1rem; }
+
+    .vc-header{ position:sticky; top:0; z-index:20; background:rgba(18,9,6,0.88); backdrop-filter:blur(6px); border-bottom:1px solid var(--rule); }
+    .vc-header-inner{ max-width:1000px; margin:0 auto; padding:0.9rem 1.5rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
+    .vc-brand{ font-family:'Cormorant Garamond', serif; font-weight:700; font-size:1.25rem; color:var(--gold-bright); text-decoration:none; letter-spacing:0.02em; display:flex; align-items:center; gap:0.5rem; }
+    .vc-brand svg{ width:20px; height:20px; }
+    .vc-nav{ display:flex; gap:1.4rem; flex-wrap:wrap; }
+    .vc-nav a{ text-decoration:none; color:var(--ivory); font-size:0.92rem; letter-spacing:0.03em; opacity:0.85; border-bottom:1px solid transparent; padding-bottom:2px; transition:opacity 0.2s, border-color 0.2s; }
+    .vc-nav a:hover{ opacity:1; border-color:var(--vel-gold); }
+
+    .vc-page-hero{ position:relative; text-align:center; padding:4.5rem 1.5rem 3.2rem; overflow:hidden; border-bottom:1px solid var(--rule); }
+    .vc-page-hero::before{
+      content:""; position:absolute; inset:0;
+      background:
+        repeating-linear-gradient(45deg, transparent 0 26px, rgba(200,155,60,0.035) 26px 27px),
+        repeating-linear-gradient(-45deg, transparent 0 26px, rgba(200,155,60,0.035) 26px 27px);
+      pointer-events:none;
+    }
+    .feather-mark{ position:relative; margin:0 auto 1.1rem; width:42px; height:42px; }
+    .feather-mark svg{ width:100%; height:100%; filter:drop-shadow(0 0 10px rgba(230,200,119,0.35)); }
+
+    .vc-page-title{ position:relative; font-family:'Noto Sans Tamil', serif; font-weight:700; font-size:clamp(1.9rem, 5vw, 2.9rem); color:var(--gold-bright); margin:0 0 0.35rem; letter-spacing:0.01em; }
+    .vc-page-title .en{ display:block; font-family:'Cormorant Garamond', serif; font-weight:600; font-size:0.42em; letter-spacing:0.12em; text-transform:uppercase; color:var(--ivory); opacity:0.75; margin-top:0.4rem; }
+    .vc-page-sub{ position:relative; max-width:640px; margin:1.1rem auto 0; color:var(--ivory); opacity:0.82; font-style:italic; font-size:1.02rem; line-height:1.7; }
+
+    .kavasam-meta{ position:relative; display:flex; flex-wrap:wrap; gap:0.6rem; justify-content:center; margin:1.6rem 0 0; }
+    .kavasam-meta span{ font-family:'Crimson Text', serif; font-size:0.8rem; letter-spacing:0.02em; color:var(--ivory); background:rgba(200,155,60,0.08); border:1px solid var(--rule); border-radius:999px; padding:0.32rem 0.95rem; }
+
+    .kavasam-divider{ display:flex; align-items:center; justify-content:center; gap:0.8rem; margin:2.6rem 0 1.2rem; }
+    .kavasam-divider .line{ height:1px; width:64px; background:linear-gradient(90deg, transparent, var(--vel-gold)); }
+    .kavasam-divider .line.right{ background:linear-gradient(90deg, var(--vel-gold), transparent); }
+    .kavasam-divider svg{ width:16px; height:16px; opacity:0.9; }
+
+    .kavasam-section-label{ text-align:center; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:1.5rem; color:var(--gold-bright); margin:0; letter-spacing:0.03em; }
+    .kavasam-section-label .ta{ font-family:'Noto Sans Tamil', serif; font-weight:600; }
+
+    .vc-container{ max-width:760px; margin:0 auto; padding:0 1.5rem 5rem; }
+    .kavasam-note{ max-width:640px; margin:1.6rem auto 2rem; text-align:center; color:var(--ivory); opacity:0.78; font-size:0.98rem; font-style:italic; line-height:1.75; }
+
+    .toc-note{ max-width:640px; margin:1rem auto 2rem; text-align:center; color:var(--ivory); opacity:0.6; font-size:0.85rem; }
+
+    /* verse cards */
+    .verse{
+      position:relative; counter-increment: verse;
+      background:linear-gradient(180deg, var(--parchment) 0%, var(--parchment-2) 100%);
+      border:1px solid rgba(92,26,31,0.14); border-radius:4px; box-shadow:var(--shadow);
+      padding:1.3rem 1.7rem 1.4rem; margin-bottom:1.15rem; color:var(--parchment-ink);
+    }
+    .verse::before{
+      content:""; position:absolute; top:-1px; left:50%; transform:translateX(-50%);
+      width:34px; height:6px; background:var(--maroon); border-radius:0 0 6px 6px;
+    }
+    .verse-head{
+      display:flex; align-items:baseline; justify-content:center; gap:0.6rem;
+      margin-bottom:0.7rem; flex-wrap:wrap; text-align:center;
+    }
+    .verse-num{
+      font-family:'Cormorant Garamond', serif; font-weight:700; color:var(--maroon);
+      font-size:1rem; border:1px solid rgba(92,26,31,0.3); border-radius:999px;
+      width:1.8rem; height:1.8rem; display:inline-flex; align-items:center; justify-content:center;
+      flex-shrink:0;
+    }
+    .verse-theme{
+      font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:600;
+      color:var(--maroon); font-size:0.95rem;
+    }
+    .verse-theme .ta{ font-family:'Noto Sans Tamil', serif; font-style:normal; }
+    .verse-original{
+      font-family:'Noto Sans Tamil', serif; font-size:1.15rem; line-height:2; text-align:center;
+    }
+    .verse-original br{ content:""; display:block; margin-top:0.1rem; }
+
+    .kaappu-card{
+      background:linear-gradient(180deg, var(--parchment) 0%, var(--parchment-2) 100%);
+      border:1px solid rgba(92,26,31,0.14); border-radius:4px; box-shadow:var(--shadow);
+      padding:1.4rem 1.8rem 1.3rem; margin-bottom:1.6rem; color:var(--parchment-ink); text-align:center;
+    }
+    .kaappu-label{ font-family:'Cormorant Garamond', serif; font-weight:700; font-style:italic; color:var(--maroon); font-size:0.95rem; margin-bottom:0.6rem; }
+    .kaappu-text{ font-family:'Noto Sans Tamil', serif; font-size:1.18rem; line-height:2; }
+
+    .closing-line{ text-align:center; font-family:'Cormorant Garamond', serif; font-weight:600; color:var(--gold-bright); margin-top:2.4rem; letter-spacing:0.04em; font-size:1.1rem; }
+
+    .vc-footer{ text-align:center; padding:2.6rem 1.5rem 3rem; border-top:1px solid var(--rule); color:var(--ivory); opacity:0.7; font-size:0.85rem; }
+    .vc-footer-ornament{ font-family:'Cormorant Garamond', serif; color:var(--gold-bright); letter-spacing:0.25em; font-size:0.85rem; margin-bottom:0.7rem; opacity:0.9; }
+
+    @media (max-width:560px){
+      .vc-page-hero{ padding:3.2rem 1.2rem 2.6rem; }
+      .verse{ padding:1.1rem 1.1rem 1.2rem; }
+      .verse-original{ font-size:1.05rem; }
+      .vc-header-inner{ justify-content:center; text-align:center; }
+    }
+  </style>
 </head>
-<body class="vc-body">
+<body>
   <a href="#main" class="vc-skip-link">Skip to content</a>
 
   <header class="vc-header">
     <div class="vc-header-inner">
-      <a class="vc-brand" href="index.html"><img src="logo.png" alt=""> Vedic Corner</a>
+      <a class="vc-brand" href="index.html">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2 L14 10 L12 22 L10 10 Z" fill="#c89b3c"/><path d="M12 2 L14 10 L10 10 Z" fill="#e6c877"/></svg>
+        Vedic Corner
+      </a>
       <nav class="vc-nav" aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="verse.html">Daily Verse</a>
@@ -28,34 +146,281 @@
 
   <main id="main">
     <section class="vc-page-hero">
-      <div class="vc-om">🪶</div>
-      <h1 class="vc-page-title">Kanthar Anuboothi</h1>
-      <p class="vc-page-tamil">கந்தர் அனுபூதி</p>
-      <p class="vc-page-sub">Verses of inner surrender to Lord Muruga, composed in the devotional tradition of Arunagirinathar — reflections written in that spirit for daily recitation.</p>
+      <div class="feather-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="none">
+          <path d="M24 4 C14 10 12 22 18 32 C21 37 24 40 24 44 C24 40 27 37 30 32 C36 22 34 10 24 4 Z" fill="#c89b3c"/>
+          <path d="M24 4 C19 8 17 15 18 22 L24 22 Z" fill="#e6c877"/>
+          <circle cx="24" cy="24" r="22.5" stroke="#c89b3c" stroke-width="0.6" opacity="0.4"/>
+        </svg>
+      </div>
+      <h1 class="vc-page-title">
+        கந்தர் அனுபூதி
+        <span class="en">Kanthar Anuboothi · Full Text</span>
+      </h1>
+      <p class="vc-page-sub">
+        Fifty-one verses of inner realization composed by Arunagirinathar — a saint-poet's account of
+        surrender, struggle, and union with Lord Muruga, revered alongside the Tirumandiram as a text
+        of deep mystical insight.
+      </p>
+      <div class="kavasam-meta">
+        <span>✍️ Arunagirinathar</span>
+        <span>📍 Thiruvannamalai</span>
+        <span>📏 51 verses + Kaappu</span>
+        <span>🙏 A revered paaraayanam text</span>
+      </div>
     </section>
 
     <div class="vc-container">
-      <div class="vc-verse">
-        <div class="vc-verse-original vc-tamil">துதிப்போர் வினை தீர்க்கும் குமரா!<br>உந்தன் திருவடியே சரணம்</div>
-        <div class="vc-verse-meaning">O Kumara who dissolves the karma of those who praise You — Your holy feet alone are my refuge.</div>
-      </div>
-      <div class="vc-verse">
-        <div class="vc-verse-original vc-tamil">அறிவே உருவான குகனே!<br>என் அகம் நிறை அன்பாய் நிலைப்பாய்</div>
-        <div class="vc-verse-meaning">O Guha, embodiment of wisdom — dwell forever as the love that fills my heart.</div>
-      </div>
-      <div class="vc-verse">
-        <div class="vc-verse-original vc-tamil">பயமெனும் இருள் நீங்கிட வேலா!<br>உன் ஒளி ஒன்றே வழி காட்டும்</div>
-        <div class="vc-verse-meaning">O Vel, so that the darkness of fear may leave me, Your light alone shows the way.</div>
-      </div>
-      <div class="vc-verse">
-        <div class="vc-verse-original vc-tamil">சிந்தை தடுமாறும் போதினிலே<br>ஆறுமுக நாயகா! கை தூக்கிடுவாய்</div>
-        <div class="vc-verse-meaning">When the mind wavers and loses its way, O six-faced Lord, reach out and lift me up.</div>
-      </div>
-    </div>
+      <p class="kavasam-note">
+        Tradition holds that Arunagirinathar, having renounced a life of excess, climbed the temple
+        tower at Thiruvannamalai intending to end his life — and was caught mid-fall by Lord Muruga,
+        who touched his tongue with the Vel and set him on a lifelong path of devotional song.
+        Kanthar Anuboothi is counted among the most treasured of the hymns that followed. Each verse
+        below carries the short theme by which it is traditionally known.
+      </p>
 
-    <div class="vc-container" style="padding-top:0;">
-      <p style="text-align:center;color:var(--deep-sage);font-size:0.9rem;">
-        For the complete traditional text of Kanthar Anuboothi, we recommend a printed or temple-published edition.
+      <div class="kavasam-divider">
+        <span class="line"></span>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2 L14 10 L12 22 L10 10 Z" fill="#c89b3c"/></svg>
+        <span class="line right"></span>
+      </div>
+      <h2 class="kavasam-section-label"><span class="ta">காப்பு</span> — Kaappu</h2>
+
+      <div class="kaappu-card">
+        <div class="kaappu-label">Meditation on the sacred ash</div>
+        <div class="kaappu-text">
+          நெஞ்சக் கனகல்லு நெகிழ்ந் துருகத்<br>
+          தஞ்சத் தருள்சண் முகனுக் கியல்சேர்<br>
+          செஞ்சொற் புனைமாலை சிறந் திடவே<br>
+          பஞ்சக் கரவானை பதம் பணிவாம்.
+        </div>
+      </div>
+
+      <div class="kavasam-divider">
+        <span class="line"></span>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2 L14 10 L12 22 L10 10 Z" fill="#c89b3c"/></svg>
+        <span class="line right"></span>
+      </div>
+      <h2 class="kavasam-section-label">Nūl — The 51 Verses</h2>
+
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">1</span><span class="verse-theme">To conquer the mad elephant <span class="ta">(மதயானையை வெல்ல)</span></span></div>
+        <div class="verse-original">ஆடும் பணிவே லணிசே வலெனப்<br>பாடும் பணிவே பணியா யருள்வாய்<br>தேடுங் கயமா முகனைச் செருவிற்<br>காடுந் தனியா னைசகோ தரனே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">2</span><span class="verse-theme">To punish those who do not bow <span class="ta">(வணங்காரை தண்டிக்க)</span></span></div>
+        <div class="verse-original">உல்லாச நிராகுல யோக விதச்<br>சல்லாப விநோதனு நீயலையோ<br>எல்லாமற என்னை யிழந்த நலஞ்<br>சொல்லாய் முருகா கரபூ பதியே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">3</span><span class="verse-theme">To excel in learning <span class="ta">(கல்வியில் மெச்ச)</span></span></div>
+        <div class="verse-original">வானோ புனல்பார் கனல்மா ருதமோ<br>ஞானோ தயமோ நவில்நான் மறையோ<br>யானோ மனமோ எனையாண் டவிடந்<br>தானோ பொருளா வதுசண்முகனே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">4</span><span class="verse-theme">To attain renunciation <span class="ta">(துறவு பெற)</span></span></div>
+        <div class="verse-original">வளைபட்டகைம் மாதொடு மக்க ளெனுந்<br>தளைபட் டழியத் தகுமோ தகுமோ<br>கிளைபட் டெழுகு ருரமுங் கிரியுந்<br>தொளைபட் டுருவத் தொடுவே லவனே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">5</span><span class="verse-theme">To dispel illusion <span class="ta">(மாயை ஒழிக்க)</span></span></div>
+        <div class="verse-original">மகமாயை களைந்திட வல்ல பிரான்<br>முகமாறு மொழிந்து மொழிந் திலனே<br>அகமாடை மடந்தைய ரென் றயருஞ்<br>சகமாயையுள் நின்று தயங் குவதே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">6</span><span class="verse-theme">On embracing women <span class="ta">(மாதரைத் தழுவ)</span></span></div>
+        <div class="verse-original">திணியா னமனோ சிலைமீ துனதாள்<br>அணியா ரரவிந்த மரும்பு மதோ<br>பணியா வென வள்ளி பதம் பணியுந்<br>தணியா வதிமோத தயா பரனே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">7</span><span class="verse-theme">To end unending toil <span class="ta">(தீராப்பணி தீர)</span></span></div>
+        <div class="verse-original">கெடுவாய் மனனை கதிகேள் கரவா<br>திடுவாய் வடிவே லிறைதாள் நினைவாய்<br>சுடுவாய் நெடுவே தனைதூள் படவே<br>விடுவாய் விடுவாய் வினையா வையுமே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">8</span><span class="verse-theme">To bring people under one's sway <span class="ta">(குடிகளை தன்வசமாக்க)</span></span></div>
+        <div class="verse-original">அமரும் பதிதே ளகமா மெனுமிப்<br>பிமரங் கெட்மெய்ப் பொருள் பேசியவா<br>குமரன் கிரிராச குமாரி மகன்<br>சமரம் பொரு தானவ நாசகனே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">9</span><span class="verse-theme">To end desire for women <span class="ta">(பெண்ணாசை ஒழிக்க)</span></span></div>
+        <div class="verse-original">மட்டூர்குழல் மங்கையர் மையல் வலைப்<br>பட்டூசல் படும் பரிசென் றொழிவேன்<br>தட்டூ டறவேல் சயிலத் தெறியும்<br>திட்டூர நிராகுல நிர்ப் பயனே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">10</span><span class="verse-theme">To ward off Yama <span class="ta">(நமனை விலக்க)</span></span></div>
+        <div class="verse-original">கார்மா மிசைகா லன்வரிற் கலபத்<br>தேர்மா மிகைவந் தெதிரப் படுவாய்<br>தார்மார்ப வலாரி தலாரி யெனுஞ்<br>சூர்மா மடியத் தொடுவே லவனே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">11</span><span class="verse-theme">To reach Tanigai <span class="ta">(தணிகை சேர்க்க)</span></span></div>
+        <div class="verse-original">கூகா வெனவென் கிளைகூ டியழப்<br>போகா வகைமெய்ப் பொருள்பே சியவா<br>தாகாசல வேலவ நாலு கவித்<br>தியாகா கரலோக சிகா மணியே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">12</span><span class="verse-theme">To overcome deceit <span class="ta">(களவு வெல்ல)</span></span></div>
+        <div class="verse-original">செம்மான் மகளைத் திருடுந் திருடன்<br>பெம்மான் முருகன் பிறவா னிறவான்<br>சும்மா இருசொல் லறவென் றலுமே<br>அம்மா பொரு ளொன்று மறிந்திலனே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">13</span><span class="verse-theme">To walk the path through darkness <span class="ta">(இருள் வழி நடக்க)</span></span></div>
+        <div class="verse-original">முருகன் தனிவேல் முனிநங் குருவென்<br>றருள்கொண் டறியா ரறியுந் தரமோ<br>உருவன் றருவன் றுளதன் றிலதன்<br>றிருளன் றொளியன் றென்நின் றதுவே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">14</span><span class="verse-theme">To receive the vision <span class="ta">(பாரி தரிசனம் செய்ய)</span></span></div>
+        <div class="verse-original">கைவாய் கதிர்வேல் முருகன் கழல்பெற்<br>றுய்வாய் மனனே யொழிவா யொழிவாய்<br>மெய்வாய் விழி நாசியொடுஞ் செவியாம்<br>ஐவாய் வழி செல்லு மவாவினையே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">15</span><span class="verse-theme">To master the eight faculties <span class="ta">(அஷ்டாவதனம் செய்ய)</span></span></div>
+        <div class="verse-original">முருகன் குமரன் குகனென்று மொழிந்<br>துருகுஞ் செயல்தந் துணர்வென் றருள்வாய்<br>பொருபுங் கவரும் புவியும் பரவுங்<br>குருபுங்கவ எண்குண பஞ் சரனே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">16</span><span class="verse-theme">To remove great greed <span class="ta">(பேராசை விலக்க)</span></span></div>
+        <div class="verse-original">பேராசை யெனும் பிணியிற் பிணிபட்<br>டோ ரா வினையே னுழலந் தகுமோ<br>வீரா முதுசூர் படவே லெறியுஞ்<br>சூரா சுரலோக துரந் தரனே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">17</span><span class="verse-theme">To elevate one's conduct <span class="ta">(தன்னடத்தை மேன்மையாக்க)</span></span></div>
+        <div class="verse-original">யாமோதிய கல்வியு மெம் மறிவுந்<br>தாமே பெற வேலவர் தந்தனாற்<br>பூமேல் மயல் போ யறமெய்ப் புணர்வீர்<br>தாமேல் நடவீர் நடவீ ரினியே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">18</span><span class="verse-theme">To preserve virtue <span class="ta">(கற்பழியாதிருக்க)</span></span></div>
+        <div class="verse-original">உதியா மரியா வுணரா மறவா<br>விதிமா லறியா விமலன் புதல்வா<br>அதிகா வநகா வபயா வமரா<br>பதிகா வலசூர் பயங் கரனே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">19</span><span class="verse-theme">To give up household life <span class="ta">(இல்வாழ்க்கை நீக்க)</span></span></div>
+        <div class="verse-original">வடிவுந் தனமும் மனமுங் குணமுங்<br>குடியுங் குலமுங் குடிபோ கியவா<br>அடியந் தமிலா அயில்வே லரசே<br>மிடி யென்றொரு பாவி வௌவீப் படினே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">20</span><span class="verse-theme">To receive grace <span class="ta">(அனுக்கிரகம் பெற)</span></span></div>
+        <div class="verse-original">அரிதா கியமெய்ப் பொருளுக் கடியேண்<br>உரிதா வுபதேச முணர்ந் தியவா<br>விரிதாரண விக்ரம் வேளி மையோர்<br>புரிதா ரக நாக புரந்தரனே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">21</span><span class="verse-theme">To worship the holy feet <span class="ta">(திருவடி வணங்க)</span></span></div>
+        <div class="verse-original">கருதா மறவா நெறிகாண எனக்<br>கிருதாள் வனசந் தரஎன் றிசைவாய்<br>வரதா முருகா மயில்வா கனனே<br>விரதா கரசூர விபாட ணனே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">22</span><span class="verse-theme">To attain penance <span class="ta">(தவம் பெற)</span></span></div>
+        <div class="verse-original">காளைக் குமரேச னெனக் கருதித்<br>தாளைப் பணியத் தவமெய் தியவா<br>பாளைச் சூழல் வள்ளி பதம்புணியும்<br>வேளைச் சுரபூ பதிமே ருவையே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">23</span><span class="verse-theme">To voice a plea <span class="ta">(சலிகை சொல்ல)</span></span></div>
+        <div class="verse-original">அடியைக் குறியா தறியா மையினால்<br>முடியக் கெடவோ முறையோ முறையோ<br>வடிவிக் ரமமேல் மகிபா குறமின்<br>கொடியைப் புணருங் குணபூத ரனே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">24</span><span class="verse-theme">To avoid the snare of women <span class="ta">(மாதர் வலையில் விழாதிருக்க)</span></span></div>
+        <div class="verse-original">கூர்வேல் விழி மங்கையர் கொங்கையிலே<br>சேர்வே னருள் சேரவு மெண்ணுமதோ<br>சூர்வே ரொடு குன்று தொளைத்தநெடும்<br>போர்வேல புரத்தா பூப தியே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">25</span><span class="verse-theme">To end great karma <span class="ta">(மகாவினை ஒழிக்க)</span></span></div>
+        <div class="verse-original">மெய்ய யெனவெவ் வினைவாழ் வையுகந்<br>தையோ அடியே னலையத் தகுமோ<br>கையோ அயிலோ கழலோ முழுதுஞ்<br>செய்யோய் மயிலே றிய சேவகனே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">26</span><span class="verse-theme">To be a refuge for the destitute <span class="ta">(யாருமற்ற பேருக்கு ஆதாரமாக)</span></span></div>
+        <div class="verse-original">ஆதார மிலே னருளைப் பெறவே<br>நீதா னொரு சற்று நினைந்திலையே<br>வேதாகம ஞான விநோ தமனோ<br>கீதா சுரலோக சிகா மணியே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">27</span><span class="verse-theme">To accept fortune as fate allows <span class="ta">(பாக்கியத்தை விதிவழி அனுபவிக்க)</span></span></div>
+        <div class="verse-original">மின்னே நிகர்வாழ்வை விரும்பிய யான்<br>என்னே விதியின் பயனிங் கிதுவோ<br>பொன்னே மணியே பொருளே யருளே<br>மன்னே மயிலேறிய வானவனே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">28</span><span class="verse-theme">To become one with Him <span class="ta">(தான் அவனாக)</span></span></div>
+        <div class="verse-original">ஆனா அமுதே அயில்வே லரசே<br>ஞானா கரனே நவிலத் தகுமோ<br>யானாகிய வென்னை விழுங்கி வெறுந்<br>தானாய் நிலைநின் றதுதற் பரமே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">29</span><span class="verse-theme">Before divine anger <span class="ta">(கடவுள் முன் கோபம் மாற்ற)</span></span></div>
+        <div class="verse-original">இல்லே யெனுமா யையி லிட்டனைநீ<br>பொல்லே னறியாமை பொறுத் திலையே<br>மல்லே புரி பன்னிரு வாகுவிலென்<br>சொல்லே புனையுஞ் சுடர்வே லவனே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">30</span><span class="verse-theme">To plead one's case <span class="ta">(வழக்கு பேச)</span></span></div>
+        <div class="verse-original">செல்வா னுருவிற் றிகழ்வே லவனன்<br>றொவ்வா ததென வுணர்வித் ததுதான்<br>அவ்வா றறிவா ரறிகின் றதலால்<br>எவ்வா றொருவர்க் கிசைவிப் பதுவே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">31</span><span class="verse-theme">To gain wisdom in His presence <span class="ta">(கடவுள் முன்னிலையில் ஞானம் பெற)</span></span></div>
+        <div class="verse-original">பாழ்வாழ் வெனுமிப் படுமா யையிலே<br>வீழ்வா யென என்னை விதித்தனையே<br>தாழ்வா னவைசெய் தனதா முளவோ<br>வாழ்வா யினிநீ மயில்வா கனனே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">32</span><span class="verse-theme">To let go of killing <span class="ta">(கொலை மறக்க)</span></span></div>
+        <div class="verse-original">கலையே பதறிக் கதறிக் தலையூ<br>டலையே படுமா றதுவாய் விடவோ<br>கொலையே புரி வேடர்குலப் பிடிதோய்<br>மலையே மலை கூறிடு வாகையானே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">33</span><span class="verse-theme">To end anguish <span class="ta">(வியாகூலம் ஒழிக்க)</span></span></div>
+        <div class="verse-original">சிந்தா குலவில் லொடுசெல் வமெனும்<br>விந்தா டவியென்று விடப் பெறுவேன்<br>மந்தா கினிதந்த வரோ தயனே<br>கந்தா முருகா கருணா கரனே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">34</span><span class="verse-theme">To see women as one's mother <span class="ta">(பெண்களைத் தாயாக நினைக்க)</span></span></div>
+        <div class="verse-original">சிங்கார மடந்தையர் தீநெறி போய்<br>மங்கார லெனக்கு வரந்தருவாய்<br>சங்க்ராம சிகா வலசண் முகனே<br>கங்கா நதி பால க்ருபாகரனே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">35</span><span class="verse-theme">To end attachment to the body <span class="ta">(சரீர வாஞ்சை ஒழிக்க)</span></span></div>
+        <div class="verse-original">விதிகாணு முடம்பை விடா வினையேன்<br>கதிகாண மலர்க்கழ லென் றருள்வாய்<br>மதிவா ணுதல்வள்ளியையல் லதுபின்<br>துதியா விரதா சுரபூ பதியே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">36</span><span class="verse-theme">To behold God <span class="ta">(கடவுளைக் காண)</span></span></div>
+        <div class="verse-original">நாதா குமரா நமவென் றரனார்<br>ஓதா யெனவோ தியதெப் பொருள்தான்<br>வேதா முதல் விண்ணவர் சூடுமலர்ப்<br>பாதா குறமின் பதசே கரனே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">37</span><span class="verse-theme">To destroy one's ego <span class="ta">(தனது அகந்தையை ஒழிக்க)</span></span></div>
+        <div class="verse-original">கிரிவாய் விடுவிக் ரம வேலிறையோன்<br>பரிவா ரமெனும் பதமே வலையே<br>புரிவாய் மனனே பொறையா மறிவால்<br>அரிவா யடியொடு மகந் தையையே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">38</span><span class="verse-theme">To dispel evil spirits <span class="ta">(பிசாசம் ஒழிக்க)</span></span></div>
+        <div class="verse-original">ஆதாளிணீய யொன் றறியே னையறத்<br>தீதாளியை யாண் டதுசெப் புமதோ<br>கூதாள கிராத குலிக் கிறைவா<br>வேதாள கணம் புகழ்வே லவனே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">39</span><span class="verse-theme">To be freed from rebirth <span class="ta">(ஜனனம் எட்டாதிருக்க)</span></span></div>
+        <div class="verse-original">மாவேழ் சனனங் கெடமா யைவிடா<br>மூவேடணை யென்று முடிந் திடுமோ<br>கோவே குறமின் கொடிதோள் புணருந்<br>தேவே சிவ சங்கர தேசிகனே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">40</span><span class="verse-theme">To become clear of illusion <span class="ta">(மாயை தெளிய)</span></span></div>
+        <div class="verse-original">வினையோட விடுங் கதிர்வேல் மறவேன்<br>மனையோடு தியங்கி மயங் கிடவோ<br>கனையோ டருவித் துறையோடு பசுந்<br>தினையோ டிதணோடு திரிந் தவனே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">41</span><span class="verse-theme">To attain an eternal body <span class="ta">(நித்திய தேகம் பெற)</span></span></div>
+        <div class="verse-original">சாகா தெனையே சரணங் களிலே<br>காகா நமனார் கலகஞ் செயுநாள்<br>வாகா முருகா மயில்வா கனனே<br>யோகா சிவஞா னொபதே சிகனே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">42</span><span class="verse-theme">To remain in the state one has reached <span class="ta">(நின்ற நிலை நிற்க)</span></span></div>
+        <div class="verse-original">குறியைக் குறியாது குறித்தறியும்<br>நெறியைத் தனிவோல நிகழ்த் திடலுஞ்<br>செறிவற் றுலகோ டுரைசிந் தையுமற்<br>றறிவற் றறியா மையு மற்றதுவே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">43</span><span class="verse-theme">To become a teacher and grant grace <span class="ta">(ஆசானாகி அனுக்கிரகிக்க)</span></span></div>
+        <div class="verse-original">தூசா மணியுந் துகிலும் புனைவாள்<br>நேசா முருகா நினதன் பருளால்<br>ஆசா நிகளந் துகளா யின்பின்<br>பேசா அநுபூதி பிறந் ததுவே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">44</span><span class="verse-theme">To receive the guru-mantra <span class="ta">(குரு மந்திரம் பெற)</span></span></div>
+        <div class="verse-original">சாடுந் தனிவேல் முருகன் சரணஞ்<br>சூடும் படிதந் ததுசொல் லுமதோ<br>வீடுஞ் சுரர்மா முடிவே தமும்வெங்<br>காடும் புனமுங் கமழுங் கழலே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">45</span><span class="verse-theme">To be honored in learning <span class="ta">(கல்வியிற் சம்பாவிக்க)</span></span></div>
+        <div class="verse-original">கரவா கியகல்வி யுளார் கடைசென்<br>றிரவா வகைமெய்ப் பொருளீ குவையோ<br>குரவா குமரா குலிசா யுதகுஞ்<br>சரவா சிவயோக தயா பரனே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">46</span><span class="verse-theme">To relieve mental distress <span class="ta">(மனவருத்தம் தீர)</span></span></div>
+        <div class="verse-original">எந்தாயுமெனக் கருள்தந்தையுநீ<br>சிந்தா குலமா னவைதீர்த் தெனையாள்<br>கந்தா கதிர்வே லவனே யுமையாள்<br>மைந்தா குமரா மறைநா யகனே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">47</span><span class="verse-theme">To behold the dance of bliss <span class="ta">(ஆனந்த நடனம் காண)</span></span></div>
+        <div class="verse-original">ஆறா றையுநீத் ததன்மேல் நிலையைப்<br>பேறா வடியேன் பெறுமா றுளதோ<br>சீறா வருசூர் சிதைவித் திமையோர்<br>கூறா வுலகங் குளிர்வித் தவனே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">48</span><span class="verse-theme">To see one's true nature <span class="ta">(தற்சொரூபம் காண)</span></span></div>
+        <div class="verse-original">அறிவொன் றறநின் றறிவா ரறிவிற்<br>பிறிவொன் றறநின் றபிரா னலையோ<br>செறிவொன் றறவந் திருளே சிதைய<br>வெறிவென்றவ ரோடுறும் வேலவனே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">49</span><span class="verse-theme">To know oneself <span class="ta">(தன்னை அறிந்து கொள்ள)</span></span></div>
+        <div class="verse-original">தன்னந் தனிநின் றதுதா னறிய<br>இன்னம் மொருவர்க் கிசைவிப் பதுவோ<br>மின்னுங் கதிர்வேல் விகிர்தா நினைவார்<br>கின்னங் களையும் க்ருபைசூழ் சுடரே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">50</span><span class="verse-theme">To cut off desire <span class="ta">(அவா அறுக்க)</span></span></div>
+        <div class="verse-original">மதிகெட்டறவா டிமயங் கியறக்<br>கதிகெட்டவமே கெடவோ கடவேன்<br>நதிபுத்திர ஞான சுகா திபவத்<br>திதிபுத் திரர்வீ றடுசே வகனே.</div>
+      </div>
+      <div class="verse">
+        <div class="verse-head"><span class="verse-num">51</span><span class="verse-theme">To grant vision as one wishes <span class="ta">(நினைத்தபடி தரிசனம் கொடுக்க)</span></span></div>
+        <div class="verse-original">உருவா யருவா யுளதா யிலதாய்<br>மருவாய் மலராய் மணியா யொளியாய்<br>க்கருவா யுயிராய்க் கதியாய்<br>விதியாய்க்குருவாய் வருவா யருள்வாய் குகனே.</div>
+      </div>
+
+      <p class="closing-line">கந்தர் அநுபூதி முற்றிற்று ✧ Kanthar Anuboothi ends here</p>
+
+      <div class="kavasam-divider">
+        <span class="line"></span>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2 L14 10 L12 22 L10 10 Z" fill="#c89b3c"/></svg>
+        <span class="line right"></span>
+      </div>
+      <p class="toc-note">
+        A note on translation: this text is deliberately dense and layered — many verses turn on wordplay
+        and mystical double meanings that even traditional commentators read differently. Rather than risk
+        a flattened or inaccurate line-by-line English rendering, this page keeps the verified Tamil text
+        and the traditional theme for each verse. Happy to add a careful verse-by-verse commentary as a
+        separate section if that would be useful.
       </p>
     </div>
   </main>

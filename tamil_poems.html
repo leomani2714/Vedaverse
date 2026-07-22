@@ -5,22 +5,122 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Tamil Devotional Poems | Vedic Corner</title>
   <meta name="description" content="A collection of Tamil devotional hymns and poems — Thiruvasagam, Kantha Sasti Kavasam, Rudram, and more.">
-  <link rel="icon" type="image/png" href="logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500&family=Playfair+Display:wght@600;700;800&family=Noto+Sans+Tamil:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/theme.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#1a0e08; --ink-deep:#120906;
+      --maroon:#5c1a1f; --maroon-bright:#7a2530;
+      --vel-gold:#c89b3c; --gold-bright:#e6c877;
+      --peacock:#1e5c52; --peacock-bright:#2f8a7a;
+      --parchment:#f4e8cd; --parchment-2:#eeddb9; --parchment-ink:#2c1a10;
+      --ivory:#f6efdd; --rule: rgba(200,155,60,0.35);
+      --shadow: 0 18px 40px -20px rgba(0,0,0,0.55);
+    }
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{animation:none !important; transition:none !important;} }
+
+    body{
+      margin:0;
+      background:
+        radial-gradient(1200px 600px at 50% -10%, rgba(200,155,60,0.10), transparent 60%),
+        linear-gradient(180deg, var(--ink) 0%, var(--ink-deep) 100%);
+      color:var(--ivory); font-family:'Crimson Text', serif; font-size:1.05rem; line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:var(--gold-bright);}
+    a:focus-visible, button:focus-visible{ outline:2px solid var(--gold-bright); outline-offset:3px; }
+    .vc-skip-link{ position:absolute; left:-999px; top:0; background:var(--maroon); color:var(--ivory); padding:0.6rem 1rem; z-index:100; }
+    .vc-skip-link:focus{ left:1rem; top:1rem; }
+
+    .vc-header{ position:sticky; top:0; z-index:20; background:rgba(18,9,6,0.88); backdrop-filter:blur(6px); border-bottom:1px solid var(--rule); }
+    .vc-header-inner{ max-width:1080px; margin:0 auto; padding:0.9rem 1.5rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
+    .vc-brand{ font-family:'Cormorant Garamond', serif; font-weight:700; font-size:1.25rem; color:var(--gold-bright); text-decoration:none; letter-spacing:0.02em; display:flex; align-items:center; gap:0.5rem; }
+    .vc-brand svg{ width:20px; height:20px; }
+    .vc-nav{ display:flex; gap:1.4rem; flex-wrap:wrap; }
+    .vc-nav a{ text-decoration:none; color:var(--ivory); font-size:0.92rem; letter-spacing:0.03em; opacity:0.85; border-bottom:1px solid transparent; padding-bottom:2px; transition:opacity 0.2s, border-color 0.2s; }
+    .vc-nav a:hover, .vc-nav a[aria-current="page"]{ opacity:1; border-color:var(--vel-gold); }
+
+    .vc-page-hero{ position:relative; text-align:center; padding:4.2rem 1.5rem 3rem; overflow:hidden; border-bottom:1px solid var(--rule); }
+    .vc-page-hero::before{
+      content:""; position:absolute; inset:0;
+      background:
+        repeating-linear-gradient(45deg, transparent 0 26px, rgba(200,155,60,0.035) 26px 27px),
+        repeating-linear-gradient(-45deg, transparent 0 26px, rgba(200,155,60,0.035) 26px 27px);
+      pointer-events:none;
+    }
+    .scroll-mark{ position:relative; margin:0 auto 1rem; width:42px; height:42px; }
+    .scroll-mark svg{ width:100%; height:100%; filter:drop-shadow(0 0 10px rgba(230,200,119,0.35)); }
+
+    .vc-page-title{ position:relative; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:clamp(2rem, 5vw, 3rem); color:var(--gold-bright); margin:0 0 0.4rem; letter-spacing:0.01em; }
+    .vc-page-sub{ position:relative; max-width:620px; margin:0.9rem auto 0; color:var(--ivory); opacity:0.82; font-style:italic; font-size:1.02rem; line-height:1.7; }
+
+    .vc-container{ max-width:1080px; margin:0 auto; padding:3rem 1.5rem 5rem; }
+
+    .vc-card-grid{
+      display:grid; grid-template-columns:repeat(auto-fill, minmax(270px, 1fr)); gap:1.1rem;
+    }
+
+    .vc-list-card{
+      position:relative;
+      display:flex; flex-direction:column; gap:0.55rem;
+      background:linear-gradient(180deg, var(--parchment) 0%, var(--parchment-2) 100%);
+      border:1px solid rgba(92,26,31,0.14);
+      border-radius:6px;
+      box-shadow:var(--shadow);
+      padding:1.5rem 1.5rem 1.4rem;
+      text-decoration:none;
+      color:var(--parchment-ink);
+      transition:transform 0.22s ease, box-shadow 0.22s ease;
+    }
+    .vc-list-card::before{
+      content:""; position:absolute; top:-1px; left:1.5rem;
+      width:26px; height:5px; background:var(--maroon); border-radius:0 0 5px 5px;
+    }
+    .vc-list-card:hover, .vc-list-card:focus-visible{
+      transform:translateY(-3px);
+      box-shadow:0 24px 48px -20px rgba(0,0,0,0.62);
+    }
+    .vc-list-card h3{
+      margin:0.3rem 0 0; font-family:'Cormorant Garamond', serif; font-weight:700;
+      font-size:1.35rem; color:var(--maroon); display:flex; align-items:center; gap:0.4rem;
+    }
+    .vc-list-card .ext-icon{ width:0.8em; height:0.8em; opacity:0.55; flex-shrink:0; }
+    .vc-list-card p{
+      margin:0; font-size:0.96rem; line-height:1.55; color:var(--parchment-ink); opacity:0.85;
+    }
+    .vc-tag{
+      margin-top:0.4rem; align-self:flex-start;
+      font-family:'Noto Sans Tamil', serif; font-size:0.82rem;
+      color:var(--maroon); background:rgba(92,26,31,0.08);
+      border:1px solid rgba(92,26,31,0.2); border-radius:999px; padding:0.28rem 0.85rem;
+    }
+
+    .vc-footer{ text-align:center; padding:2.6rem 1.5rem 3rem; border-top:1px solid var(--rule); color:var(--ivory); opacity:0.7; font-size:0.85rem; }
+    .vc-footer-ornament{ font-family:'Cormorant Garamond', serif; color:var(--gold-bright); letter-spacing:0.25em; font-size:0.85rem; margin-bottom:0.7rem; opacity:0.9; }
+
+    @media (max-width:560px){
+      .vc-page-hero{ padding:3rem 1.2rem 2.4rem; }
+      .vc-header-inner{ justify-content:center; text-align:center; }
+      .vc-container{ padding:2.4rem 1.2rem 4rem; }
+    }
+  </style>
 </head>
 <body class="vc-body">
   <a href="#main" class="vc-skip-link">Skip to content</a>
 
   <header class="vc-header">
     <div class="vc-header-inner">
-      <a class="vc-brand" href="index.html"><img src="logo.png" alt=""> Vedic Corner</a>
+      <a class="vc-brand" href="index.html">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2 L14 10 L12 22 L10 10 Z" fill="#c89b3c"/><path d="M12 2 L14 10 L10 10 Z" fill="#e6c877"/></svg>
+        Vedic Corner
+      </a>
       <nav class="vc-nav" aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="verse.html">Daily Verse</a>
-        <a href="tamil_poems.html">Tamil Poems</a>
+        <a href="tamil_poems.html" aria-current="page">Tamil Poems</a>
         <a href="search.html">Search</a>
       </nav>
     </div>
@@ -28,9 +128,18 @@
 
   <main id="main">
     <section class="vc-page-hero">
-      <div class="vc-om">📜</div>
+      <div class="scroll-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="none">
+          <rect x="10" y="8" width="28" height="32" rx="2" fill="#c89b3c" opacity="0.15" stroke="#c89b3c" stroke-width="1.2"/>
+          <path d="M15 16h18M15 22h18M15 28h12" stroke="#c89b3c" stroke-width="1.2" stroke-linecap="round"/>
+          <circle cx="24" cy="24" r="22.5" stroke="#c89b3c" stroke-width="0.6" opacity="0.4"/>
+        </svg>
+      </div>
       <h1 class="vc-page-title">Tamil Devotional Poems</h1>
-      <p class="vc-page-sub">A collection of Tamil hymns of surrender, protection, and praise — chanted for centuries across Shaiva and Murugan devotional traditions.</p>
+      <p class="vc-page-sub">
+        A collection of Tamil hymns of surrender, protection, and praise — chanted for centuries
+        across Shaiva and Murugan devotional traditions.
+      </p>
     </section>
 
     <div class="vc-container">
@@ -40,38 +149,53 @@
           <p>Shivapuranam — Saint Manikkavasagar's verses of surrender to Lord Shiva.</p>
           <span class="vc-tag">திருவாசகம்</span>
         </a>
+
         <a class="vc-list-card" href="kantha_sasti_kavasam.html">
           <h3>Kantha Sasti Kavasam</h3>
           <p>The complete 238-line hymn of protection to Lord Muruga, recited during Skanda Sashti.</p>
           <span class="vc-tag">கந்த சஷ்டி கவசம் — முழு பாடல்</span>
         </a>
+
         <a class="vc-list-card" href="kanthar_anuboothi.html">
           <h3>Kanthar Anuboothi</h3>
-          <p>Verses of inner experience and devotion to Lord Muruga.</p>
+          <p>Arunagirinathar's 51 verses of inner experience and surrender to Lord Muruga.</p>
           <span class="vc-tag">கந்தர் அனுபூதி</span>
         </a>
+
         <a class="vc-list-card" href="https://leomani2714.github.io/Rudram/" target="_blank" rel="noopener">
-          <h3>Sri Rudram</h3>
+          <h3>Sri Rudram
+            <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H9M17 7V15"/></svg>
+          </h3>
           <p>The Vedic hymn to Lord Shiva, Namakam and Chamakam — full recitation.</p>
           <span class="vc-tag">ஶ்ரீ ருத்ரம்</span>
         </a>
+
         <a class="vc-list-card" href="shiva-panchakshara.html">
           <h3>Shiva Panchakshara Stotram</h3>
           <p>Adi Shankara's hymn of the five syllables — "Namah Shivaya."</p>
           <span class="vc-tag">சிவ பஞ்சாக்ஷர ஸ்தோத்ரம்</span>
         </a>
+
         <a class="vc-list-card" href="https://leomani2714.github.io/Soundarya-lahari/" target="_blank" rel="noopener">
-          <h3>Soundarya Lahari</h3>
+          <h3>Soundarya Lahari
+            <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H9M17 7V15"/></svg>
+          </h3>
           <p>Adi Shankara's hymn on the wave of beauty of the Divine Mother.</p>
           <span class="vc-tag">ஸௌந்தர்ய லஹரி</span>
         </a>
+
         <a class="vc-list-card" href="https://leomani2714.github.io/Kanagathara-Stortram/" target="_blank" rel="noopener">
-          <h3>Kanakadhara Stotram</h3>
+          <h3>Kanakadhara Stotram
+            <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H9M17 7V15"/></svg>
+          </h3>
           <p>Adi Shankara's hymn invoking the grace and abundance of Goddess Lakshmi.</p>
           <span class="vc-tag">கனகதாரா ஸ்தோத்ரம்</span>
         </a>
+
         <a class="vc-list-card" href="https://leomani2714.github.io/siva_vakkiyam" target="_blank" rel="noopener">
-          <h3>Siva Vakkiyam</h3>
+          <h3>Siva Vakkiyam
+            <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H9M17 7V15"/></svg>
+          </h3>
           <p>Siddhar Sivavakkiyar's philosophical Tamil verses questioning ritual and pointing to inner truth.</p>
           <span class="vc-tag">சிவவாக்கியம்</span>
         </a>

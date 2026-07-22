@@ -5,39 +5,131 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Search Scriptures — Vedic Corner</title>
   <meta name="description" content="Search verses, chants, and hymns across Vedic Corner.">
-  <link rel="icon" type="image/png" href="logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500&family=Playfair+Display:wght@600;700;800&family=Noto+Sans+Tamil:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/theme.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    .vc-search-bar {
-      display: flex;
-      gap: 0.6rem;
-      max-width: 640px;
-      margin: 0 auto 1rem;
+    :root{
+      --ink:#1a0e08; --ink-deep:#120906;
+      --maroon:#5c1a1f; --maroon-bright:#7a2530;
+      --vel-gold:#c89b3c; --gold-bright:#e6c877;
+      --peacock:#1e5c52; --peacock-bright:#2f8a7a;
+      --parchment:#f4e8cd; --parchment-2:#eeddb9; --parchment-ink:#2c1a10;
+      --ivory:#f6efdd; --rule: rgba(200,155,60,0.35);
+      --shadow: 0 18px 40px -20px rgba(0,0,0,0.55);
     }
-    .vc-search-input {
-      flex: 1;
-      font-family: 'Crimson Text', serif;
-      font-size: 1.1rem;
-      padding: 0.8rem 1.1rem;
-      border-radius: 999px;
-      border: 1px solid rgba(212,175,55,0.4);
-      background: rgba(255,255,255,0.8);
-      outline: none;
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{animation:none !important; transition:none !important;} }
+
+    body{
+      margin:0;
+      background:
+        radial-gradient(1200px 600px at 50% -10%, rgba(200,155,60,0.10), transparent 60%),
+        linear-gradient(180deg, var(--ink) 0%, var(--ink-deep) 100%);
+      color:var(--ivory); font-family:'Crimson Text', serif; font-size:1.05rem; line-height:1.6;
+      -webkit-font-smoothing:antialiased;
     }
-    .vc-search-input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px var(--glow); }
-    .vc-filters { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 2rem; }
-    .vc-filter-chip {
-      font-size: 0.85rem; padding: 0.35rem 0.9rem; border-radius: 999px;
-      border: 1px solid rgba(139,155,122,0.4); background: transparent; color: var(--deep-sage);
-      cursor: pointer; font-family: 'Lora', serif;
+    a{ color:var(--gold-bright); }
+    a:focus-visible, button:focus-visible, input:focus-visible{ outline:2px solid var(--gold-bright); outline-offset:3px; }
+    .vc-skip-link{ position:absolute; left:-999px; top:0; background:var(--maroon); color:var(--ivory); padding:0.6rem 1rem; z-index:100; }
+    .vc-skip-link:focus{ left:1rem; top:1rem; }
+
+    .vc-header{ position:sticky; top:0; z-index:20; background:rgba(18,9,6,0.88); backdrop-filter:blur(6px); border-bottom:1px solid var(--rule); }
+    .vc-header-inner{ max-width:1080px; margin:0 auto; padding:0.9rem 1.5rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
+    .vc-brand{ font-family:'Cormorant Garamond', serif; font-weight:700; font-size:1.25rem; color:var(--gold-bright); text-decoration:none; letter-spacing:0.02em; display:flex; align-items:center; gap:0.5rem; }
+    .vc-brand svg{ width:20px; height:20px; }
+    .vc-nav{ display:flex; gap:1.4rem; flex-wrap:wrap; }
+    .vc-nav a{ text-decoration:none; color:var(--ivory); font-size:0.92rem; letter-spacing:0.03em; opacity:0.85; border-bottom:1px solid transparent; padding-bottom:2px; transition:opacity 0.2s, border-color 0.2s; }
+    .vc-nav a:hover, .vc-nav a[aria-current="page"]{ opacity:1; border-color:var(--vel-gold); }
+
+    .vc-page-hero{ position:relative; text-align:center; padding:4.2rem 1.5rem 3rem; overflow:hidden; border-bottom:1px solid var(--rule); }
+    .vc-page-hero::before{
+      content:""; position:absolute; inset:0;
+      background:
+        repeating-linear-gradient(45deg, transparent 0 26px, rgba(200,155,60,0.035) 26px 27px),
+        repeating-linear-gradient(-45deg, transparent 0 26px, rgba(200,155,60,0.035) 26px 27px);
+      pointer-events:none;
     }
-    .vc-filter-chip.active { background: var(--sage); color: #fff; border-color: var(--sage); }
-    .vc-result-count { text-align: center; color: var(--deep-sage); margin-bottom: 1.5rem; font-size: 0.95rem; }
-    .vc-empty { text-align: center; color: var(--deep-sage); padding: 3rem 1rem; }
-    mark { background: var(--light-gold); color: var(--text-dark); border-radius: 3px; padding: 0 2px; }
+    .search-mark{ position:relative; margin:0 auto 1rem; width:42px; height:42px; }
+    .search-mark svg{ width:100%; height:100%; filter:drop-shadow(0 0 10px rgba(230,200,119,0.35)); }
+
+    .vc-page-title{ position:relative; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:clamp(2rem, 5vw, 3rem); color:var(--gold-bright); margin:0 0 0.4rem; letter-spacing:0.01em; }
+    .vc-page-sub{ position:relative; max-width:640px; margin:0.9rem auto 0; color:var(--ivory); opacity:0.82; font-style:italic; font-size:1.02rem; line-height:1.7; }
+
+    .vc-container{ max-width:760px; margin:0 auto; padding:2.8rem 1.5rem 5rem; }
+
+    /* search bar */
+    .vc-search-bar{ display:flex; gap:0.6rem; max-width:640px; margin:0 auto 1.4rem; }
+    .vc-search-input{
+      flex:1; font-family:'Crimson Text', serif; font-size:1.1rem;
+      padding:0.85rem 1.3rem; border-radius:999px;
+      border:1px solid var(--rule);
+      background:rgba(244,232,205,0.95); color:var(--parchment-ink);
+      outline:none; box-shadow:var(--shadow);
+      transition:border-color 0.2s, box-shadow 0.2s;
+    }
+    .vc-search-input::placeholder{ color:rgba(44,26,16,0.5); font-style:italic; }
+    .vc-search-input:focus{ border-color:var(--vel-gold); box-shadow:0 0 0 3px rgba(200,155,60,0.28), var(--shadow); }
+
+    /* filter chips */
+    .vc-filters{ display:flex; flex-wrap:wrap; gap:0.5rem; justify-content:center; margin-bottom:2rem; }
+    .vc-filter-chip{
+      font-size:0.85rem; padding:0.4rem 1rem; border-radius:999px;
+      border:1px solid var(--rule); background:rgba(200,155,60,0.06); color:var(--ivory);
+      cursor:pointer; font-family:'Cormorant Garamond', serif; letter-spacing:0.02em;
+      transition:background 0.2s, border-color 0.2s, color 0.2s;
+    }
+    .vc-filter-chip:hover{ border-color:var(--vel-gold); }
+    .vc-filter-chip.active{ background:var(--maroon); border-color:var(--maroon-bright); color:var(--gold-bright); }
+
+    .vc-result-count{ text-align:center; color:var(--ivory); opacity:0.65; margin-bottom:1.6rem; font-size:0.92rem; letter-spacing:0.02em; }
+    .vc-empty{
+      text-align:center; color:var(--ivory); opacity:0.75; padding:3rem 1.5rem;
+      font-style:italic; border:1px dashed var(--rule); border-radius:8px;
+    }
+
+    mark{ background:rgba(200,155,60,0.55); color:var(--parchment-ink); border-radius:3px; padding:0 3px; }
+
+    /* result cards, reuses the site's parchment-card language */
+    .result-link{ text-decoration:none; color:inherit; display:block; }
+    .result-card{
+      position:relative;
+      background:linear-gradient(180deg, var(--parchment) 0%, var(--parchment-2) 100%);
+      border:1px solid rgba(92,26,31,0.14);
+      border-radius:6px;
+      box-shadow:var(--shadow);
+      padding:1.2rem 1.6rem 1.3rem;
+      margin-bottom:1rem;
+      color:var(--parchment-ink);
+      transition:transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .result-card::before{
+      content:""; position:absolute; top:-1px; left:1.4rem;
+      width:26px; height:5px; background:var(--maroon); border-radius:0 0 5px 5px;
+    }
+    .result-link:hover .result-card, .result-link:focus-visible .result-card{
+      transform:translateY(-2px);
+      box-shadow:0 22px 44px -20px rgba(0,0,0,0.6);
+    }
+    .result-collection{
+      font-family:'Cormorant Garamond', serif; font-weight:700; font-style:italic;
+      color:var(--maroon); font-size:0.88rem; margin-bottom:0.55rem; letter-spacing:0.02em;
+    }
+    .result-original{
+      font-family:'Noto Sans Tamil', serif; font-size:1.12rem; line-height:1.85; margin-bottom:0.5rem;
+    }
+    .result-meaning{ font-size:0.96rem; line-height:1.6; opacity:0.85; font-style:italic; }
+
+    .vc-footer{ text-align:center; padding:2.6rem 1.5rem 3rem; border-top:1px solid var(--rule); color:var(--ivory); opacity:0.7; font-size:0.85rem; }
+    .vc-footer-ornament{ font-family:'Cormorant Garamond', serif; color:var(--gold-bright); letter-spacing:0.25em; font-size:0.85rem; margin-bottom:0.7rem; opacity:0.9; }
+
+    @media (max-width:560px){
+      .vc-page-hero{ padding:3rem 1.2rem 2.4rem; }
+      .vc-header-inner{ justify-content:center; text-align:center; }
+      .vc-container{ padding:2.2rem 1.2rem 4rem; }
+      .result-card{ padding:1.05rem 1.15rem 1.15rem; }
+    }
   </style>
 </head>
 <body class="vc-body">
@@ -45,21 +137,33 @@
 
   <header class="vc-header">
     <div class="vc-header-inner">
-      <a class="vc-brand" href="index.html"><img src="logo.png" alt=""> Vedic Corner</a>
+      <a class="vc-brand" href="index.html">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2 L14 10 L12 22 L10 10 Z" fill="#c89b3c"/><path d="M12 2 L14 10 L10 10 Z" fill="#e6c877"/></svg>
+        Vedic Corner
+      </a>
       <nav class="vc-nav" aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="verse.html">Daily Verse</a>
         <a href="tamil_poems.html">Tamil Poems</a>
-        <a href="search.html">Search</a>
+        <a href="search.html" aria-current="page">Search</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
     <section class="vc-page-hero">
-      <div class="vc-om">🔍</div>
+      <div class="search-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="none">
+          <circle cx="21" cy="21" r="13" stroke="#c89b3c" stroke-width="2.2"/>
+          <path d="M30.5 30.5 L40 40" stroke="#e6c877" stroke-width="2.6" stroke-linecap="round"/>
+          <circle cx="24" cy="24" r="22.5" stroke="#c89b3c" stroke-width="0.6" opacity="0.4"/>
+        </svg>
+      </div>
       <h1 class="vc-page-title">Search Scriptures</h1>
-      <p class="vc-page-sub">Search across the Bhagavad Gita, Shiva Panchakshara, Kantha Sasti Kavasam, Thiruvasagam, and Kanthar Anuboothi — by Sanskrit/Tamil text or English meaning.</p>
+      <p class="vc-page-sub">
+        Search across the Bhagavad Gita, Shiva Panchakshara, Kantha Sasti Kavasam, Thiruvasagam,
+        and Kanthar Anuboothi — by Sanskrit/Tamil text or English meaning.
+      </p>
     </section>
 
     <div class="vc-container">
@@ -131,11 +235,11 @@
       }
 
       resultsEl.innerHTML = matches.slice(0, 60).map(v => `
-        <a href="${v.url}" style="text-decoration:none;color:inherit;">
-          <div class="vc-verse">
-            <div class="vc-verse-index">${v.collection}${v.collectionTa ? " · " + v.collectionTa : ""}</div>
-            <div class="vc-verse-original vc-tamil">${highlight(v.text, terms)}</div>
-            <div class="vc-verse-meaning">${highlight(v.meaning, terms)}</div>
+        <a class="result-link" href="${v.url}">
+          <div class="result-card">
+            <div class="result-collection">${v.collection}${v.collectionTa ? " · " + v.collectionTa : ""}</div>
+            <div class="result-original">${highlight(v.text, terms)}</div>
+            <div class="result-meaning">${highlight(v.meaning, terms)}</div>
           </div>
         </a>
       `).join("");

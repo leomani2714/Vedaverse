@@ -5,79 +5,148 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Daily Verse — Bhagavad Gita | Vedic Corner</title>
   <meta name="description" content="A new Bhagavad Gita verse each day, with Sanskrit text and meaning.">
-  <link rel="icon" type="image/png" href="logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500&family=Playfair+Display:wght@600;700;800&family=Noto+Sans+Tamil:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/theme.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Noto+Serif+Devanagari:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
-    .verse-hero {
-      background: linear-gradient(rgba(20,15,10,0.35), rgba(20,15,10,0.55)), url("krishna-arjuna.jpg.png") no-repeat center 20%;
-      background-size: cover;
-      min-height: 62vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      color: #fff;
-      text-align: center;
-      padding: 3rem 1.5rem;
+    :root{
+      --ink:#1a0e08; --ink-deep:#120906;
+      --maroon:#5c1a1f; --maroon-bright:#7a2530;
+      --vel-gold:#c89b3c; --gold-bright:#e6c877;
+      --ivory:#f6efdd; --rule: rgba(200,155,60,0.35);
+      --shadow: 0 18px 40px -20px rgba(0,0,0,0.55);
     }
-    .verse-hero-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 4.5vw, 3rem);
-      font-weight: 700;
-      text-shadow: 0 3px 12px rgba(0,0,0,0.6);
-      margin-bottom: 1.5rem;
-      max-width: 760px;
+    *{box-sizing:border-box;}
+    @media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important;} }
+
+    body{
+      margin:0; background:var(--ink); color:var(--ivory);
+      font-family:'Crimson Text', serif; font-size:1.05rem; line-height:1.6;
+      -webkit-font-smoothing:antialiased;
     }
-    .verse-box {
-      background: rgba(15, 12, 10, 0.62);
-      backdrop-filter: blur(4px);
-      border: 1px solid rgba(212,175,55,0.4);
-      border-radius: 16px;
-      padding: 2rem 2.2rem;
-      max-width: 640px;
+    a{ color:var(--gold-bright); }
+    a:focus-visible, button:focus-visible{ outline:2px solid var(--gold-bright); outline-offset:3px; }
+    .vc-skip-link{ position:absolute; left:-999px; top:0; background:var(--maroon); color:var(--ivory); padding:0.6rem 1rem; z-index:100; }
+    .vc-skip-link:focus{ left:1rem; top:1rem; }
+
+    .vc-header{ position:sticky; top:0; z-index:20; background:rgba(18,9,6,0.72); backdrop-filter:blur(6px); border-bottom:1px solid var(--rule); }
+    .vc-header-inner{ max-width:1080px; margin:0 auto; padding:0.9rem 1.5rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
+    .vc-brand{ font-family:'Cormorant Garamond', serif; font-weight:700; font-size:1.25rem; color:var(--gold-bright); text-decoration:none; letter-spacing:0.02em; display:flex; align-items:center; gap:0.5rem; }
+    .vc-brand svg{ width:20px; height:20px; }
+    .vc-nav{ display:flex; gap:1.4rem; flex-wrap:wrap; }
+    .vc-nav a{ text-decoration:none; color:var(--ivory); font-size:0.92rem; letter-spacing:0.03em; opacity:0.85; border-bottom:1px solid transparent; padding-bottom:2px; transition:opacity 0.2s, border-color 0.2s; }
+    .vc-nav a:hover, .vc-nav a[aria-current="page"]{ opacity:1; border-color:var(--vel-gold); }
+
+    /* ---------- Hero ---------- */
+    .verse-hero{
+      position:relative;
+      background-color:var(--ink);
+      background-image:
+        linear-gradient(180deg, rgba(18,9,6,0.35) 0%, rgba(18,9,6,0.55) 55%, rgba(18,9,6,0.88) 100%),
+        url("krishna-arjuna.jpg.png");
+      background-repeat:no-repeat;
+      background-position:center 20%;
+      background-size:cover;
+      min-height:74vh;
+      display:flex; align-items:center; justify-content:center; flex-direction:column;
+      text-align:center; padding:3.5rem 1.5rem 3rem;
     }
-    .verse-day-label {
-      font-size: 0.8rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--light-gold);
-      margin-bottom: 0.7rem;
+    .verse-hero-eyebrow{
+      font-family:'Cormorant Garamond', serif; font-weight:600; letter-spacing:0.18em;
+      text-transform:uppercase; font-size:0.82rem; color:var(--gold-bright); opacity:0.85;
+      margin-bottom:0.7rem;
     }
-    .verse-sanskrit {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 0.8rem;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    .verse-hero-title{
+      font-family:'Cormorant Garamond', serif; font-size:clamp(1.9rem, 4.5vw, 3.1rem); font-weight:700;
+      color:var(--ivory); text-shadow:0 3px 16px rgba(0,0,0,0.65);
+      margin:0 0 2rem; max-width:760px; letter-spacing:0.01em;
     }
-    .verse-meaning { font-size: 1.05rem; opacity: 0.95; }
-    .verse-actions { margin-top: 3rem; text-align: center; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    .verse-box{
+      position:relative;
+      background:rgba(18,9,6,0.66); backdrop-filter:blur(5px);
+      border:1px solid var(--rule);
+      border-radius:14px;
+      box-shadow:var(--shadow);
+      padding:2.1rem 2.3rem 2rem;
+      max-width:640px; width:100%;
+    }
+    .verse-box::before{
+      content:""; position:absolute; top:-1px; left:50%; transform:translateX(-50%);
+      width:34px; height:5px; background:var(--vel-gold); border-radius:0 0 6px 6px;
+    }
+    .verse-day-label{
+      font-family:'Cormorant Garamond', serif; font-weight:600;
+      font-size:0.8rem; letter-spacing:0.14em; text-transform:uppercase;
+      color:var(--gold-bright); opacity:0.9; margin-bottom:0.9rem;
+    }
+    .verse-sanskrit{
+      font-family:'Noto Serif Devanagari', serif; font-weight:600;
+      font-size:1.55rem; line-height:1.6; color:var(--ivory);
+      text-shadow:0 2px 10px rgba(0,0,0,0.5);
+      margin-bottom:1rem;
+    }
+    .verse-meaning{ font-size:1.05rem; opacity:0.9; font-style:italic; color:var(--ivory); }
+
+    /* ---------- Actions ---------- */
+    .verse-actions{
+      margin:0 auto; max-width:640px; padding:2.6rem 1.5rem 4.5rem;
+      text-align:center; display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;
+    }
+    .vc-btn{
+      display:inline-flex; align-items:center; gap:0.5rem;
+      font-family:'Cormorant Garamond', serif; font-weight:600; font-size:1.02rem;
+      letter-spacing:0.02em; text-decoration:none; border-radius:999px;
+      padding:0.75rem 1.6rem; transition:transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+    .vc-btn:hover{ transform:translateY(-2px); }
+    .vc-btn-primary{
+      background:linear-gradient(180deg, var(--vel-gold), #b7872f); color:var(--ink-deep);
+      box-shadow:0 14px 28px -12px rgba(200,155,60,0.55);
+    }
+    .vc-btn-primary:hover{ box-shadow:0 18px 34px -12px rgba(200,155,60,0.7); }
+    .vc-btn-outline{
+      background:rgba(200,155,60,0.06); color:var(--gold-bright);
+      border:1px solid var(--rule);
+    }
+    .vc-btn-outline:hover{ border-color:var(--vel-gold); background:rgba(200,155,60,0.12); }
+
+    .vc-footer{ text-align:center; padding:2.6rem 1.5rem 3rem; border-top:1px solid var(--rule); color:var(--ivory); opacity:0.7; font-size:0.85rem; }
+    .vc-footer-ornament{ font-family:'Cormorant Garamond', serif; color:var(--gold-bright); letter-spacing:0.25em; font-size:0.85rem; margin-bottom:0.7rem; opacity:0.9; }
+
+    @media (max-width:560px){
+      .verse-hero{ min-height:68vh; padding:2.6rem 1rem 2.4rem; }
+      .verse-box{ padding:1.6rem 1.4rem 1.6rem; }
+      .verse-sanskrit{ font-size:1.3rem; }
+      .vc-header-inner{ justify-content:center; text-align:center; }
+    }
   </style>
 </head>
 <body class="vc-body">
   <a href="#main" class="vc-skip-link">Skip to content</a>
 
-  <!-- <header class="vc-header">
+  <header class="vc-header">
     <div class="vc-header-inner">
-      <a class="vc-brand" href="index.html"><img src="logo.png" alt=""> Vedic Corner</a>
+      <a class="vc-brand" href="index.html">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2 L14 10 L12 22 L10 10 Z" fill="#c89b3c"/><path d="M12 2 L14 10 L10 10 Z" fill="#e6c877"/></svg>
+        Vedic Corner
+      </a>
       <nav class="vc-nav" aria-label="Primary">
         <a href="index.html">Home</a>
-        <a href="verse.html">Daily Verse</a>
+        <a href="verse.html" aria-current="page">Daily Verse</a>
         <a href="tamil_poems.html">Tamil Poems</a>
         <a href="search.html">Search</a>
       </nav>
     </div>
-  </header> -->
+  </header>
 
   <main id="main">
     <div class="verse-hero">
-      <div class="verse-hero-title">Bhagavad Gita — Krishna's Teachings to Arjuna</div>
+      <div class="verse-hero-eyebrow">Bhagavad Gita</div>
+      <div class="verse-hero-title">Krishna's Teachings to Arjuna</div>
       <div class="verse-box">
         <div class="verse-day-label" id="verseDay"></div>
-        <div class="verse-sanskrit" id="verseText"></div>
+        <div class="verse-sanskrit" id="verseText" lang="sa"></div>
         <div class="verse-meaning" id="verseMeaning"></div>
       </div>
     </div>

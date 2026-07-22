@@ -5,51 +5,220 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Kantha Sasti Kavasam — Full Text | கந்த சஷ்டி கவசம் | Vedic Corner</title>
   <meta name="description" content="The complete Kantha Sasti Kavasam — the full traditional Tamil hymn of protection to Lord Muruga, composed by Devaraya Swamigal.">
-  <link rel="icon" type="image/png" href="logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500&family=Playfair+Display:wght@600;700;800&family=Noto+Sans+Tamil:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/theme.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    .kavasam-meta {
-      display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; margin: 1.2rem 0 2rem;
+    :root{
+      --ink:#1a0e08;
+      --ink-deep:#120906;
+      --maroon:#5c1a1f;
+      --maroon-bright:#7a2530;
+      --vel-gold:#c89b3c;
+      --gold-bright:#e6c877;
+      --peacock:#1e5c52;
+      --peacock-bright:#2f8a7a;
+      --parchment:#f4e8cd;
+      --parchment-2:#eeddb9;
+      --parchment-ink:#2c1a10;
+      --ivory:#f6efdd;
+      --rule: rgba(200,155,60,0.35);
+      --shadow: 0 18px 40px -20px rgba(0,0,0,0.55);
     }
-    .kavasam-meta span {
-      font-size: 0.82rem; color: var(--deep-sage); background: rgba(139,155,122,0.12);
-      border: 1px solid rgba(139,155,122,0.3); border-radius: 999px; padding: 0.3rem 0.9rem;
+
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{animation:none !important; transition:none !important;} }
+
+    body{
+      margin:0;
+      background:
+        radial-gradient(1200px 600px at 50% -10%, rgba(200,155,60,0.10), transparent 60%),
+        linear-gradient(180deg, var(--ink) 0%, var(--ink-deep) 100%);
+      color:var(--ivory);
+      font-family:'Crimson Text', serif;
+      font-size:1.05rem;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
     }
-    .kavasam-section-label {
-      text-align: center; font-family: 'Playfair Display', serif; font-size: 1.1rem;
-      color: var(--rose-deep); margin: 2.5rem 0 1rem; letter-spacing: 0.03em;
+
+    a{color:var(--gold-bright);}
+    a:focus-visible, button:focus-visible{ outline:2px solid var(--gold-bright); outline-offset:3px; }
+
+    .vc-skip-link{
+      position:absolute; left:-999px; top:0; background:var(--maroon); color:var(--ivory);
+      padding:0.6rem 1rem; z-index:100;
     }
-    .kavasam-stanza {
-      background: rgba(255,255,255,0.7);
-      border: 1px solid rgba(212,175,55,0.22);
-      border-radius: 12px;
-      padding: 1.1rem 1.5rem;
-      margin-bottom: 0.9rem;
-      font-family: 'Noto Sans Tamil', serif;
-      font-size: 1.15rem;
-      line-height: 2;
-      text-align: center;
+    .vc-skip-link:focus{ left:1rem; top:1rem; }
+
+    /* ---------- Header ---------- */
+    .vc-header{
+      position:sticky; top:0; z-index:20;
+      background:rgba(18,9,6,0.88);
+      backdrop-filter:blur(6px);
+      border-bottom:1px solid var(--rule);
     }
-    .kavasam-note {
-      max-width: 680px; margin: 0 auto 2rem; text-align: center; color: #5a5a52; font-size: 0.98rem;
+    .vc-header-inner{
+      max-width:1000px; margin:0 auto; padding:0.9rem 1.5rem;
+      display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap;
     }
-    .toc {
-      max-width: 680px; margin: 0 auto 2rem; text-align: center;
-      font-size: 0.9rem; color: var(--deep-sage);
+    .vc-brand{
+      font-family:'Cormorant Garamond', serif; font-weight:700; font-size:1.25rem;
+      color:var(--gold-bright); text-decoration:none; letter-spacing:0.02em;
+      display:flex; align-items:center; gap:0.5rem;
     }
-    .toc a { color: var(--gold); text-decoration: none; margin: 0 0.4rem; }
-    .toc a:hover { text-decoration: underline; }
+    .vc-brand svg{ width:20px; height:20px; }
+    .vc-nav{ display:flex; gap:1.4rem; flex-wrap:wrap; }
+    .vc-nav a{
+      text-decoration:none; color:var(--ivory); font-size:0.92rem; letter-spacing:0.03em;
+      opacity:0.85; border-bottom:1px solid transparent; padding-bottom:2px;
+      transition:opacity 0.2s, border-color 0.2s;
+    }
+    .vc-nav a:hover{ opacity:1; border-color:var(--vel-gold); }
+
+    /* ---------- Hero ---------- */
+    .vc-page-hero{
+      position:relative;
+      text-align:center;
+      padding:4.5rem 1.5rem 3.5rem;
+      overflow:hidden;
+      border-bottom:1px solid var(--rule);
+    }
+    .vc-page-hero::before{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        repeating-linear-gradient(45deg, transparent 0 26px, rgba(200,155,60,0.035) 26px 27px),
+        repeating-linear-gradient(-45deg, transparent 0 26px, rgba(200,155,60,0.035) 26px 27px);
+      pointer-events:none;
+    }
+    .vel-mark{ position:relative; margin:0 auto 1.1rem; width:46px; height:46px; }
+    .vel-mark svg{ width:100%; height:100%; filter:drop-shadow(0 0 10px rgba(230,200,119,0.35)); }
+
+    .vc-page-title{
+      position:relative;
+      font-family:'Noto Sans Tamil', serif; font-weight:700;
+      font-size:clamp(1.9rem, 5vw, 2.9rem);
+      color:var(--gold-bright);
+      margin:0 0 0.35rem;
+      letter-spacing:0.01em;
+    }
+    .vc-page-title .en{
+      display:block; font-family:'Cormorant Garamond', serif; font-weight:600;
+      font-size:0.42em; letter-spacing:0.12em; text-transform:uppercase;
+      color:var(--ivory); opacity:0.75; margin-top:0.4rem;
+    }
+    .vc-page-sub{
+      position:relative;
+      max-width:620px; margin:1.1rem auto 0; color:var(--ivory); opacity:0.82;
+      font-style:italic; font-size:1.02rem; line-height:1.7;
+    }
+
+    .kavasam-meta{
+      position:relative;
+      display:flex; flex-wrap:wrap; gap:0.6rem; justify-content:center; margin:1.6rem 0 0;
+    }
+    .kavasam-meta span{
+      font-family:'Crimson Text', serif; font-size:0.8rem; letter-spacing:0.02em;
+      color:var(--ivory); background:rgba(200,155,60,0.08);
+      border:1px solid var(--rule); border-radius:999px; padding:0.32rem 0.95rem;
+    }
+
+    /* ---------- Divider ornament ---------- */
+    .kavasam-divider{
+      display:flex; align-items:center; justify-content:center; gap:0.8rem;
+      margin:2.6rem 0 1.2rem;
+    }
+    .kavasam-divider .line{
+      height:1px; width:64px;
+      background:linear-gradient(90deg, transparent, var(--vel-gold));
+    }
+    .kavasam-divider .line.right{ background:linear-gradient(90deg, var(--vel-gold), transparent); }
+    .kavasam-divider svg{ width:16px; height:16px; opacity:0.9; }
+
+    .kavasam-section-label{
+      text-align:center; font-family:'Cormorant Garamond', serif; font-weight:700;
+      font-size:1.5rem; color:var(--gold-bright); margin:0; letter-spacing:0.03em;
+    }
+    .kavasam-section-label .ta{ font-family:'Noto Sans Tamil', serif; font-weight:600; }
+
+    /* ---------- Container ---------- */
+    .vc-container{ max-width:760px; margin:0 auto; padding:0 1.5rem 5rem; }
+
+    .kavasam-note{
+      max-width:640px; margin:1.6rem auto 2rem; text-align:center;
+      color:var(--ivory); opacity:0.78; font-size:0.98rem; font-style:italic; line-height:1.75;
+    }
+
+    .toc{
+      max-width:640px; margin:2rem auto 0.5rem; text-align:center;
+      font-family:'Cormorant Garamond', serif; font-size:1rem; letter-spacing:0.04em;
+      color:var(--ivory); opacity:0.9;
+      display:flex; flex-wrap:wrap; justify-content:center; gap:0.4rem 0.9rem;
+    }
+    .toc a{
+      text-decoration:none; color:var(--gold-bright); font-weight:600;
+      border-bottom:1px solid transparent; transition:border-color 0.2s;
+    }
+    .toc a:hover{ border-color:var(--vel-gold); }
+    .toc .sep{ opacity:0.4; }
+
+    /* ---------- Stanza cards ---------- */
+    .kavasam-stanza{
+      position:relative;
+      background:linear-gradient(180deg, var(--parchment) 0%, var(--parchment-2) 100%);
+      border:1px solid rgba(92,26,31,0.14);
+      border-radius:4px;
+      box-shadow:var(--shadow);
+      padding:1.4rem 1.8rem 1.3rem;
+      margin-bottom:1.1rem;
+      font-family:'Noto Sans Tamil', serif;
+      font-size:1.18rem;
+      line-height:2.05;
+      text-align:center;
+      color:var(--parchment-ink);
+    }
+    .kavasam-stanza::before{
+      content:"";
+      position:absolute; top:-1px; left:50%; transform:translateX(-50%);
+      width:34px; height:6px;
+      background:var(--maroon);
+      border-radius:0 0 6px 6px;
+    }
+    .kavasam-stanza br{ content:""; display:block; margin-top:0.15rem; }
+
+    /* ---------- Footer ---------- */
+    .vc-footer{
+      text-align:center; padding:2.6rem 1.5rem 3rem;
+      border-top:1px solid var(--rule);
+      color:var(--ivory); opacity:0.7; font-size:0.85rem;
+    }
+    .vc-footer-ornament{
+      font-family:'Cormorant Garamond', serif; color:var(--gold-bright);
+      letter-spacing:0.25em; font-size:0.85rem; margin-bottom:0.7rem; opacity:0.9;
+    }
+
+    .closing-line{
+      text-align:center; font-family:'Cormorant Garamond', serif; font-weight:600;
+      color:var(--gold-bright); margin-top:2.4rem; letter-spacing:0.04em; font-size:1.1rem;
+    }
+
+    @media (max-width:560px){
+      .vc-page-hero{ padding:3.2rem 1.2rem 2.6rem; }
+      .kavasam-stanza{ padding:1.15rem 1.1rem; font-size:1.08rem; }
+      .vc-header-inner{ justify-content:center; text-align:center; }
+    }
   </style>
 </head>
-<body class="vc-body">
+<body>
   <a href="#main" class="vc-skip-link">Skip to content</a>
 
   <header class="vc-header">
     <div class="vc-header-inner">
-      <a class="vc-brand" href="index.html"><img src="logo.png" alt=""> Vedic Corner</a>
+      <a class="vc-brand" href="index.html">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2 L14 10 L12 22 L10 10 Z" fill="#c89b3c"/><path d="M12 2 L14 10 L10 10 Z" fill="#e6c877"/></svg>
+        Vedic Corner
+      </a>
       <nav class="vc-nav" aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="verse.html">Daily Verse</a>
@@ -61,10 +230,21 @@
 
   <main id="main">
     <section class="vc-page-hero">
-      <div class="vc-om">🔱</div>
-      <h1 class="vc-page-title">Kantha Sasti Kavasam — Full Text</h1>
-      <p class="vc-page-tamil">கந்த சஷ்டி கவசம்</p>
-      <p class="vc-page-sub">The complete traditional hymn of protection to Lord Muruga, composed by Devaraya Swamigal of Tondaimandalam, first recited at Thiruchendur.</p>
+      <div class="vel-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="none">
+          <path d="M24 3 L29 20 L24 45 L19 20 Z" fill="#c89b3c"/>
+          <path d="M24 3 L29 20 L24 22 Z" fill="#e6c877"/>
+          <circle cx="24" cy="24" r="22.5" stroke="#c89b3c" stroke-width="0.6" opacity="0.4"/>
+        </svg>
+      </div>
+      <h1 class="vc-page-title">
+        கந்த சஷ்டி கவசம்
+        <span class="en">Kantha Sasti Kavasam · Full Text</span>
+      </h1>
+      <p class="vc-page-sub">
+        The complete traditional hymn of protection to Lord Muruga, composed by Devaraya Swamigal
+        of Tondaimandalam, first recited at Thiruchendur.
+      </p>
       <div class="kavasam-meta">
         <span>✍️ Devaraya Swamigal, 1857</span>
         <span>📍 Thiruchendur</span>
@@ -80,14 +260,20 @@
         of the body and every hour of the day, and closes with verses of surrender and praise.
       </p>
 
-      <div class="toc">
-        <a href="#kaappu">Kaappu</a> ·
-        <a href="#dhyanam">Invocation</a> ·
-        <a href="#kavasam">The Kavasam</a> ·
+      <nav class="toc" aria-label="Sections">
+        <a href="#kaappu">Kaappu</a><span class="sep">·</span>
+        <a href="#dhyanam">Invocation</a><span class="sep">·</span>
+        <a href="#kavasam">The Kavasam</a><span class="sep">·</span>
         <a href="#end">Ending</a>
-      </div>
+      </nav>
 
-      <h2 id="kaappu" class="kavasam-section-label">காப்பு — Kaappu</h2>
+      <div class="kavasam-divider">
+        <span class="line"></span>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2 L14 10 L12 22 L10 10 Z" fill="#c89b3c"/></svg>
+        <span class="line right"></span>
+      </div>
+      <h2 id="kaappu" class="kavasam-section-label"><span class="ta">காப்பு</span> — Kaappu</h2>
+
       <div class="kavasam-stanza">
         துதிப்போர்க்கு வல்வினைபோம், துன்பம்போம்; நெஞ்சில்<br>
         பதிப்போர்க்குச் செல்வம் பலித்துக் கதித்து ஓங்கும்;<br>
@@ -98,13 +284,19 @@
         அமரர் இடர் தீர அமரம் புரிந்த<br>
         குமரனடி நெஞ்சே குறி.
       </div>
-      <p class="kavasam-note" style="margin-top:-0.5rem;">
+      <p class="kavasam-note" style="margin-top:-0.6rem;">
         Meaning: for those who praise it, powerful past karma and sorrow leave; for those who hold it in
         their heart, wealth and steadiness grow, by the grace of the pure Lord — mind, fix upon the feet
         of Kumara, who waged war to end the suffering of the celestials.
       </p>
 
-      <h2 id="dhyanam" class="kavasam-section-label">கந்த சஷ்டி கவசம் நூல் — Invocation</h2>
+      <div class="kavasam-divider">
+        <span class="line"></span>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2 L14 10 L12 22 L10 10 Z" fill="#c89b3c"/></svg>
+        <span class="line right"></span>
+      </div>
+      <h2 id="dhyanam" class="kavasam-section-label"><span class="ta">கந்த சஷ்டி கவசம் நூல்</span> — Invocation</h2>
+
       <div class="kavasam-stanza">
         சஷ்டியை நோக்கச் சரவண பவனார்<br>
         சிஷ்டருக்குதவும் செங்கதிர் வேலோன்<br>
@@ -155,7 +347,13 @@
         பன்னிரு கண்ணும் பவளச் செவ்வாயும்
       </div>
 
+      <div class="kavasam-divider">
+        <span class="line"></span>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2 L14 10 L12 22 L10 10 Z" fill="#c89b3c"/></svg>
+        <span class="line right"></span>
+      </div>
       <h2 id="kavasam" class="kavasam-section-label">Kavasam — The Armour of Protection</h2>
+
       <div class="kavasam-stanza">
         நன்னெறி நெற்றியில் நவமணிச்சுட்டியும்<br>
         ஈராறு செவியில் இலங்குகுண்டலமும்<br>
@@ -252,7 +450,10 @@
         தாமதம் நீக்கி சதுர்வேல் காக்க
       </div>
 
-      <p class="kavasam-note">The verses below invoke the Vel against fear, illness, and misfortune — asking every affliction to leave the one who recites this with a steady heart.</p>
+      <p class="kavasam-note">
+        The verses below invoke the Vel against fear, illness, and misfortune — asking every affliction
+        to leave the one who recites this with a steady heart.
+      </p>
 
       <div class="kavasam-stanza">
         காக்க காக்க கனகவேல் காக்க<br>
@@ -337,7 +538,10 @@
         மண்ணாள் அரசரும் மகிழ்ந்து உறவாகவும்
       </div>
 
-      <p class="kavasam-note">This section calls upon Muruga by his many names and shrines, thanking him for freeing the celestials from bondage.</p>
+      <p class="kavasam-note">
+        This section calls upon Muruga by his many names and shrines, thanking him for freeing the
+        celestials from bondage.
+      </p>
 
       <div class="kavasam-stanza">
         உன்னைத் துதித்த உன்திரு நாமம்<br>
@@ -375,7 +579,13 @@
         மெத்தமெத் தாக வேலா யுதனார்
       </div>
 
-      <h2 id="end" class="kavasam-section-label">Ending — வாழ்த்து & சரணாகதி</h2>
+      <div class="kavasam-divider">
+        <span class="line"></span>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2 L14 10 L12 22 L10 10 Z" fill="#c89b3c"/></svg>
+        <span class="line right"></span>
+      </div>
+      <h2 id="end" class="kavasam-section-label"><span class="ta">வாழ்த்து & சரணாகதி</span> — Ending</h2>
+
       <div class="kavasam-stanza">
         சித்தி பெற்று அடியேன் சிறப்புடன் வாழ்க<br>
         வாழ்க வாழ்க மயிலோன் வாழ்க<br>
@@ -452,9 +662,7 @@
         சரணம் சரணம் சண்முகா சரணம்!
       </div>
 
-      <p style="text-align:center;font-family:'Playfair Display',serif;color:var(--gold);margin-top:2rem;">
-        சுபம். முருகன் துணை. ✧ ॐ ✧
-      </p>
+      <p class="closing-line">சுபம். முருகன் துணை. ✧ ॐ ✧</p>
     </div>
   </main>
 

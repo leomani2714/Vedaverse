@@ -176,5 +176,42 @@ const VC_CONTENT = [
     text: "உருவா யருவா யுளதா யிலதாய் மருவாய் மலராய் மணியா யொளியாய் க்கருவா யுயிராய்க் கதியாய் விதியாய்க்குருவாய் வருவா யருள்வாய் குகனே.",
     meaning: "Verse 51, the closing verse — 'form and formless, being and non-being... come as my guru and grant me grace, O Guha.'",
     url: "kanthar_anuboothi.html"
+  },
+
+  // ---------- Shankaracharya Works ----------
+  {
+    collection: "Shankaracharya Works",
+    collectionTa: "ஆதிசங்கரர் நூல்கள்",
+    text: "भजगोविन्दं भजगोविन्दं गोविन्दं भजमुद्रिते।",
+    meaning: "Bhaja Govindam — turn your mind toward Govinda, before the hour of death arrives.",
+    url: "shankaracharya_works.html#bhaja-govindam"
+  },
+  {
+    collection: "Shankaracharya Works",
+    collectionTa: "ஆதிசங்கரர் நூல்கள்",
+    text: "विवेकचूडामणि",
+    meaning: "Vivekachudamani — a classic text on discrimination between the Self and the non-Self.",
+    url: "shankaracharya_works.html#vivekachudamani"
+  },
+  {
+    collection: "Shankaracharya Works",
+    collectionTa: "ஆதிசங்கரர் நூல்கள்",
+    text: "आत्मबोध",
+    meaning: "Atma Bodha — a compact teaching on the nature of the Self and the path of realization.",
+    url: "shankaracharya_works.html#atma-bodha"
+  },
+  {
+    collection: "Shankaracharya Works",
+    collectionTa: "ஆதிசங்கரர் நூல்கள்",
+    text: "सौन्दर्यलहरी",
+    meaning: "Soundarya Lahari — a devotional hymn extolling the beauty and grace of the Divine Mother.",
+    url: "shankaracharya_works.html#soundarya-lahari"
+  },
+  {
+    collection: "Shankaracharya Works",
+    collectionTa: "ஆதிசங்கரர் நூல்கள்",
+    text: "भज गोविन्दं भज गोविन्दं",
+    meaning: "Bhaja Govindam — sing the name of Govinda and turn away from pride and forgetfulness.",
+    url: "bhaja_govindam.html"
   }
 ];

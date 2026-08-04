@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shankaracharya Works — Vedic Corner</title>
+  <meta name="description" content="A curated collection of the essential teachings and hymns of Sri Adi Shankaracharya, including Bhaja Govindam and Soundarya Lahari.">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #22140d;
+      --paper: #f8efe0;
+      --paper-2: #efe0c4;
+      --gold: #c89b3c;
+      --sage: #5b6d4f;
+      --maroon: #6b2d2f;
+      --text: #2f2117;
+      --shadow: 0 16px 38px -24px rgba(0,0,0,0.55);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Crimson Text', serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #fdf8ee 0%, #f4e7cd 100%);
+      line-height: 1.8;
+    }
+    a { color: var(--maroon); }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px 64px; }
+    header { padding: 24px 0 16px; border-bottom: 1px solid rgba(200,155,60,0.25); }
+    .brand { display: inline-flex; align-items: center; gap: 10px; font-family: 'Cormorant Garamond', serif; font-size: 1.22rem; font-weight: 700; color: var(--maroon); text-decoration: none; }
+    .brand img { width: 40px; height: 40px; }
+    nav { margin-top: 12px; display: flex; gap: 16px; flex-wrap: wrap; }
+    nav a { text-decoration: none; color: var(--sage); font-weight: 600; }
+    .hero { padding: 40px 0 24px; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 2.75rem); color: var(--maroon); margin: 0 0 8px; }
+    .hero p { max-width: 760px; margin: 0; font-size: 1.06rem; }
+    .intro-card {
+      margin-top: 18px; padding: 18px 20px; border-radius: 14px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.5), rgba(244,231,205,0.7));
+      border: 1px solid rgba(200,155,60,0.2);
+      box-shadow: var(--shadow);
+    }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 24px; }
+    .card {
+      background: linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+      border: 1px solid rgba(107,45,47,0.14);
+      border-radius: 16px; padding: 20px; box-shadow: var(--shadow);
+    }
+    .card h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; margin: 0 0 8px; color: var(--maroon); }
+    .card p { margin: 0; color: var(--text); }
+    .card a { font-weight: 700; }
+    footer { margin-top: 30px; padding-top: 18px; border-top: 1px solid rgba(200,155,60,0.25); color: #675038; font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="index.html"><img src="logo.png" alt=""> Vedic Corner</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="bhaja_govindam.html">Bhaja Govindam</a>
+        <a href="gayatri_mantras.html">Gayatri Mantras</a>
+        <a href="search.html">Search</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1>Shankaracharya Works</h1>
+        <p>These timeless teachings of Sri Adi Shankaracharya guide the seeker from confusion to clarity, from worldly attachment to inner stillness.</p>
+        <div class="intro-card">
+          <strong>Featured theme:</strong> Wisdom, devotion, self-knowledge, and liberation.
+        </div>
+      </section>
+
+      <div class="grid">
+        <article class="card" id="bhaja-govindam">
+          <h2>Bhaja Govindam</h2>
+          <p>A profound devotional text that reminds us to turn the mind toward the Divine before life slips away.</p>
+          <p><a href="bhaja_govindam.html">Open Bhaja Govindam</a></p>
+        </article>
+
+        <article class="card" id="vivekachudamani">
+          <h2>Vivekachudamani</h2>
+          <p>On the crest-jewel of discrimination, this work teaches the seeker how to distinguish the real from the unreal.</p>
+          <p><a href="https://www.speakingtree.in/blog/vivekachudamani-meaning" target="_blank" rel="noopener">Read more</a></p>
+        </article>
+
+        <article class="card" id="atma-bodha">
+          <h2>Atma Bodha</h2>
+          <p>A concise teaching on the nature of the Self, illuminating the path of self-knowledge with simplicity and strength.</p>
+          <p><a href="https://www.hindupedia.com/en/Atma_Bodha" target="_blank" rel="noopener">Read more</a></p>
+        </article>
+
+        <article class="card" id="soundarya-lahari">
+          <h2>Soundarya Lahari</h2>
+          <p>A luminous hymn to Goddess Lalita, celebrated for its beauty, devotion, and spiritual depth.</p>
+          <p><a href="https://leomani2714.github.io/Soundarya-lahari/" target="_blank" rel="noopener">Explore Soundarya Lahari</a></p>
+        </article>
+
+        <article class="card" id="shiva-panchakshara">
+          <h2>Shiva Panchakshara Stotram</h2>
+          <p>A concise and powerful devotional hymn centered on the sacred five-syllable mantra, beloved for its simplicity and depth.</p>
+          <p><a href="shiva-panchakshara.html">Open Shiva Panchakshara Stotram</a></p>
+        </article>
+      </div>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Vedic Corner — Built with care
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

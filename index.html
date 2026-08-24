@@ -805,6 +805,14 @@
             margin-bottom: 1rem;
         }
 
+        img, svg, video, canvas {
+            max-width: 100%;
+        }
+
+        .hero p, .chant p, .card p, .accordion-content {
+            overflow-wrap: anywhere;
+        }
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
             header {
@@ -880,6 +888,22 @@
             .wrap {
                 padding: 0 16px;
             }
+
+            header {
+                padding-top: 1.5rem;
+            }
+
+            .hero, section {
+                padding: 1.5rem;
+            }
+
+            .chant {
+                padding: 1.2rem;
+            }
+
+            footer {
+                padding: 2rem 1rem;
+            }
         }
 
         /* Additional utility styles */
@@ -943,6 +967,7 @@
             font-style: italic;
         }
     </style>
+    <link rel="stylesheet" href="assets/theme.css">
 </head>
 
 <body>
@@ -961,6 +986,8 @@
                 <a href="#chants">Chants</a>
                 <a href="#sacred-verses">Sacred Verses</a>
                 <a href="#learn">Learn</a>
+                <a href="ayyappan.html">Ayyappan</a>
+                <a href="daily_mantra.html">Daily Mantra</a>
                 <!-- <a href="shankaracharya_works.html">Shankaracharya Works</a>
                 <a href="gayatri_mantras.html">Gayatri Mantras</a>
                 <a href="search.html">Search</a>
@@ -978,6 +1005,8 @@
                     <a class="btn btn-outline" href="#chants">Listen to Chants</a>
                     <a class="btn btn-secondary" href="verse.html" target="_blank">Read Daily Verse</a>
                     <a class="btn btn-secondary" href="tamil_poems.html" target="_blank">Tamil Devotional Poems</a>
+                    <a class="btn btn-secondary" href="ayyappan.html">Ayyappan Mantras</a>
+                    <a class="btn btn-secondary" href="daily_mantra.html">Daily Mantra</a>
                     <!-- <a class="btn btn-secondary" href="shiva-panchakshara.html" target="_blank">Shiva Panchakshara
                         Stotram</a>
                     <a class="btn btn-outline" href="shankaracharya_works.html">Shankaracharya Works</a>
@@ -1117,22 +1146,6 @@
                 <h2 id="chantsTitle">Chants & Recordings</h2>
                 <p class="meta">High-quality recitations for daily practice and contemplation.</p>
                 <ul class="audio-list">
-                    <!-- <li>
-                        <div>Gayatri Mantra — Morning Rhythm</div>
-                        <div class="meta">Duration 3:05</div>
-                        <audio controls preload="none">
-                            <source src="audio/gayatri.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                    </li>
-                    <li>
-                        <div>Maha Mrityunjaya Mantra — Healing Chant</div>
-                        <div class="meta">Duration 3:55</div>
-                        <audio controls preload="none">
-                            <source src="audio/mrityunjaya.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                    </li> -->
                 </ul>
                 <div class="resource-links">
                     <a href="gayatri_mantras.html" class="chant-link">

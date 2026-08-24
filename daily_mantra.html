@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daily Puja Mantra Book | Vedic Corner</title>
+  <meta name="description" content="A complete daily puja mantra book with dhyana verses, moola mantras, and gayatris for Ganesha, Shiva, Murugan, Vishnu, Anjaneya, Ayyappa, and Kubera, in English transliteration.">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#14110d;
+      --ink-deep:#0b0a08;
+      --brass:#c68a3d;
+      --brass-light:#e6bb76;
+      --ember:#b3402c;
+      --ivory:#f4ecdb;
+      --sand:#f1e6c9;
+      --sand-deep:#e3cf9c;
+      --basil:#54704e;
+      --text-soft:#6d5c46;
+      --text-softer:#8a7a62;
+      --line:rgba(20,17,13,0.16);
+      --shadow:0 20px 44px -26px rgba(11,10,8,0.55);
+      --display-font:'Cinzel', serif;
+      --head-font:'Cormorant Garamond', serif;
+      --body-font:'Crimson Text', serif;
+    }
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      overflow-x:hidden;
+      color:var(--text-soft);
+      font-family:var(--body-font);
+      background:
+        radial-gradient(ellipse at 50% -10%, rgba(198,138,61,0.07), transparent 46%),
+        linear-gradient(180deg, #fbf5e4, #efe0b9);
+    }
+    a{ color:inherit; }
+    :lang(sa){ font-family:'Noto Sans Devanagari', sans-serif; }
+    :lang(ta){ font-family:'Noto Sans Tamil', sans-serif; }
+
+    .vc-skip-link{ position:absolute; left:-999px; top:0; }
+    .vc-header{ border-bottom:1px solid var(--line); background:var(--ivory); }
+    .vc-header-inner{ display:flex; align-items:center; justify-content:space-between; gap:20px; max-width:1040px; margin:0 auto; padding:18px 28px; }
+    .vc-brand{ display:inline-flex; align-items:center; gap:10px; color:var(--ink); font-family:var(--display-font); font-size:1.1rem; font-weight:600; letter-spacing:0.04em; text-decoration:none; }
+    .vc-brand img{ width:34px; height:34px; }
+    .vc-nav{ display:flex; flex-wrap:wrap; gap:20px; }
+    .vc-nav a{ color:var(--text-soft); font-family:var(--head-font); font-weight:600; font-size:0.98rem; text-decoration:none; border-bottom:1px solid transparent; }
+    .vc-nav a:hover{ color:var(--ember); border-color:var(--ember); }
+
+    .daily-hero{
+      position:relative;
+      overflow:hidden;
+      padding:84px 28px 74px;
+      text-align:center;
+      color:var(--ivory);
+      background:
+        radial-gradient(circle at 50% 18%, rgba(198,138,61,0.20), transparent 42%),
+        linear-gradient(160deg, var(--ink) 0%, #241a10 60%, var(--ink-deep) 100%);
+    }
+    .daily-hero::before{
+      content:'';
+      position:absolute; inset:0;
+      background-image:repeating-linear-gradient(90deg, rgba(244,236,219,0.035) 0 1px, transparent 1px 64px);
+      pointer-events:none;
+    }
+    .daily-hero > *{ position:relative; z-index:1; }
+    .flame{ width:30px; height:44px; margin:0 auto 18px; display:block; }
+    .flame .drop{ transform-origin:50% 100%; animation:flicker 3.6s ease-in-out infinite; }
+    @keyframes flicker{
+      0%,100%{ transform:scaleY(1) scaleX(1) rotate(0deg); opacity:1; }
+      35%{ transform:scaleY(1.08) scaleX(0.96) rotate(-1.5deg); opacity:0.92; }
+      65%{ transform:scaleY(0.94) scaleX(1.04) rotate(1.5deg); opacity:1; }
+    }
+    @media (prefers-reduced-motion: reduce){ .flame .drop{ animation:none; } }
+    .daily-eyebrow{ margin:0 0 10px; color:var(--brass-light); font-family:var(--head-font); font-size:0.86rem; font-weight:700; letter-spacing:0.32em; text-transform:uppercase; }
+    .daily-hero h1{ margin:0 0 18px; color:var(--ivory); font-family:var(--display-font); font-weight:600; font-size:clamp(2.1rem, 4.6vw, 3.6rem); letter-spacing:0.02em; line-height:1.18; }
+    .daily-hero p{ max-width:600px; margin:0 auto; color:rgba(244,236,219,0.72); font-size:1.1rem; }
+    .order-strip{ margin:30px auto 0; display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:9px; max-width:680px; font-family:var(--head-font); font-size:0.98rem; font-weight:600; color:var(--brass-light); }
+    .order-strip .bead{ width:5px; height:5px; border-radius:50%; background:var(--ember); display:inline-block; }
+    .order-strip .opt{ color:rgba(244,236,219,0.5); font-weight:500; font-style:italic; }
+
+    .daily-container{ width:min(calc(100% - 2rem), 940px); margin:0 auto; padding:48px 0 76px; }
+
+    .mantra-intro{ padding:28px 30px; background:linear-gradient(160deg, var(--ivory), var(--sand)); border:1px solid var(--line); border-radius:2px; box-shadow:var(--shadow); text-align:center; position:relative; }
+    .mantra-intro::before{ content:''; position:absolute; left:50%; top:0; transform:translate(-50%,-50%); width:34px; height:3px; background:var(--brass); }
+    .mantra-intro h2{ margin:0; color:var(--ink); font-family:var(--display-font); font-weight:600; font-size:1.4rem; letter-spacing:0.01em; }
+    .mantra-intro p{ max-width:640px; margin:10px auto 0; color:var(--text-soft); }
+
+    .deity-group{ margin-top:54px; }
+    .deity-group-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:16px; }
+    .deity-group-head h3{ margin:0; color:var(--ink); font-family:var(--display-font); font-weight:600; font-size:1.3rem; letter-spacing:0.06em; text-transform:uppercase; white-space:nowrap; }
+    .deity-group-head .leaf{ color:var(--basil); font-size:0.9rem; }
+    .deity-group-head .rule{ flex:1; height:1px; background:linear-gradient(90deg, var(--brass), transparent); }
+    .deity-group-head span.tag{ color:var(--text-softer); font-family:var(--body-font); font-style:italic; font-size:0.96rem; white-space:nowrap; }
+    .deity-note{ margin:0 0 16px; padding:12px 16px; background:rgba(198,138,61,0.10); border-left:2px solid var(--brass); color:var(--text-soft); font-size:0.92rem; font-style:italic; }
+
+    .mantra-list{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:18px; }
+    .mantra-card{
+      position:relative;
+      padding:24px 26px 22px;
+      background:linear-gradient(160deg, var(--ivory), var(--sand));
+      border:1px solid var(--line);
+      border-top:2px solid var(--brass);
+      box-shadow:var(--shadow);
+    }
+    .mantra-card .num{
+      position:absolute; top:-13px; right:20px;
+      width:26px; height:26px; border-radius:50%;
+      background:var(--ink);
+      border:1px solid var(--brass);
+      color:var(--brass-light);
+      font-family:var(--head-font); font-weight:700; font-size:0.78rem;
+      display:flex; align-items:center; justify-content:center;
+    }
+    .mantra-card h3{ margin:0 30px 12px 0; color:var(--ember); font-family:var(--head-font); font-weight:700; font-size:1.28rem; }
+    .mantra-text{ color:var(--ink); font-size:1.16rem; font-weight:600; line-height:1.85; overflow-wrap:anywhere; }
+    .mantra-roman{ margin-top:9px; color:var(--basil); font-family:var(--body-font); font-style:italic; overflow-wrap:anywhere; }
+    .mantra-meaning{ margin:10px 0 0; padding-top:10px; border-top:1px dashed var(--line); color:var(--text-soft); font-size:0.95rem; }
+    .mantra-card.wide{ grid-column:1 / -1; }
+
+    .practice{ margin-top:64px; }
+    .practice h2{ margin:0 0 6px; color:var(--ink); font-family:var(--display-font); font-weight:600; font-size:1.7rem; letter-spacing:0.02em; text-align:center; }
+    .practice > p.practice-sub{ max-width:540px; margin:0 auto 24px; color:var(--text-soft); text-align:center; font-size:0.98rem; }
+    .practice-grid{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:14px; }
+    .practice-card{ position:relative; padding:18px 18px 16px; background:var(--ivory); border:1px solid var(--line); border-left:2px solid var(--ember); text-align:left; }
+    .practice-card strong{ display:block; margin-bottom:5px; color:var(--ink); font-family:var(--head-font); font-weight:700; font-size:1.05rem; }
+    .practice-card p{ margin:0; color:var(--text-soft); font-size:0.93rem; }
+
+    .vc-footer{ padding:34px 20px 40px; text-align:center; color:var(--text-softer); font-size:0.92rem; background:var(--ivory); border-top:1px solid var(--line); }
+    .vc-footer-ornament{ margin-bottom:8px; color:var(--brass); letter-spacing:0.3em; }
+
+    @media (max-width: 860px){
+      .mantra-list{ grid-template-columns:1fr; }
+      .mantra-card.wide{ grid-column:auto; }
+    }
+    @media (max-width: 640px){
+      .vc-header-inner{ display:block; padding:16px; }
+      .vc-nav{ margin-top:12px; gap:8px 16px; }
+      .daily-hero{ padding:60px 18px 50px; }
+      .daily-container{ padding:34px 0 50px; }
+      .mantra-intro{ padding:22px 18px; }
+      .mantra-card{ padding:20px 18px 18px; }
+      .deity-group{ margin-top:40px; }
+      .deity-group-head{ flex-wrap:wrap; }
+      .deity-group-head .rule{ display:none; }
+      .practice-grid{ grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+  <a class="vc-skip-link" href="#main">Skip to content</a>
+  <header class="vc-header">
+    <div class="vc-header-inner">
+      <a class="vc-brand" href="index.html"><img src="logo.png" alt=""> Vedic Corner</a>
+      <nav class="vc-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="ayyappan.html">Ayyappan</a>
+        <a href="tamil_poems.html">Tamil Poems</a>
+        <a href="search.html">Search</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="daily-hero" aria-labelledby="page-title">
+      <svg class="flame" viewBox="0 0 30 44" aria-hidden="true">
+        <path d="M15 44c-6 0-9-4.5-9-10 0-6 5-10 6-17 0.5-3 0-8 3-14 3 6 1 8 3 12 3 5 6 9 6 19 0 5.5-3 10-9 10z" fill="none" stroke="#e6bb76" stroke-width="1"/>
+        <path class="drop" d="M15 38c-3.2 0-5-2.4-5-5.6 0-3.6 3-6 3.4-10 0.2-1.6 0-4.4 1.6-7.6 1.6 3.2 0.5 4.4 1.6 6.6 1.7 2.8 3.4 5 3.4 10.6 0 3.2-1.8 6-5 6z" fill="#c68a3d"/>
+      </svg>
+      <p class="daily-eyebrow">Daily Puja Mantra Book</p>
+      <h1 id="page-title">A Complete Daily Practice</h1>
+      <p>English transliteration edition — dhyana verses, moola mantras, and gayatris for seven deities, in the traditional order of daily worship.</p>
+      <div class="order-strip" aria-label="Recommended order of worship">
+        <span>Ganesha</span><span class="bead"></span>
+        <span>Shiva</span><span class="bead"></span>
+        <span>Murugan</span><span class="bead"></span>
+        <span>Vishnu</span><span class="bead"></span>
+        <span>Anjaneya</span><span class="bead"></span>
+        <span>Ayyappa</span><span class="bead"></span>
+        <span class="opt">Kubera</span><span class="bead"></span>
+        <span>Aarti</span><span class="bead"></span>
+        <span>Shanti</span><span class="bead"></span>
+        <span>Namaskaram</span>
+      </div>
+    </section>
+
+    <div class="daily-container">
+      <section aria-labelledby="mantras-title">
+        <div class="mantra-intro">
+          <h2 id="mantras-title">Twenty-two invocations for a complete puja</h2>
+          <p>Read each verse slowly in its recommended order, or select individual deities for a shorter practice. Every mantra below follows the sequence in the Daily Puja Mantra Book.</p>
+        </div>
+
+        <div class="deity-group" id="ganesha">
+          <div class="deity-group-head"><h3>Ganesha</h3><span class="leaf">&#10047;</span><span class="tag">Remover of obstacles</span><div class="rule"></div></div>
+          <div class="mantra-list">
+            <article class="mantra-card wide"><span class="num">01</span>
+              <h3>Ganesha Dhyana</h3>
+              <div class="mantra-text" lang="sa">शुक्लाम्बरधरं विष्णुं शशिवर्णं चतुर्भुजम् ।<br>प्रसन्नवदनं ध्यायेत् सर्वविघ्नोपशान्तये ॥</div>
+              <div class="mantra-roman">Shuklambharadharam Vishnum, Shashivarnam Chaturbhujam<br>Prasanna Vadanam Dhyayet, Sarva Vighnopashantaye</div>
+              <p class="mantra-meaning">Meditate on the Lord clad in white, moon-hued, four-armed, with a serene countenance — for the pacification of all obstacles.</p>
+            </article>
+            <article class="mantra-card"><span class="num">02</span>
+              <h3>Ganesha Moola Mantra</h3>
+              <div class="mantra-text" lang="sa">ॐ गं गणपतये नमः ॥</div>
+              <div class="mantra-roman">Om Gam Ganapataye Namah</div>
+              <p class="mantra-meaning">Salutations to Lord Ganapati, remover of obstacles and lord of new beginnings.</p>
+            </article>
+            <article class="mantra-card"><span class="num">03</span>
+              <h3>Ganesha Gayatri</h3>
+              <div class="mantra-text" lang="sa">ॐ तत्पुरुषाय विद्महे<br>वक्रतुण्डाय धीमहि ।<br>तन्नो दन्तिः प्रचोदयात् ॥</div>
+              <div class="mantra-roman">Om Tatpurushaya Vidmahe, Vakratundaya Dhimahi<br>Tanno Dantih Prachodayat</div>
+              <p class="mantra-meaning">Let us meditate on the Supreme Being; may the curved-trunked Lord illumine our understanding.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="deity-group" id="shiva">
+          <div class="deity-group-head"><h3>Shiva</h3><span class="leaf">&#10047;</span><span class="tag">Source of stillness</span><div class="rule"></div></div>
+          <p class="deity-note">Sri Rudram is traditionally learned with correct Vedic svara and pronunciation from a qualified teacher. The opening verse and Rudra Gayatri below are the portions commonly recited in daily devotion.</p>
+          <div class="mantra-list">
+            <article class="mantra-card wide"><span class="num">04</span>
+              <h3>Sri Rudram — Opening</h3>
+              <div class="mantra-text" lang="sa">ॐ नमस्ते अस्तु भगवन् विश्वेश्वराय महादेवाय ।<br>त्र्यम्बकाय त्रिपुरान्तकाय त्रिकाग्निकालाय कालाग्निरुद्राय ।<br>नीलकण्ठाय मृत्युञ्जयाय सर्वेश्वराय सदाशिवाय श्रीमन्महादेवाय नमः ॥</div>
+              <div class="mantra-roman">Om Namaste Astu Bhagavan, Vishveshvaraya Mahadevaya<br>Tryambakaya Tripurantakaya, Trikagnikalaya Kalagnirudraya<br>Nilakanthaya Mrityunjayaya, Sarveshvaraya Sadashivaya, Shriman Mahadevaya Namah</div>
+              <p class="mantra-meaning">Salutations to you, O Lord of the universe, the great God — three-eyed destroyer of the triple cities, blue-throated conqueror of death, eternal all-lord Sadashiva.</p>
+            </article>
+            <article class="mantra-card"><span class="num">05</span>
+              <h3>Shiva Panchakshara</h3>
+              <div class="mantra-text" lang="sa">ॐ नमः शिवाय ॥</div>
+              <div class="mantra-roman">Om Namah Shivaya</div>
+              <p class="mantra-meaning">Salutations to Shiva, the auspicious one, the source of inner stillness.</p>
+            </article>
+            <article class="mantra-card"><span class="num">06</span>
+              <h3>Rudra Gayatri</h3>
+              <div class="mantra-text" lang="sa">ॐ तत्पुरुषाय विद्महे<br>महादेवाय धीमहि ।<br>तन्नो रुद्रः प्रचोदयात् ॥</div>
+              <div class="mantra-roman">Om Tatpurushaya Vidmahe, Mahadevaya Dhimahi<br>Tanno Rudrah Prachodayat</div>
+              <p class="mantra-meaning">Let us meditate on the Supreme Being; may Lord Rudra illumine our understanding.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="deity-group" id="murugan">
+          <div class="deity-group-head"><h3>Murugan</h3><span class="leaf">&#10047;</span><span class="tag">The six-faced lord</span><div class="rule"></div></div>
+          <div class="mantra-list">
+            <article class="mantra-card"><span class="num">07</span>
+              <h3>Murugan Moola Mantra</h3>
+              <div class="mantra-text" lang="sa">ॐ सरवणभवाय नमः ॥</div>
+              <div class="mantra-roman">Om Saravanabhavaya Namah</div>
+              <p class="mantra-meaning">Salutations to Murugan, born amid the sacred Saravana reeds.</p>
+            </article>
+            <article class="mantra-card"><span class="num">08</span>
+              <h3>Shanmukha Gayatri</h3>
+              <div class="mantra-text" lang="sa">ॐ तत्पुरुषाय विद्महे<br>महासेनाय धीमहि ।<br>तन्नो षण्मुखः प्रचोदयात् ॥</div>
+              <div class="mantra-roman">Om Tatpurushaya Vidmahe, Mahasenaya Dhimahi<br>Tanno Shanmukhah Prachodayat</div>
+              <p class="mantra-meaning">Let us meditate on the Supreme Being; may the six-faced Lord illumine our understanding.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="deity-group" id="vishnu">
+          <div class="deity-group-head"><h3>Vishnu</h3><span class="leaf">&#10047;</span><span class="tag">Sustainer of the worlds</span><div class="rule"></div></div>
+          <div class="mantra-list">
+            <article class="mantra-card wide"><span class="num">09</span>
+              <h3>Vishnu Dhyana</h3>
+              <div class="mantra-text" lang="sa">शान्ताकारं भुजगशयनं पद्मनाभं सुरेशं<br>विश्वाधारं गगनसदृशं मेघवर्णं शुभाङ्गम् ।<br>लक्ष्मीकान्तं कमलनयनं योगिभिर्ध्यानगम्यं<br>वन्दे विष्णुं भवभयहरं सर्वलोकैकनाथम् ॥</div>
+              <div class="mantra-roman">Shantakaram Bhujagashayanam, Padmanabham Suresham<br>Vishvadharam Gaganasadrisham, Meghavarnam Shubhangam<br>Lakshmikantam Kamalanayanam, Yogibhirdhyanagamyam<br>Vande Vishnum Bhavabhayaharam, Sarvalokaikanatham</div>
+              <p class="mantra-meaning">I bow to Vishnu, peaceful of form, reclining on the serpent, lotus-naveled, sustainer of the universe, sky-hued, beloved of Lakshmi, reachable by yogis through meditation, remover of worldly fear, sole lord of all worlds.</p>
+            </article>
+            <article class="mantra-card"><span class="num">10</span>
+              <h3>Vishnu Ashtakshara</h3>
+              <div class="mantra-text" lang="sa">ॐ नमो नारायणाय ॥</div>
+              <div class="mantra-roman">Om Namo Narayanaya</div>
+              <p class="mantra-meaning">Salutations to Narayana, the all-pervading Lord.</p>
+            </article>
+            <article class="mantra-card"><span class="num">11</span>
+              <h3>Vishnu Gayatri</h3>
+              <div class="mantra-text" lang="sa">ॐ नारायणाय विद्महे<br>वासुदेवाय धीमहि ।<br>तन्नो विष्णुः प्रचोदयात् ॥</div>
+              <div class="mantra-roman">Om Narayanaya Vidmahe, Vasudevaya Dhimahi<br>Tanno Vishnuh Prachodayat</div>
+              <p class="mantra-meaning">Let us meditate on Narayana; may Lord Vishnu illumine our understanding.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="deity-group" id="anjaneya">
+          <div class="deity-group-head"><h3>Anjaneya</h3><span class="leaf">&#10047;</span><span class="tag">Courage and devoted service</span><div class="rule"></div></div>
+          <div class="mantra-list">
+            <article class="mantra-card wide"><span class="num">12</span>
+              <h3>Anjaneya Dhyana</h3>
+              <div class="mantra-text" lang="sa">मनोजवं मारुततुल्यवेगं<br>जितेन्द्रियं बुद्धिमतां वरिष्ठम् ।<br>वातात्मजं वानरयूथमुख्यं<br>श्रीरामदूतं शरणं प्रपद्ये ॥</div>
+              <div class="mantra-roman">Manojavam Maruta Tulyavegam, Jitendriyam Buddhimatam Varishtham<br>Vatatmajam Vanarayuthamukhyam, Sri Rama Dutam Sharanam Prapadye</div>
+              <p class="mantra-meaning">I take refuge in Hanuman, swift as thought and wind, master of the senses, foremost among the wise, son of the wind-god, chief of the monkey clan, and messenger of Sri Rama.</p>
+            </article>
+            <article class="mantra-card"><span class="num">13</span>
+              <h3>Hanuman Moola Mantra</h3>
+              <div class="mantra-text" lang="sa">ॐ हनुमते नमः ॥</div>
+              <div class="mantra-roman">Om Hanumate Namah</div>
+              <p class="mantra-meaning">Salutations to Hanuman, embodiment of courage, strength, and devotion.</p>
+            </article>
+            <article class="mantra-card"><span class="num">14</span>
+              <h3>Hanuman Gayatri</h3>
+              <div class="mantra-text" lang="sa">ॐ अञ्जनेयाय विद्महे<br>वायुपुत्राय धीमहि ।<br>तन्नो हनुमान् प्रचोदयात् ॥</div>
+              <div class="mantra-roman">Om Anjaneyaya Vidmahe, Vayuputraya Dhimahi<br>Tanno Hanuman Prachodayat</div>
+              <p class="mantra-meaning">Let us meditate on the son of Anjana; may Hanuman, son of the wind, illumine our understanding.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="deity-group" id="ayyappa">
+          <div class="deity-group-head"><h3>Ayyappa</h3><span class="leaf">&#10047;</span><span class="tag">Lord of Sabarimala</span><div class="rule"></div></div>
+          <div class="mantra-list">
+            <article class="mantra-card"><span class="num">15</span>
+              <h3>Ayyappa Saranam</h3>
+              <div class="mantra-text" lang="ta">சுவாமியே சரணம் ஐயப்பா</div>
+              <div class="mantra-roman">Swamiye Saranam Ayyappa</div>
+              <p class="mantra-meaning">A complete offering of the heart to Lord Ayyappa.</p>
+            </article>
+            <article class="mantra-card"><span class="num">16</span>
+              <h3>Ayyappa / Shasta Gayatri</h3>
+              <div class="mantra-text" lang="sa">ॐ भूतनाथाय विद्महे<br>भवपुत्राय धीमहि ।<br>तन्नः शास्ता प्रचोदयात् ॥</div>
+              <div class="mantra-roman">Om Bhootanathaya Vidmahe, Bhavaputraya Dhimahi<br>Tanno Shasta Prachodayat</div>
+              <p class="mantra-meaning">Let us meditate on the Lord of all beings; may the divine son of Shiva illumine our path.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="deity-group" id="kubera">
+          <div class="deity-group-head"><h3>Kubera</h3><span class="leaf">&#10047;</span><span class="tag">Optional</span><div class="rule"></div></div>
+          <div class="mantra-list">
+            <article class="mantra-card wide"><span class="num">17</span>
+              <h3>Kubera Mantra</h3>
+              <div class="mantra-text" lang="sa">ॐ राजाधिराजाय प्रसह्य साहिने नमो वयं वैश्रवणाय कुर्महे ।<br>स मे कामान् कामकामाय मह्यं कामेश्वरो वैश्रवणो ददातु ॥<br>कुबेराय वैश्रवणाय महाराजाय नमः ॥</div>
+              <div class="mantra-roman">Om Rajadhirajaya Prasahya Sahine, Namo Vayam Vaishravanaya Kurmahe<br>Sa Me Kaman Kamakamaya Mahyam, Kameshvaro Vaishravano Dadatu<br>Kuberaya Vaishravanaya Maharajaya Namah</div>
+              <p class="mantra-meaning">We bow to Vaishravana (Kubera), king of kings, lord of wealth and abundance; may he, the granter of desires, fulfill our righteous wishes.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="deity-group" id="closing">
+          <div class="deity-group-head"><h3>Aarti, Peace &amp; Offering</h3><span class="leaf">&#10047;</span><span class="tag">Closing the practice</span><div class="rule"></div></div>
+          <div class="mantra-list">
+            <article class="mantra-card wide"><span class="num">18</span>
+              <h3>Aarti — Shiva</h3>
+              <div class="mantra-text" lang="sa">कर्पूरगौरं करुणावतारं संसारसारं भुजगेन्द्रहारम् ।<br>सदा वसन्तं हृदयारविन्दे भवं भवानीसहितं नमामि ॥</div>
+              <div class="mantra-roman">Karpura Gauram Karunavataram, Samsara Saram Bhujagendra Haram<br>Sada Vasantam Hridayaravinde, Bhavam Bhavani Sahitam Namami</div>
+              <p class="mantra-meaning">I salute Shiva, white as camphor, the embodiment of compassion, essence of worldly existence, adorned with the serpent-king, who dwells eternally in the lotus of the heart, together with Bhavani.</p>
+            </article>
+            <article class="mantra-card wide"><span class="num">19</span>
+              <h3>Sarva Mangala Prayer</h3>
+              <div class="mantra-text" lang="sa">सर्वमङ्गलमाङ्गल्ये शिवे सर्वार्थसाधिके ।<br>शरण्ये त्र्यम्बके गौरि नारायणि नमोऽस्तु ते ॥</div>
+              <div class="mantra-roman">Sarva Mangala Mangalye, Shive Sarvartha Sadhike<br>Sharanye Tryambake Gauri, Narayani Namostute</div>
+              <p class="mantra-meaning">Salutations to you, O Narayani — the auspiciousness of all that is auspicious, the accomplisher of all goals, the refuge of all, three-eyed Gauri.</p>
+            </article>
+            <article class="mantra-card"><span class="num">20</span>
+              <h3>Universal Peace</h3>
+              <div class="mantra-text" lang="sa">लोकाः समस्ताः सुखिनो भवन्तु ॥</div>
+              <div class="mantra-roman">Lokah Samastah Sukhino Bhavantu <em>(recited three times)</em></div>
+              <p class="mantra-meaning">May all beings everywhere be happy and free.</p>
+            </article>
+            <article class="mantra-card"><span class="num">21</span>
+              <h3>Shanti</h3>
+              <div class="mantra-text" lang="sa">ॐ शान्तिः शान्तिः शान्तिः ॥</div>
+              <div class="mantra-roman">Om Shantih Shantih Shantih</div>
+              <p class="mantra-meaning">May peace pervade the body, the mind, and the world around us — a threefold peace for all realms of being.</p>
+            </article>
+            <article class="mantra-card wide"><span class="num">22</span>
+              <h3>Final Offering — Namaskaram</h3>
+              <div class="mantra-text" lang="sa">कायेन वाचा मनसेन्द्रियैर्वा बुद्ध्यात्मना वा प्रकृतेः स्वभावात् ।<br>करोमि यद्यत् सकलं परस्मै नारायणायेति समर्पयामि ॥</div>
+              <div class="mantra-roman">Kayena Vacha Manasendriyairva, Buddhyatmana Va Prakriteh Svabhavat<br>Karomi Yadyat Sakalam Parasmai, Narayanayeti Samarpayami</div>
+              <p class="mantra-meaning">Whatever I do with body, speech, mind, senses, intellect, or by the very nature of my being — all of it I offer to the Supreme, unto Narayana.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="practice" aria-labelledby="practice-title">
+        <h2 id="practice-title">The 15–20 minute daily routine</h2>
+        <p class="practice-sub">The full sequence from the Daily Puja Mantra Book, in the traditional recommended order.</p>
+        <div class="practice-grid">
+          <article class="practice-card"><strong>01 · Ganesha</strong><p>Dhyana + Moola Mantra</p></article>
+          <article class="practice-card"><strong>02 · Shiva</strong><p>Rudram opening + Om Namah Shivaya + Rudra Gayatri</p></article>
+          <article class="practice-card"><strong>03 · Murugan</strong><p>Om Saravanabhavaya Namah + Shanmukha Gayatri</p></article>
+          <article class="practice-card"><strong>04 · Vishnu</strong><p>Shantakaram + Om Namo Narayanaya + Vishnu Gayatri</p></article>
+          <article class="practice-card"><strong>05 · Anjaneya</strong><p>Manojavam + Om Hanumate Namah + Hanuman Gayatri</p></article>
+          <article class="practice-card"><strong>06 · Ayyappa</strong><p>Swamiye Saranam Ayyappa + Ayyappa Gayatri</p></article>
+          <article class="practice-card"><strong>07 · Kubera</strong><p>Optional mantra for abundance</p></article>
+          <article class="practice-card"><strong>08 · Aarti</strong><p>Karpura Gauram, offered with a lit lamp</p></article>
+          <article class="practice-card"><strong>09 · Universal Peace</strong><p>Lokah Samastah Sukhino Bhavantu</p></article>
+          <article class="practice-card"><strong>10 · Shanti</strong><p>Om Shantih Shantih Shantih</p></article>
+          <article class="practice-card"><strong>11 · Namaskaram</strong><p>Kayena Vacha — the final offering</p></article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="vc-footer"><div class="vc-footer-ornament">✧ ॐ ✧</div>© <span id="year"></span> Vedic Corner — Built with care</footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

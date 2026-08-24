@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ayyappan Mantras & Slogams | Vedic Corner</title>
+  <meta name="description" content="A complete devotional collection of Lord Ayyappan mantras, gayatris, saranam chants, and slogams in Sanskrit and Tamil.">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --night: #101f2a;
+      --night-soft: #1d3540;
+      --leaf: #2f6856;
+      --leaf-light: #8fc2a2;
+      --saffron: #e3a13b;
+      --saffron-light: #f5d486;
+      --paper: #fff9eb;
+      --paper-deep: #f1dfb9;
+      --ink: #233b3a;
+      --muted: #526862;
+      --line: rgba(35, 59, 58, 0.16);
+      --shadow: 0 18px 45px -25px rgba(16, 31, 42, 0.58);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: 'Crimson Text', serif;
+      font-size: 1.08rem;
+      line-height: 1.7;
+      background:
+        linear-gradient(rgba(35, 59, 58, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(35, 59, 58, 0.035) 1px, transparent 1px),
+        linear-gradient(180deg, #fff9eb, #ecdfc5);
+      background-size: 34px 34px, 34px 34px, auto;
+    }
+    a { color: inherit; }
+    img, svg { max-width: 100%; }
+    .page { max-width: 1180px; margin: 0 auto; padding: 0 28px 70px; }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 20px 0 16px;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--night);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+    .brand img { width: 40px; height: 40px; }
+    nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 18px; }
+    nav a {
+      color: var(--night-soft);
+      font-size: 0.96rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+    nav a:hover { color: var(--leaf); border-color: var(--saffron); }
+
+    .hero {
+      position: relative;
+      margin: 0 -28px;
+      padding: 76px max(28px, calc((100vw - 1124px) / 2)) 70px;
+      overflow: hidden;
+      color: var(--paper);
+      background: var(--night);
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 78% 35%, rgba(227, 161, 59, 0.26), transparent 24%), linear-gradient(135deg, transparent 0 64%, rgba(143, 194, 162, 0.11) 64% 64.2%, transparent 64.2%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: 'ॐ';
+      position: absolute;
+      right: 8%;
+      top: 24px;
+      color: rgba(245, 212, 134, 0.16);
+      font-size: 11rem;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 760px; }
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--saffron-light);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 700px;
+      margin: 0 0 18px;
+      color: var(--paper);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.7rem, 6vw, 5.3rem);
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+    .hero p { max-width: 620px; margin: 0; color: rgba(255, 249, 235, 0.78); font-size: 1.18rem; }
+    .saranam {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 18px;
+      border: 1px solid rgba(245, 212, 134, 0.45);
+      color: var(--saffron-light);
+      font-family: 'Noto Sans Tamil', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+    }
+
+    main { padding-top: 42px; }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 22px; }
+    .section-heading h2 { margin: 0; color: var(--night); font-family: 'Playfair Display', serif; font-size: clamp(1.7rem, 3vw, 2.3rem); line-height: 1.15; }
+    .section-heading p { max-width: 380px; margin: 0; color: var(--muted); text-align: right; }
+    
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+    .card {
+      position: relative;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: linear-gradient(145deg, var(--paper), var(--paper-deep));
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card::before { content: ''; position: absolute; top: -1px; left: 22px; width: 30px; height: 5px; border-radius: 0 0 5px 5px; background: var(--saffron); }
+    .card h3 { margin: 0 0 12px; color: var(--leaf); font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; line-height: 1.1; }
+    
+    .mantra, .slogam { 
+      color: var(--night); 
+      font-size: 1.1rem; 
+      font-weight: 600; 
+      line-height: 1.85; 
+      overflow-wrap: anywhere; 
+    }
+    :lang(sa) { font-family: 'Noto Sans Devanagari', sans-serif; }
+    :lang(ta) { font-family: 'Noto Sans Tamil', sans-serif; }
+    
+    .transliteration { margin-top: 12px; color: var(--leaf); font-style: italic; font-size: 1rem; overflow-wrap: anywhere; }
+    .meaning { margin-top: 10px; color: var(--muted); font-size: 0.96rem; line-height: 1.55; }
+    
+    .featured { grid-column: span 2; background: linear-gradient(135deg, var(--leaf), var(--night-soft)); color: var(--paper); }
+    .featured h3, .featured .mantra, .featured .slogam { color: var(--saffron-light); }
+    .featured .transliteration, .featured .meaning { color: rgba(255, 249, 235, 0.85); }
+    
+    .content-section { margin-top: 64px; }
+    footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.95rem; text-align: center; }
+
+    @media (max-width: 860px) {
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .featured { grid-column: span 2; }
+    }
+
+    @media (max-width: 640px) {
+      .page { padding: 0 16px 46px; }
+      header { display: block; padding-top: 16px; }
+      nav { justify-content: flex-start; gap: 8px 14px; margin-top: 14px; }
+      .hero { margin: 0 -16px; padding: 56px 16px 48px; }
+      .hero::after { right: 0; top: 14px; font-size: 7rem; }
+      .hero p { font-size: 1.06rem; }
+      .section-heading { display: block; }
+      .section-heading p { margin-top: 10px; text-align: left; }
+      .grid { grid-template-columns: 1fr; }
+      .featured { grid-column: auto; }
+      .card { padding: 20px; }
+      .content-section { margin-top: 44px; }
+    }
+  </style>
+  <link rel="stylesheet" href="assets/theme.css">
+</head>
+<body>
+  <div class="page">
+    <header>
+      <a class="brand" href="index.html"><img src="logo.png" alt=""> Vedic Corner</a>
+      <nav aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="daily_mantra.html">Daily Mantra</a>
+        <a href="#moola">Moola & Gayatri</a>
+        <a href="#daily">Daily Mantras</a>
+        <a href="#stotrams">Stotrams</a>
+        <a href="#tamil">Tamil Slogams</a>
+      </nav>
+    </header>
+
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-inner">
+        <p class="eyebrow">A devotion of courage and surrender</p>
+        <h1 id="page-title">Ayyappan<br>Mantras & Slogams</h1>
+        <p>A comprehensive compendium of sacred Sanskrit mantras, Vedic gayatris, and traditional Tamil chants for daily puja and Vratham observance.</p>
+        <div class="saranam" lang="ta">சுவாமியே சரணம் ஐயப்பா</div>
+      </div>
+    </section>
+
+    <main>
+      <!-- Section 1: Moola & Gayatri Mantras -->
+      <section id="moola" class="content-section" style="margin-top: 20px;" aria-labelledby="moola-title">
+        <div class="section-heading">
+          <h2 id="moola-title">Moola & Gayatri Mantras</h2>
+          <p>Core invocations recited 108 times for spiritual focus, peace, and inner resolve.</p>
+        </div>
+        <div class="grid">
+          <article class="card featured">
+            <h3>Ayyappa Gayatri Mantra</h3>
+            <div class="mantra" lang="sa">ॐ भूतनाथाय विद्महे भवपुत्राय धीमहि ।<br>तन्नः शास्ता प्रचोदयात् ॥</div>
+            <div class="transliteration">Om Bhootanaathaya Vidmahe Bhavaputraya Dheemahi, Tannah Sastha Prachodayaat</div>
+            <div class="meaning">Om, let us meditate on the Lord of all beings. May the divine son of Lord Shiva illuminate our intellect and guide our spiritual path.</div>
+          </article>
+          <article class="card">
+            <h3>Moola Mantra</h3>
+            <div class="mantra" lang="sa">ॐ ह्रीं श्रीं क्लीं श्रीं धर्मशास्त्रा नमः ॥</div>
+            <div class="transliteration">Om Hreem Shreem Kleem Shreem Dharma Shaastraa Namah</div>
+            <div class="meaning">The potent seed syllable (Beeja) mantra for Dharma Sastha invoking protection and auspiciousness.</div>
+          </article>
+          <article class="card">
+            <h3>Hariharaputra Gayatri</h3>
+            <div class="mantra" lang="sa">ॐ हरिहरपुत्राय विद्महे शरवणपुत्राय धीमहि ।<br>तन्नः शास्ता प्रचोदयात् ॥</div>
+            <div class="transliteration">Om Hariharaputraya Vidmahe Saravanaputraya Dheemahi, Tannah Sastha Prachodayaat</div>
+            <div class="meaning">Salutations to the son of Vishnu and Shiva; may Lord Sastha enlighten and protect us.</div>
+          </article>
+          <article class="card">
+            <h3>Kshipra Prasada Mantra</h3>
+            <div class="mantra" lang="sa">ॐ क्षिप्रप्रसादाय नमः ॥</div>
+            <div class="transliteration">Om Kshipraprasaadaaya Namah</div>
+            <div class="meaning">Salutations to the Lord who grants blessings and grace swiftly to true seekers.</div>
+          </article>
+          <article class="card">
+            <h3>Dhyana Mantra</h3>
+            <div class="mantra" lang="sa">ध्यायेद् उमापति-रमापति-भाग्यपुत्रं<br>शान्तं प्रभाकर-सहस्र-समान-भासम् ।</div>
+            <div class="transliteration">Dhyayed Umapati Ramapati Bhagya Putram, Shaantam Prabhakara Sahasra Samaana Bhaasam</div>
+            <div class="meaning">Meditate on the blessed son of Shiva and Vishnu, luminous as a thousand suns and ever peaceful.</div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Section 2: Daily Namavalis & Invocation Mantras -->
+      <section id="daily" class="content-section" aria-labelledby="daily-title">
+        <div class="section-heading">
+          <h2 id="daily-title">Daily Invocations & Nama Mantras</h2>
+          <p>Simple and profound salutations to begin morning and evening prayers.</p>
+        </div>
+        <div class="grid">
+          <article class="card featured">
+            <h3>Swamiye Saranam Ayyappa</h3>
+            <div class="mantra" lang="ta">சுவாமியே சரணம் ஐயப்பா<br>சுவாமியே சரணம் ஐயப்பா</div>
+            <div class="transliteration">Swamiye Saranam Ayyappa</div>
+            <div class="meaning">The quintessential call of complete surrender: “O Lord Ayyappa, You alone are my eternal refuge.”</div>
+          </article>
+          <article class="card">
+            <h3>Maha Mantra</h3>
+            <div class="mantra" lang="sa">ॐ श्री हरिहरपुत्राय नमः ॥</div>
+            <div class="transliteration">Om Sri Hariharaputraya Namah</div>
+            <div class="meaning">Salutations to Sri Ayyappa, the sacred divine offspring of Hari (Vishnu) and Hara (Shiva).</div>
+          </article>
+          <article class="card">
+            <h3>Sastha Mantra</h3>
+            <div class="mantra" lang="sa">ॐ धर्मशास्त्रे नमः ॥</div>
+            <div class="transliteration">Om Dharma Sasthre Namah</div>
+            <div class="meaning">Salutations to Dharma Sastha, the supreme protector and upholder of cosmic righteousness.</div>
+          </article>
+          <article class="card">
+            <h3>Protection Mantra</h3>
+            <div class="mantra" lang="sa">ॐ भूतनाथाय नमः ॥</div>
+            <div class="transliteration">Om Bhootanathaya Namah</div>
+            <div class="meaning">Salutations to the Lord of the elements and all living beings.</div>
+          </article>
+          <article class="card">
+            <h3>Grace Mantra</h3>
+            <div class="mantra" lang="sa">ॐ लोकवीराय नमः ॥</div>
+            <div class="transliteration">Om Lokaveeraya Namah</div>
+            <div class="meaning">Salutations to the heroic protector of the universe.</div>
+          </article>
+          <article class="card">
+            <h3>Peace & Surrender Mantra</h3>
+            <div class="mantra" lang="sa">ॐ शरणागतवत्सलाय नमः ॥</div>
+            <div class="transliteration">Om Saranagata Vatsalaya Namah</div>
+            <div class="meaning">Salutations to the compassionate Lord who warmly embraces all who seek refuge.</div>
+          </article>
+          <article class="card">
+            <h3>Arogya (Health) Mantra</h3>
+            <div class="mantra" lang="sa">ॐ महाशास्त्रा वैद्याय नमः ॥</div>
+            <div class="transliteration">Om Mahasasthree Vaidyaya Namah</div>
+            <div class="meaning">Salutations to the Supreme Healer who cures the illnesses of body, mind, and samsara.</div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Section 3: Classical Stotrams & Ashtakam Verses -->
+      <section id="stotrams" class="content-section" aria-labelledby="stotrams-title">
+        <div class="section-heading">
+          <h2 id="stotrams-title">Classical Stotrams & Ashtakams</h2>
+          <p>Potent Sanskrit slokas composed for evening Aarti and temple recitations.</p>
+        </div>
+        <div class="grid">
+          <article class="card featured">
+            <h3>Lokaveeram Slokam</h3>
+            <div class="slogam" lang="sa">लोकवीरं महापूज्यं सर्वरक्षाकरं विभुम् ।<br>पार्वतीहृदयानन्दं शास्तारं प्रणमाम्यहम् ॥</div>
+            <div class="transliteration">Lokaveeram Maha Poojyam, Sarva Rakshakaram Vibhum<br>Parvathi Hridayanandam, Sastharam Pranamaamyaham</div>
+            <div class="meaning">I bow to Lord Sastha, the hero of the worlds, deeply revered, all-protecting, omnipresent, and the supreme joy of Mother Parvati's heart.</div>
+          </article>
+          <article class="card">
+            <h3>Viprapoojyam Verse</h3>
+            <div class="slogam" lang="sa">विप्रपूज्यं विश्ववन्द्यं विष्णुशम्भोः प्रियं सुतम् ।<br>क्षिप्रप्रसादनिरतं शास्तारं प्रणमाम्यहम् ॥</div>
+            <div class="transliteration">Viprapoojyam Viswavandyam, Vishnu Sambhoh Priyam Sutam<br>Kshipra Prasada Niratham, Sastharam Pranamaamyaham</div>
+            <div class="meaning">I revere Lord Sastha, worshipped by the wise, revered by the cosmos, dear son of Vishnu and Shiva, who bestows quick grace.</div>
+          </article>
+          <article class="card">
+            <h3>Maha Sastha Namaskaram</h3>
+            <div class="slogam" lang="sa">भूतनाथ सदानन्द सर्वभूतदयापर ।<br>रक्ष मां करुणासिन्धो पूर्णचन्द्रनिभानन ॥</div>
+            <div class="transliteration">Bhootanatha Sadananda, Sarvabhoota Dayapara<br>Raksha Maam Karunasindho, Poornachandra Nibhaanana</div>
+            <div class="meaning">O Lord of beings, ever blissful, full of mercy to all, ocean of compassion with a moon-like face, protect me.</div>
+          </article>
+          <article class="card">
+            <h3>Harivarasanam (Mangala Slokam)</h3>
+            <div class="slogam" lang="sa">हरिवरासनं विश्वमोहनम् ।<br>हरिदधीश्वरम् आराध्यपादुकम् ॥</div>
+            <div class="transliteration">Harivarasanam Visvamohanam, Haridadheesvaram Aaradhyapadukam</div>
+            <div class="meaning">Repository of Hari’s boons, enchanter of the universe, whose holy lotus feet are worshipped by the gods.</div>
+          </article>
+          <article class="card">
+            <h3>Kshamapanam (Forgiveness)</h3>
+            <div class="slogam" lang="sa">अपराधसहस्राणि क्रियन्तेऽहर्निशं मया ।<br>दासोऽयमिति मां मत्वा क्षमस्व परमेश्वर ॥</div>
+            <div class="transliteration">Aparadha Sahasrani Kriyante Aharnisam Maya<br>Daso Ayamiti Maam Matva Kshamasva Parameshwara</div>
+            <div class="meaning">Thousands of faults are committed by me day and night. Knowing me as your servant, forgive me, O Supreme Lord.</div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Section 4: Tamil Slogams & Padi Paattu -->
+      <section id="tamil" class="content-section" aria-labelledby="tamil-title">
+        <div class="section-heading">
+          <h2 id="tamil-title">Ayyappan Tamil Slogams</h2>
+          <p>Traditional Tamil chants, Padi stutis, and journey invocations for Sabarimala devotees.</p>
+        </div>
+        <div class="grid">
+          <article class="card featured">
+            <h3>Hariharaputra Slogam</h3>
+            <div class="slogam" lang="ta">ஹரிஹர சுதனே சரணம் ஐயப்பா !<br>அருள்மிகு மணிகண்டா சரணம் ஐயப்பா !<br>அகிலாண்ட நாயகனே சரணம் ஐயப்பா !</div>
+            <div class="transliteration">Harihara Suthane Saranam Ayyappa, Arulmigu Manikanda Saranam Ayyappa, Akhilanda Nayagane Saranam Ayyappa</div>
+            <div class="meaning">O son of Hari and Hara, O graceful Manikanta, Lord of the entire cosmos, I take refuge in You.</div>
+          </article>
+          <article class="card">
+            <h3>Jyothi Darshanam</h3>
+            <div class="slogam" lang="ta">மணிகண்டா மணிகண்டா<br>மகர ஜோதியே சரணம் ஐயப்பா</div>
+            <div class="transliteration">Manikanda Manikanda, Makara Jyothiye Saranam Ayyappa</div>
+            <div class="meaning">O Manikanta, radiant Makara Jyothi upon the sacred hill, I bow in surrender.</div>
+          </article>
+          <article class="card">
+            <h3>Pathinettampadi Slogam</h3>
+            <div class="slogam" lang="ta">பதினெட்டாம் படி ஏறி<br>பகவானைத் தொழுதிடுவோம்</div>
+            <div class="transliteration">Pathinettaam Padi Yeri, Bhagavanaith Thozhudhiduvom</div>
+            <div class="meaning">Climbing the sacred eighteen steps with pure mind, let us worship the supreme Lord.</div>
+          </article>
+          <article class="card">
+            <h3>Pilgrimage Chants (Kallum Mullum)</h3>
+            <div class="slogam" lang="ta">கல்லும் முள்ளும் காலுக்கு மெத்தை<br>சுவாமியே சரணம் ஐயப்பா</div>
+            <div class="transliteration">Kallum Mullum Kaalukku Methai, Swamiye Saranam Ayyappa</div>
+            <div class="meaning">Even stones and forest thorns turn soft as cushions when chanting the Lord's name.</div>
+          </article>
+          <article class="card">
+            <h3>Irumudi Chanting</h3>
+            <div class="slogam" lang="ta">இருமுடி தாங்கி ஒருமனதாகி<br>குருவருள் தேடி வந்தோம் ஐயப்பா</div>
+            <div class="transliteration">Irumudi Thaangi Oru Manathaagi, Guru Arul Thedi Vandhom Ayyappa</div>
+            <div class="meaning">Bearing the sacred Irumudi with single-pointed devotion, we come seeking Your divine grace.</div>
+          </article>
+          <article class="card">
+            <h3>Puli Vahana Stuti</h3>
+            <div class="slogam" lang="ta">புலி வாகனனே பொன்னம்பலவாசா<br>வில்லாளி வீரனே வீரமணிகண்டா</div>
+            <div class="transliteration">Puli Vahanane Ponnambalavaasa, Villaali Veerane Veera Manikanda</div>
+            <div class="meaning">Salutations to the Lord who rides the tiger, dweller of the golden sanctum, the heroic archer.</div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>© <span id="year"></span> Vedic Corner — Built with care</footer>
+  </div>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -48,7 +48,18 @@
     .related { margin-top: 24px; padding: 18px; background: rgba(255,255,255,0.46); border-radius: 12px; border: 1px solid rgba(200,155,60,0.2); }
     .related ul { margin: 8px 0 0 18px; }
     footer { margin-top: 30px; padding-top: 18px; border-top: 1px solid rgba(200,155,60,0.25); color: #675038; font-size: 0.95rem; }
+    img, svg, video, canvas { max-width: 100%; }
+    .sanskrit, .translit, .meaning { overflow-wrap: anywhere; }
+    @media (max-width: 600px) {
+      .wrap { padding: 0 16px 40px; }
+      header { padding-top: 18px; }
+      nav { gap: 10px 14px; }
+      .hero { padding: 28px 0 18px; }
+      .note, .related, .card { padding: 14px; }
+      .sanskrit { font-size: 1.06rem; }
+    }
   </style>
+  <link rel="stylesheet" href="assets/theme.css">
 </head>
 <body>
   <div class="wrap">
@@ -57,7 +68,7 @@
       <nav>
         <a href="index.html">Home</a>
         <a href="shiva-panchakshara.html">Shiva Panchakshara</a>
-        <a href="soundarya_lahari.html">Soundarya Lahari</a>
+        <a href="https://leomani2714.github.io/Soundarya-lahari/" target="_blank" rel="noopener">Soundarya Lahari</a>
         <a href="search.html">Search</a>
       </nav>
     </header>

@@ -100,13 +100,18 @@
 
     .vc-footer{ text-align:center; padding:2.6rem 1.5rem 3rem; border-top:1px solid var(--rule); color:var(--ivory); opacity:0.7; font-size:0.85rem; }
     .vc-footer-ornament{ font-family:'Cormorant Garamond', serif; color:var(--gold-bright); letter-spacing:0.25em; font-size:0.85rem; margin-bottom:0.7rem; opacity:0.9; }
+    img, svg, video, canvas{ max-width:100%; }
+    .vc-page-sub, .vc-list-card h3, .vc-list-card p{ overflow-wrap:anywhere; }
 
     @media (max-width:560px){
       .vc-page-hero{ padding:3rem 1.2rem 2.4rem; }
       .vc-header-inner{ justify-content:center; text-align:center; }
       .vc-container{ padding:2.4rem 1.2rem 4rem; }
+      .vc-nav{ justify-content:center; gap:0.8rem 1rem; }
+      .vc-card-grid{ grid-template-columns:1fr; }
     }
   </style>
+  <link rel="stylesheet" href="assets/theme.css">
 </head>
 <body class="vc-body">
   <a href="#main" class="vc-skip-link">Skip to content</a>

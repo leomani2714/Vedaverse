@@ -113,14 +113,20 @@
 
     .vc-footer{ text-align:center; padding:2.6rem 1.5rem 3rem; border-top:1px solid var(--rule); color:var(--ivory); opacity:0.7; font-size:0.85rem; }
     .vc-footer-ornament{ font-family:'Cormorant Garamond', serif; color:var(--gold-bright); letter-spacing:0.25em; font-size:0.85rem; margin-bottom:0.7rem; opacity:0.9; }
+    img, svg, video, canvas{ max-width:100%; }
+    .verse-hero-title, .verse-sanskrit, .verse-meaning{ overflow-wrap:anywhere; }
 
     @media (max-width:560px){
       .verse-hero{ min-height:68vh; padding:2.6rem 1rem 2.4rem; }
       .verse-box{ padding:1.6rem 1.4rem 1.6rem; }
       .verse-sanskrit{ font-size:1.3rem; }
       .vc-header-inner{ justify-content:center; text-align:center; }
+      .vc-nav{ justify-content:center; gap:0.8rem 1rem; }
+      .verse-actions{ padding-left:1rem; padding-right:1rem; }
+      .vc-btn{ width:100%; justify-content:center; text-align:center; padding-left:1rem; padding-right:1rem; }
     }
   </style>
+  <link rel="stylesheet" href="assets/theme.css">
 </head>
 <body class="vc-body">
   <a href="#main" class="vc-skip-link">Skip to content</a>

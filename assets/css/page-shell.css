@@ -1,0 +1,235 @@
+/* Shared page shell for every Vedic Corner view. */
+:root {
+    --shell-maroon: #43161a;
+    --shell-maroon-dark: #240d0f;
+    --shell-gold: #c89b3c;
+    --shell-gold-light: #e6c877;
+    --shell-paper: #fbf5e8;
+    --shell-paper-deep: #f0e2c7;
+    --shell-ink: #2d211d;
+    --shell-muted: #75665b;
+    --shell-line: rgba(91, 32, 37, 0.16);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 7% 0%, rgba(200, 155, 60, 0.12), transparent 28%),
+        radial-gradient(circle at 95% 80%, rgba(30, 92, 82, 0.07), transparent 30%),
+        linear-gradient(180deg, #fffdf8 0%, var(--shell-paper-deep) 100%);
+    color: var(--shell-ink);
+}
+
+.vc-header,
+.site-header {
+    background: var(--shell-maroon-dark);
+    border-bottom: 1px solid rgba(230, 200, 119, 0.32);
+    box-shadow: 0 10px 28px rgba(36, 13, 15, 0.12);
+}
+
+.vc-header-inner {
+    width: min(calc(100% - 2rem), 1180px);
+    min-height: 70px;
+    padding: 0.8rem 0;
+}
+
+.vc-brand {
+    color: var(--shell-gold-light);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.35rem;
+}
+
+.vc-nav {
+    gap: 1.2rem;
+}
+
+.vc-nav a {
+    color: #f6efdd;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1rem;
+}
+
+.vc-nav a:hover,
+.vc-nav a[aria-current="page"] {
+    color: var(--shell-gold-light);
+}
+
+main {
+    color: var(--shell-ink);
+}
+
+.vc-container,
+.vc-content {
+    width: min(calc(100% - 2rem), 1080px);
+}
+
+.vc-card,
+.vc-verse,
+.vc-mantra,
+.vc-related {
+    background: rgba(255, 253, 248, 0.84);
+    border-color: var(--shell-line);
+    box-shadow: 0 12px 30px rgba(80, 51, 31, 0.08);
+}
+
+.vc-card h2,
+.vc-card h3,
+.vc-related h2 {
+    color: var(--shell-maroon);
+}
+
+.vc-button-primary {
+    background: var(--shell-maroon);
+    border-color: var(--shell-maroon);
+}
+
+.vc-button-secondary {
+    color: var(--shell-maroon);
+}
+
+.vc-footer,
+footer,
+.stotram-footer {
+    margin-top: 3rem;
+    padding: 2.8rem 1.2rem 1.5rem;
+    color: #b6a18b;
+    text-align: center;
+    background: linear-gradient(180deg, #1f0d0e 0%, #4c151b 100%);
+    border-top: 1px solid rgba(112, 226, 228, 0.78);
+}
+
+.vc-footer-ornament,
+.vc-footer .footer-ornament,
+.stotram-footer .footer-ornament {
+    color: #d5a82d;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.vc-footer a,
+footer a,
+.stotram-footer a {
+    color: #aa9e86;
+}
+
+.vc-footer a:hover,
+footer a:hover,
+.stotram-footer a:hover {
+    color: #e2bf63;
+}
+
+@media (max-width: 700px) {
+    .vc-header-inner {
+        width: min(calc(100% - 1.25rem), 1180px);
+        justify-content: center;
+        text-align: center;
+    }
+
+    .vc-nav {
+        justify-content: center;
+        gap: 0.55rem 0.95rem;
+    }
+
+    .vc-container,
+    .vc-content {
+        width: min(calc(100% - 1.25rem), 1080px);
+    }
+
+    .vc-footer,
+    footer,
+    .stotram-footer {
+        padding: 2rem 1rem 1.2rem;
+    }
+}
+
+/* Bring the standalone Sri Rudram reader into the shared family. */
+body:has(.page-topbar) {
+    background:
+        radial-gradient(circle at 8% 0%, rgba(200, 155, 60, 0.12), transparent 28%),
+        linear-gradient(180deg, #fffdf8 0%, var(--shell-paper-deep) 100%);
+    color: var(--shell-ink);
+}
+
+body:has(.page-topbar)::before {
+    display: none;
+}
+
+.page-topbar {
+    padding: 0.8rem max(1rem, calc((100% - 1180px) / 2));
+    background: var(--shell-maroon-dark);
+    border-bottom: 1px solid rgba(230, 200, 119, 0.32);
+}
+
+.page-topbar .home-link {
+    color: var(--shell-gold-light);
+}
+
+body:has(.page-topbar) header {
+    padding: 3.5rem 1.5rem 2.4rem;
+    background: linear-gradient(180deg, #fffaf0 0%, #f1e2c5 100%);
+    border-bottom: 1px solid var(--shell-line);
+}
+
+body:has(.page-topbar) header h1 {
+    background: none;
+    color: var(--shell-maroon);
+    -webkit-text-fill-color: var(--shell-maroon);
+}
+
+body:has(.page-topbar) header .subtitle,
+body:has(.page-topbar) header .source,
+body:has(.page-topbar) .anuvaka-label,
+body:has(.page-topbar) .tier-card .tier-sa,
+body:has(.page-topbar) .tier-card p {
+    color: var(--shell-muted);
+}
+
+body:has(.page-topbar) .section-nav {
+    padding: 1rem;
+    background: var(--shell-maroon);
+    border-bottom: 0;
+}
+
+body:has(.page-topbar) .snav-btn {
+    color: #f6efdd;
+    background: rgba(255, 250, 240, 0.08);
+    border-color: rgba(230, 200, 119, 0.28);
+}
+
+body:has(.page-topbar) .snav-btn:hover,
+body:has(.page-topbar) .snav-btn.active {
+    color: var(--shell-maroon-dark);
+    background: var(--shell-gold-light);
+    border-color: var(--shell-gold-light);
+    box-shadow: none;
+}
+
+body:has(.page-topbar) .shloka-card,
+body:has(.page-topbar) .tier-card,
+body:has(.page-topbar) .info-card,
+body:has(.page-topbar) .hier-note {
+    color: var(--shell-ink);
+    background: rgba(255, 253, 248, 0.92);
+    border-color: var(--shell-line);
+    box-shadow: 0 12px 30px rgba(80, 51, 31, 0.08);
+}
+
+body:has(.page-topbar) .shloka-card::before {
+    display: none;
+}
+
+body:has(.page-topbar) .shloka-text,
+body:has(.page-topbar) .shloka-title,
+body:has(.page-topbar) .info-sa,
+body:has(.page-topbar) .hier-title {
+    color: var(--shell-maroon);
+}
+
+body:has(.page-topbar) .progress-text,
+body:has(.page-topbar) .hier-subtitle,
+body:has(.page-topbar) .hier-note {
+    color: var(--shell-muted);
+}

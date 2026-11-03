@@ -7,7 +7,7 @@
   <title>Ayyappan Mantras & Slogams | Vedic Corner</title>
   <meta name="description"
     content="A complete devotional collection of Lord Ayyappan mantras, gayatris, saranam chants, and slogams in Sanskrit and Tamil.">
-  <link rel="icon" type="image/png" href="assets/images/ayyappan-hero.jpg">
+  <link rel="icon" type="image/jpeg" href="assets/images/ayyappan-hero.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -510,6 +510,230 @@
       }
     }
 
+    header {
+      min-height: 78px;
+      margin-inline: calc(50% - 50vw);
+      padding: 14px max(20px, calc((100vw - 1180px) / 2));
+      background: var(--night);
+      border-bottom: 1px solid rgba(245, 212, 134, 0.35);
+    }
+
+    .brand {
+      color: var(--saffron-light);
+      letter-spacing: 0;
+    }
+
+    .brand img {
+      object-fit: contain;
+    }
+
+    nav {
+      gap: 8px 20px;
+    }
+
+    nav a {
+      padding: 4px 0;
+      color: rgba(255, 249, 235, 0.78);
+      transition: color 180ms ease, border-color 180ms ease;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      color: var(--saffron-light);
+      border-color: var(--saffron);
+    }
+
+    .hero {
+      min-height: 560px;
+      margin-inline: calc(50% - 50vw);
+      padding: 76px max(24px, calc((100vw - 1124px) / 2)) 72px;
+      background-size: auto, auto 100%;
+      background-position: center, right center;
+      background-repeat: no-repeat;
+    }
+
+    .hero::after {
+      content: none;
+    }
+
+    .hero-inner {
+      max-width: 680px;
+      padding-right: 28px;
+    }
+
+    .eyebrow {
+      letter-spacing: 0;
+    }
+
+    h1 {
+      font-size: 4.25rem;
+      letter-spacing: 0;
+      line-height: 1.04;
+    }
+
+    .hero p {
+      max-width: 570px;
+      font-size: 1.2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .hero-actions a {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      padding: 9px 16px;
+      border: 1px solid rgba(245, 212, 134, 0.55);
+      color: var(--paper);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.08rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color 180ms ease, color 180ms ease;
+    }
+
+    .hero-actions a:first-child {
+      color: var(--night);
+      background: var(--saffron-light);
+      border-color: var(--saffron-light);
+    }
+
+    .hero-actions a:hover {
+      color: var(--night);
+      background: var(--paper);
+      border-color: var(--paper);
+    }
+
+    .saranam {
+      margin-top: 28px;
+      border-color: rgba(245, 212, 134, 0.32);
+    }
+
+    .content-section {
+      margin-top: 72px;
+      scroll-margin-top: 24px;
+    }
+
+    .section-heading h2 {
+      font-size: 2rem;
+      letter-spacing: 0;
+    }
+
+    .grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      padding: 26px;
+      border-color: rgba(35, 59, 58, 0.14);
+      border-radius: 4px;
+      background: rgba(255, 253, 248, 0.86);
+      box-shadow: 0 8px 22px rgba(16, 31, 42, 0.06);
+      transition: border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .card.featured {
+      color: var(--paper);
+      background: linear-gradient(135deg, var(--leaf), var(--night-soft));
+      border-color: rgba(245, 212, 134, 0.34);
+    }
+
+    .card.featured h3,
+    .card.featured .mantra,
+    .card.featured .slogam {
+      color: var(--saffron-light);
+    }
+
+    .card.featured .transliteration,
+    .card.featured .meaning {
+      color: rgba(255, 249, 235, 0.86);
+    }
+
+    .card:hover {
+      transform: none;
+      border-color: rgba(47, 104, 86, 0.38);
+      box-shadow: 0 12px 28px rgba(16, 31, 42, 0.1);
+    }
+
+    .card h3 {
+      font-size: 1.55rem;
+      letter-spacing: 0;
+    }
+
+    .mantra,
+    .slogam {
+      line-height: 1.9;
+    }
+
+    .meaning {
+      margin-top: 14px;
+    }
+
+    .page footer {
+      margin: 68px calc(50% - 50vw) 0;
+      padding: 24px 20px;
+      color: rgba(255, 249, 235, 0.72);
+      background: var(--night);
+      border-top: 1px solid rgba(245, 212, 134, 0.3);
+    }
+
+    @media (max-width: 640px) {
+      header {
+        margin-inline: calc(50% - 50vw);
+        padding: 16px 20px;
+      }
+
+      nav {
+        gap: 6px 16px;
+      }
+
+      .hero {
+        min-height: 540px;
+        margin-inline: calc(50% - 50vw);
+        padding: 56px 20px 48px;
+        background-size: auto, auto 74%;
+        background-position: center, right bottom;
+      }
+
+      .hero-inner {
+        padding-right: 0;
+      }
+
+      h1 {
+        font-size: 2.75rem;
+      }
+
+      .hero p {
+        font-size: 1.08rem;
+      }
+
+      .content-section {
+        margin-top: 52px;
+      }
+
+      .section-heading h2 {
+        font-size: 1.8rem;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 22px;
+      }
+
+      .page footer {
+        margin-top: 48px;
+      }
+    }
+
   </style>
   <link rel="stylesheet" href="assets/css/theme.css">
   <link rel="stylesheet" href="assets/css/page-shell.css">
@@ -525,17 +749,18 @@
         <a href="#moola">Moola & Gayatri</a>
         <a href="#daily">Daily Mantras</a>
         <a href="#stotrams">Stotrams</a>
-        <a href="#tamil">Tamil Slogams</a>
       </nav>
     </header>
 
     <section class="hero" aria-labelledby="page-title">
-      <!-- <img class="hero-visual" src="assets/images/ayyappan-hero-figure.png" alt="" aria-hidden="true" loading="eager"> -->
       <div class="hero-inner">
-        <p class="eyebrow">A devotion of courage and surrender</p>
+        <p class="eyebrow">A devotional collection · Sabarimala</p>
         <h1 id="page-title">Ayyappan<br>Mantras & Slogams</h1>
-        <p>A comprehensive compendium of sacred Sanskrit mantras, Vedic gayatris, and traditional Tamil chants for daily
-          puja and Vratham observance.</p>
+        <p>Sacred Sanskrit mantras, Gayatri invocations, and devotional verses for daily puja and Vratham.</p>
+        <div class="hero-actions">
+          <a href="#moola">Explore mantras</a>
+          <a href="#stotrams">Browse stotrams</a>
+        </div>
         <div class="saranam" lang="ta">சுவாமியே சரணம் ஐயப்பா</div>
       </div>
     </section>
@@ -549,7 +774,6 @@
         </div>
         <div class="grid">
           <article class="card featured">
-            <img class="card-icon" src="assets/images/ayyappan-hero-figure.png" alt="" aria-hidden="true" loading="lazy">
             <h3>Ayyappa Gayatri Mantra</h3>
             <div class="mantra" lang="sa">ॐ भूतनाथाय विद्महे भवपुत्राय धीमहि ।<br>तन्नः शास्ता प्रचोदयात् ॥</div>
             <div class="transliteration">Om Bhootanaathaya Vidmahe Bhavaputraya Dheemahi, Tannah Sastha Prachodayaat
@@ -597,7 +821,6 @@
         </div>
         <div class="grid">
           <article class="card featured">
-            <img class="card-icon" src="assets/images/ayyappan-hero-figure.png" alt="" aria-hidden="true" loading="lazy">
             <h3>Swamiye Saranam Ayyappa</h3>
             <div class="mantra" lang="ta">சுவாமியே சரணம் ஐயப்பா<br>சுவாமியே சரணம் ஐயப்பா</div>
             <div class="transliteration">Swamiye Saranam Ayyappa</div>
@@ -654,7 +877,6 @@
         </div>
         <div class="grid">
           <article class="card featured">
-            <img class="card-icon" src="assets/images/ayyappan-hero-figure.png" alt="" aria-hidden="true" loading="lazy">
             <h3>Lokaveeram Slokam</h3>
             <div class="slogam" lang="sa">लोकवीरं महापूज्यं सर्वरक्षाकरं विभुम् ।<br>पार्वतीहृदयानन्दं शास्तारं
               प्रणमाम्यहम् ॥</div>

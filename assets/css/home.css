@@ -1477,9 +1477,16 @@ body::after {
 }
 
 .site-nav a::after {
+    left: 50%;
     bottom: -3px;
+    transform: translateX(-50%);
     height: 1px;
     background: var(--home-gold);
+}
+
+.site-nav a:hover::after,
+.site-nav a:focus-visible::after {
+    width: calc(100% - 0.4rem);
 }
 
 .hero {

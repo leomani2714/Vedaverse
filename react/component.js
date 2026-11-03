@@ -122,7 +122,7 @@ function Hero() {
             React.createElement(
                 "p",
                 { className: "lead" },
-                "Explore sacred scriptures, timeless philosophies, devotional hymns, and spiritual teachings through a beautifully curated digital experience."
+                "Explore scripture selections, devotional chants, and daily readings from across the Hindu tradition. Read a passage, consider its meaning, then follow a collection into deeper study at your own pace."
             ),
 
             React.createElement(
@@ -433,7 +433,7 @@ function Scriptures() {
         React.createElement(
             "p",
             { className: "meta" },
-            "Journey through Vedic hymns, Upanishadic wisdom, and devotional insight."
+            "Read selections from the Rigveda, Brihadaranyaka Upanishad, and Bhagavad Gita, each with brief context and an English meaning. Together, they open reflections on sacred offering, the search for truth, and action without attachment."
         ),
 
         React.createElement(
@@ -809,13 +809,13 @@ function Chants() {
         React.createElement(
             "h2",
             { id: "chantsTitle" },
-            "Chants & Recordings"
+            "Chants & Mantras"
         ),
 
         React.createElement(
             "p",
             { className: "meta" },
-            "High-quality recitations for daily practice and contemplation."
+            "Begin with two widely recited prayers: the Gayatri Mantra and the Maha Mrityunjaya Mantra. Transliteration and a concise English rendering offer an approachable starting point for recitation and reflection."
         ),
         React.createElement(
             "div",
@@ -918,7 +918,7 @@ function SacredVerses() {
         React.createElement(
             "p",
             { className: "meta" },
-            "Explore curated collections of divine wisdom, with Adi Shankaracharya's works gathered on their own dedicated page."
+            "Move from short excerpts into larger works. Explore Adi Shankaracharya's writings, the Sri Rudram, and Shiva Vakkiyam through dedicated pages with collection notes and themes."
         ),
         React.createElement(
             "div",
@@ -1192,7 +1192,7 @@ function Learn() {
         React.createElement(
             "p",
             { className: "meta" },
-            "Start here, whether you have five minutes or an evening to spend with these texts."
+            "Choose a way into the collection: search for a word or theme, read a verse for the day, or browse devotional works. Each route is designed to make it easier to return, compare, and study at your own pace."
         ),
         React.createElement(
             "div",

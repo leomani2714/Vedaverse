@@ -2,7 +2,6 @@ function App() {
     return React.createElement(
         React.Fragment,
         null,
-        React.createElement(Header),
         React.createElement(Hero),
         React.createElement(Scriptures),
         React.createElement(Chants),

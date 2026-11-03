@@ -1,0 +1,9 @@
+{
+  "name": "vedaverse",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "python3 -m http.server ${PORT:-8000} --bind 0.0.0.0"
+  }
+}

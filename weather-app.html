@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weather Search</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: light;
+    --weather-ink: #fff7e6;
+    --weather-gold: #e6c877;
+    --weather-soft: rgba(255, 247, 230, .11);
+    --weather-line: rgba(230, 200, 119, .27);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 10px;
+    color: var(--weather-ink);
+    font: 16px/1.5 "Crimson Text", Georgia, "Times New Roman", serif;
+    background: transparent;
+  }
+  main {
+    max-width: 860px;
+    min-height: 100%;
+    margin: 0 auto;
+    padding: clamp(18px, 3vw, 28px);
+    border: 1px solid var(--weather-line);
+    border-radius: 18px;
+    background:
+      radial-gradient(ellipse at 92% 8%, rgba(230, 200, 119, .16), transparent 34%),
+      linear-gradient(135deg, #351316, #642027 72%, #4b191d);
+    box-shadow: 0 16px 38px rgba(37, 13, 14, .2), inset 0 1px rgba(255,255,255,.08);
+    transition: background .4s ease;
+  }
+  body[data-w="Clear"] main {
+    background:
+      radial-gradient(ellipse at 92% 8%, rgba(245, 202, 112, .23), transparent 36%),
+      linear-gradient(135deg, #421b17, #743d24 72%, #57231d);
+  }
+  body[data-w="Clouds"] main {
+    background:
+      radial-gradient(ellipse at 92% 8%, rgba(230, 200, 119, .12), transparent 36%),
+      linear-gradient(135deg, #302023, #574044 72%, #432b2e);
+  }
+  body[data-w="Rain"] main,
+  body[data-w="Thunderstorm"] main,
+  body[data-w="Snow"] main,
+  body[data-w="Mist"] main {
+    background:
+      radial-gradient(ellipse at 92% 8%, rgba(230, 200, 119, .12), transparent 36%),
+      linear-gradient(135deg, #25191d, #493039 72%, #38252c);
+  }
+  h1 {
+    margin: 0;
+    color: var(--weather-gold);
+    font: 600 clamp(1.35rem, 3vw, 1.7rem)/1.2 "Cormorant Garamond", Georgia, serif;
+    letter-spacing: .01em;
+  }
+  .intro {
+    margin: 4px 0 18px;
+    color: rgba(255, 247, 230, .72);
+    font-size: .95rem;
+  }
+  form { display: flex; gap: 10px; }
+  input {
+    flex: 1;
+    min-width: 0;
+    padding: 11px 14px;
+    border: 1px solid rgba(255, 247, 230, .2);
+    border-radius: 9px;
+    color: var(--weather-ink);
+    background: rgba(22, 8, 10, .24);
+    font: inherit;
+  }
+  input::placeholder { color: rgba(255, 247, 230, .57); }
+  button {
+    padding: 10px 17px;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    color: #38171a;
+    background: var(--weather-gold);
+    font: 600 1rem "Cormorant Garamond", Georgia, serif;
+    cursor: pointer;
+    transition: background .18s ease, transform .18s ease;
+  }
+  button:hover:not(:disabled) { background: #f2dea1; transform: translateY(-1px); }
+  button:disabled { opacity: .55; cursor: not-allowed; }
+  :focus-visible { outline: 3px solid #f4df9b; outline-offset: 3px; }
+  .quota { margin: 9px 2px 0; color: rgba(255, 247, 230, .72); font-size: .85rem; }
+  .bar { height: 3px; margin-top: 5px; overflow: hidden; border-radius: 3px; background: var(--weather-soft); }
+  .bar i { display: block; width: 0; height: 100%; background: var(--weather-gold); transition: width .4s; }
+  .msg {
+    margin-top: 16px;
+    padding: 12px 14px;
+    border: 1px solid var(--weather-line);
+    border-radius: 9px;
+    color: var(--weather-ink);
+    background: var(--weather-soft);
+  }
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(150px, .75fr) minmax(0, 1.5fr);
+    column-gap: clamp(16px, 4vw, 38px);
+    align-items: center;
+    margin-top: 22px;
+  }
+  .place { grid-column: 1 / -1; margin: 0 0 10px; color: var(--weather-gold); font-size: 1.15rem; }
+  .temp { margin: 0; font: 400 clamp(4rem, 9vw, 5.5rem)/.95 "Cormorant Garamond", Georgia, serif; }
+  .desc { margin: 8px 0 0; color: rgba(255, 247, 230, .78); text-transform: capitalize; }
+  .units { display: inline-flex; gap: 5px; margin-left: 8px; vertical-align: middle; }
+  .units button { padding: 4px 9px; color: var(--weather-ink); background: var(--weather-soft); font: 600 .85rem "Crimson Text", Georgia, serif; }
+  .units button[aria-pressed="true"] { color: #38171a; background: var(--weather-gold); }
+  dl {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1px;
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid var(--weather-line);
+    border-radius: 11px;
+    background: var(--weather-line);
+  }
+  dl div { min-width: 0; padding: 10px 12px; background: rgba(29, 10, 13, .23); }
+  dt { color: rgba(255, 247, 230, .66); font-size: .82rem; }
+  dd { margin: 2px 0 0; color: var(--weather-ink); font-size: 1.05rem; }
+  .hero > .quota { grid-column: 1 / -1; margin-top: 12px; }
+  .recent { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 13px; }
+  .recent button {
+    padding: 5px 11px;
+    border-color: var(--weather-line);
+    color: var(--weather-ink);
+    background: var(--weather-soft);
+    font: 400 .9rem "Crimson Text", Georgia, serif;
+  }
+  @media (max-width: 600px) {
+    body { padding: 6px; }
+    main { padding: 18px; border-radius: 14px; }
+    .hero { grid-template-columns: 1fr; gap: 10px; }
+    .place { margin-bottom: 4px; }
+    .temp { font-size: 4.5rem; }
+    dl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .hero > .quota { grid-column: 1; }
+    form { gap: 7px; }
+    form button { padding-inline: 13px; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Find your forecast</h1>
+  <p class="intro">Weather around the world, wherever you are.</p>
+  <form id="f">
+    <input id="q" type="text" placeholder="City, e.g. Coimbatore or London,GB" aria-label="City name" autocomplete="off" required>
+    <button id="go" type="submit">Search</button>
+  </form>
+  <div class="quota" aria-live="polite"><span id="left"></span><div class="bar"><i id="fill"></i></div></div>
+  <div id="out"></div>
+  <div class="recent" id="recent" aria-label="Recent searches"></div>
+</main>
+
+<script>
+/* ============ CONFIGURE ============ */
+const API_KEY   = "ff7badd2d280444d8c564415251305";            // your WeatherAPI.com key
+const API_URL   = "https://api.weatherapi.com/v1/forecast.json";   // WeatherAPI.com (current + sunrise/sunset in one call)
+const DAILY_LIMIT = 50;                                      // searches allowed per day
+/* ================================== */
+
+const $ = id => document.getElementById(id);
+let unit = "C", last = null;
+const mem = {};                                              // fallback if storage is blocked
+
+const store = {
+  get(k){ try { return localStorage.getItem(k); } catch(e){ return mem[k] ?? null; } },
+  set(k,v){ try { localStorage.setItem(k,v); } catch(e){ mem[k] = v; } }
+};
+const today = () => { const d = new Date(); return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate(); };
+
+function usage(){
+  let u; try { u = JSON.parse(store.get("wx_usage")); } catch(e){}
+  if (!u || u.day !== today()) u = { day: today(), n: 0 };   // new day resets the count
+  return u;
+}
+function bump(){ const u = usage(); u.n++; store.set("wx_usage", JSON.stringify(u)); renderQuota(); }
+function renderQuota(){
+  const n = usage().n, left = Math.max(0, DAILY_LIMIT - n);
+  $("left").textContent = left > 0 ? `${left} of ${DAILY_LIMIT} searches left today` : `Daily limit of ${DAILY_LIMIT} reached. Searches reset at midnight.`;
+  $("fill").style.width = (n / DAILY_LIMIT * 100) + "%";
+  $("go").disabled = left === 0;
+}
+
+function recents(){ try { return JSON.parse(store.get("wx_recent")) || []; } catch(e){ return []; } }
+function addRecent(name){
+  const r = [name, ...recents().filter(x => x.toLowerCase() !== name.toLowerCase())].slice(0,5);
+  store.set("wx_recent", JSON.stringify(r)); renderRecent();
+}
+function renderRecent(){
+  const box = $("recent"); box.textContent = "";
+  recents().forEach(name => {
+    const b = document.createElement("button"); b.type = "button"; b.textContent = name;
+    b.onclick = () => { $("q").value = name; search(name); };
+    box.appendChild(b);
+  });
+}
+
+const t = (c, f) => unit === "C" ? Math.round(c) + "°C" : Math.round(f) + "°F";
+const group = code => {
+  if (code === 1000) return "Clear";
+  if ([1003,1006,1009].includes(code)) return "Clouds";
+  if ([1087,1273,1276,1279,1282].includes(code)) return "Thunderstorm";
+  if ([1066,1114,1117,1210,1213,1216,1219,1222,1225,1255,1258,1261,1264,1069,1072,1204,1207,1237].includes(code)) return "Snow";
+  if ([1063,1150,1153,1168,1171,1180,1183,1186,1189,1192,1195,1198,1201,1240,1243,1246,1249,1252].includes(code)) return "Rain";
+  return "Mist";
+};
+
+function show(d){
+  last = d;
+  const c = d.current, l = d.location, a = d.forecast.forecastday[0].astro;
+  document.body.dataset.w = group(c.condition.code);
+  const wind = unit === "C" ? Math.round(c.wind_kph) + " km/h" : Math.round(c.wind_mph) + " mph";
+  const vis  = unit === "C" ? c.vis_km + " km" : c.vis_miles + " mi";
+  $("out").innerHTML = `
+    <section class="hero">
+      <p class="place">${esc(l.name)}, ${esc(l.region ? l.region + ", " : "")}${esc(l.country)}
+        <span class="units">
+          <button type="button" data-u="C" aria-pressed="${unit==="C"}">°C</button>
+          <button type="button" data-u="F" aria-pressed="${unit==="F"}">°F</button>
+        </span></p>
+      <p class="temp">${t(c.temp_c, c.temp_f)}</p>
+      <p class="desc">${esc(c.condition.text)}</p>
+      <br>
+      
+      <dl>
+        <div><dt>Feels like</dt><dd>${t(c.feelslike_c, c.feelslike_f)}</dd></div>
+        <div><dt>Humidity</dt><dd>${c.humidity}%</dd></div>
+        <div><dt>Wind</dt><dd>${wind}</dd></div>
+        <div><dt>Pressure</dt><dd>${c.pressure_mb} hPa</dd></div>
+        <div><dt>Visibility</dt><dd>${vis}</dd></div>
+        <div><dt>Sunrise / sunset</dt><dd>${esc(a.sunrise)} / ${esc(a.sunset)}</dd></div>
+      </dl>
+      <p class="quota">Local time: ${esc(l.localtime)}</p>
+    </section>`;
+  $("out").querySelectorAll("[data-u]").forEach(b => b.onclick = () => { unit = b.dataset.u; show(last); }); // no API call
+}
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const note = text => $("out").innerHTML = `<div class="msg" role="alert">${esc(text)}</div>`;
+
+async function search(city){
+  city = city.trim();
+  if (!city) return;
+  if (usage().n >= DAILY_LIMIT) { renderQuota(); return note(`You've used all ${DAILY_LIMIT} searches for today. Try again tomorrow.`); }
+  if (API_KEY === "YOUR_API_KEY_HERE") return note("Add your API key at the top of the script to start searching.");
+  $("go").disabled = true;
+  bump();                                                    // every request to the API counts
+  try {
+    const res = await fetch(`${API_URL}?key=${API_KEY}&q=${encodeURIComponent(city)}&days=1&aqi=no&alerts=no`);
+    const data = await res.json();
+    const code = data.error && data.error.code;
+    if (code === 1006) note(`No place found for "${city}". Check the spelling or add a country, like Paris, France.`);
+    else if (code === 2006 || code === 1002) note("The API key was rejected. Check the key in the script.");
+    else if (code === 2007) note("Your WeatherAPI plan's monthly call limit is used up.");
+    else if (!res.ok) note((data.error && data.error.message) || "The weather service returned an error. Try again shortly.");
+    else { show(data); addRecent(data.location.name); }
+  } catch (e) {
+    note("Couldn't reach the weather service. Check your connection and try again.");
+  }
+  renderQuota();
+}
+
+$("f").addEventListener("submit", e => { e.preventDefault(); search($("q").value); });
+renderQuota(); renderRecent();
+</script>
+</body>
+</html>

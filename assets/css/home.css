@@ -1857,4 +1857,40 @@ footer {
     .footer-column a {
         margin: 0.48rem 0;
     }
+
+}
+
+.weather-section {
+    overflow: hidden;
+    border-color: rgba(184, 137, 50, 0.24);
+    background:
+        radial-gradient(circle at 50% 0, rgba(184, 137, 50, 0.1), transparent 42%),
+        rgba(255, 250, 241, 0.88);
+    text-align: center;
+}
+
+.weather-section h2 {
+    margin-bottom: 0.35rem;
+}
+
+.weather-section > .meta {
+    max-width: 36rem;
+    margin: 0 auto;
+}
+
+.weather-frame {
+    display: block;
+    width: min(100%, 900px);
+    height: 620px;
+    margin: 1.5rem auto 0;
+    border: 0;
+    border-radius: 18px;
+    background: transparent;
+}
+
+@media (max-width: 600px) {
+    .weather-frame {
+        height: 740px;
+        margin-top: 1.15rem;
+    }
 }

@@ -17,6 +17,79 @@
   <link rel="stylesheet" href="assets/css/page-shell.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
   <link rel="stylesheet" href="assets/css/mantra-pages.css">
+
+  <style>
+    /* Extra styles for new features */
+    .copy-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(0,0,0,0.06);
+      border: none;
+      padding: 0.35rem 0.7rem;
+      font-size: 0.75rem;
+      border-radius: 6px;
+      cursor: pointer;
+      color: #555;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .copy-btn:hover {
+      background: rgba(0,0,0,0.12);
+      color: #222;
+    }
+    .card {
+      position: relative;
+    }
+    .japa-box {
+      background: linear-gradient(135deg, #f8f1e9, #f0e6d8);
+      border: 1px solid #e0d0b8;
+      border-radius: 16px;
+      padding: 1.8rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .japa-count {
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: #8B4513;
+      margin: 0.5rem 0;
+      font-family: 'Playfair Display', serif;
+    }
+    .japa-controls {
+      display: flex;
+      gap: 0.8rem;
+      justify-content: center;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+    .japa-btn {
+      background: #8B4513;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.4rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .japa-btn:hover {
+      background: #6d3610;
+    }
+    .japa-btn.secondary {
+      background: transparent;
+      border: 1px solid #8B4513;
+      color: #8B4513;
+    }
+    .japa-btn.secondary:hover {
+      background: #8B4513;
+      color: white;
+    }
+    .harivarasanam-card .mantra {
+      font-size: 1.15rem;
+      line-height: 1.9;
+    }
+  </style>
 </head>
 
 <body>
@@ -29,6 +102,8 @@
         <a href="#moola">Moola & Gayatri</a>
         <a href="#daily">Daily Mantras</a>
         <a href="#stotrams">Stotrams</a>
+        <a href="#ashtottara">Ashtottara</a>
+        <a href="#harivarasanam">Harivarasanam</a>
       </nav>
     </header>
 
@@ -46,6 +121,22 @@
     </section>
 
     <main>
+      <!-- Japa Counter -->
+      <section class="content-section" style="padding-bottom: 0;">
+        <div class="japa-box">
+          <h3 style="margin:0 0 0.3rem; font-size:1.3rem;">Swamiye Saranam Ayyappa</h3>
+          <p style="margin:0; opacity:0.8; font-size:0.95rem;">Click to count your japa</p>
+          <div class="japa-count" id="japaCount">0</div>
+          <div class="japa-controls">
+            <button class="japa-btn" onclick="incrementJapa()">+1</button>
+            <button class="japa-btn" onclick="incrementJapa(10)">+10</button>
+             <button class="japa-btn" onclick="incrementJapa(100)">+100</button>
+              <button class="japa-btn" onclick="incrementJapa(1000)">+1000</button>
+            <button class="japa-btn secondary" onclick="resetJapa()">Reset</button>
+          </div>
+        </div>
+      </section>
+
       <!-- Section 1: Moola & Gayatri Mantras -->
       <section id="moola" class="content-section" aria-labelledby="moola-title">
         <div class="section-heading">
@@ -54,41 +145,39 @@
         </div>
         <div class="grid">
           <article class="card featured">
+            <button class="copy-btn" onclick="copyMantra(this)">Copy</button>
             <h3>Ayyappa Gayatri Mantra</h3>
             <div class="mantra" lang="sa">ॐ भूतनाथाय विद्महे भवपुत्राय धीमहि ।<br>तन्नः शास्ता प्रचोदयात् ॥</div>
-            <div class="transliteration">Om Bhootanaathaya Vidmahe Bhavaputraya Dheemahi, Tannah Sastha Prachodayaat
-            </div>
-            <div class="meaning">Om, let us meditate on the Lord of all beings. May the divine son of Lord Shiva
-              illuminate our intellect and guide our spiritual path.</div>
+            <div class="transliteration">Om Bhootanaathaya Vidmahe Bhavaputraya Dheemahi, Tannah Sastha Prachodayaat</div>
+            <div class="meaning">Om, let us meditate on the Lord of all beings. May the divine son of Lord Shiva illuminate our intellect and guide our spiritual path.</div>
           </article>
           <article class="card">
+            <button class="copy-btn" onclick="copyMantra(this)">Copy</button>
             <h3>Moola Mantra</h3>
             <div class="mantra" lang="sa">ॐ ह्रीं श्रीं क्लीं श्रीं धर्मशास्त्रा नमः ॥</div>
             <div class="transliteration">Om Hreem Shreem Kleem Shreem Dharma Shaastraa Namah</div>
-            <div class="meaning">The potent seed syllable (Beeja) mantra for Dharma Sastha invoking protection and
-              auspiciousness.</div>
+            <div class="meaning">The potent seed syllable (Beeja) mantra for Dharma Sastha invoking protection and auspiciousness.</div>
           </article>
           <article class="card">
+            <button class="copy-btn" onclick="copyMantra(this)">Copy</button>
             <h3>Hariharaputra Gayatri</h3>
             <div class="mantra" lang="sa">ॐ हरिहरपुत्राय विद्महे शरवणपुत्राय धीमहि ।<br>तन्नः शास्ता प्रचोदयात् ॥</div>
-            <div class="transliteration">Om Hariharaputraya Vidmahe Saravanaputraya Dheemahi, Tannah Sastha Prachodayaat
-            </div>
-            <div class="meaning">Salutations to the son of Vishnu and Shiva; may Lord Sastha enlighten and protect us.
-            </div>
+            <div class="transliteration">Om Hariharaputraya Vidmahe Saravanaputraya Dheemahi, Tannah Sastha Prachodayaat</div>
+            <div class="meaning">Salutations to the son of Vishnu and Shiva; may Lord Sastha enlighten and protect us.</div>
           </article>
           <article class="card">
+            <button class="copy-btn" onclick="copyMantra(this)">Copy</button>
             <h3>Kshipra Prasada Mantra</h3>
             <div class="mantra" lang="sa">ॐ क्षिप्रप्रसादाय नमः ॥</div>
             <div class="transliteration">Om Kshipraprasaadaaya Namah</div>
             <div class="meaning">Salutations to the Lord who grants blessings and grace swiftly to true seekers.</div>
           </article>
           <article class="card">
+            <button class="copy-btn" onclick="copyMantra(this)">Copy</button>
             <h3>Dhyana Mantra</h3>
             <div class="mantra" lang="sa">ध्यायेद् उमापति-रमापति-भाग्यपुत्रं<br>शान्तं प्रभाकर-सहस्र-समान-भासम् ।</div>
-            <div class="transliteration">Dhyayed Umapati Ramapati Bhagya Putram, Shaantam Prabhakara Sahasra Samaana
-              Bhaasam</div>
-            <div class="meaning">Meditate on the blessed son of Shiva and Vishnu, luminous as a thousand suns and ever
-              peaceful.</div>
+            <div class="transliteration">Dhyayed Umapati Ramapati Bhagya Putram, Shaantam Prabhakara Sahasra Samaana Bhaasam</div>
+            <div class="meaning">Meditate on the blessed son of Shiva and Vishnu, luminous as a thousand suns and ever peaceful.</div>
           </article>
         </div>
       </section>
@@ -101,258 +190,388 @@
         </div>
         <div class="grid">
           <article class="card featured">
+            <button class="copy-btn" onclick="copyMantra(this)">Copy</button>
             <h3>Swamiye Saranam Ayyappa</h3>
             <div class="mantra" lang="ta">சுவாமியே சரணம் ஐயப்பா<br>சுவாமியே சரணம் ஐயப்பா</div>
             <div class="transliteration">Swamiye Saranam Ayyappa</div>
-            <div class="meaning">The quintessential call of complete surrender: “O Lord Ayyappa, You alone are my
-              eternal refuge.”</div>
+            <div class="meaning">The quintessential call of complete surrender: “O Lord Ayyappa, You alone are my eternal refuge.”</div>
           </article>
           <article class="card">
+            <button class="copy-btn" onclick="copyMantra(this)">Copy</button>
             <h3>Maha Mantra</h3>
             <div class="mantra" lang="sa">ॐ श्री हरिहरपुत्राय नमः ॥</div>
             <div class="transliteration">Om Sri Hariharaputraya Namah</div>
-            <div class="meaning">Salutations to Sri Ayyappa, the sacred divine offspring of Hari (Vishnu) and Hara
-              (Shiva).</div>
+            <div class="meaning">Salutations to Sri Ayyappa, the sacred divine offspring of Hari (Vishnu) and Hara (Shiva).</div>
           </article>
           <article class="card">
+            <button class="copy-btn" onclick="copyMantra(this)">Copy</button>
             <h3>Sastha Mantra</h3>
             <div class="mantra" lang="sa">ॐ धर्मशास्त्रे नमः ॥</div>
             <div class="transliteration">Om Dharma Sasthre Namah</div>
-            <div class="meaning">Salutations to Dharma Sastha, the supreme protector and upholder of cosmic
-              righteousness.</div>
+            <div class="meaning">Salutations to Dharma Sastha, the supreme protector and upholder of cosmic righteousness.</div>
           </article>
           <article class="card">
+            <button class="copy-btn" onclick="copyMantra(this)">Copy</button>
             <h3>Protection Mantra</h3>
             <div class="mantra" lang="sa">ॐ भूतनाथाय नमः ॥</div>
             <div class="transliteration">Om Bhootanathaya Namah</div>
             <div class="meaning">Salutations to the Lord of the elements and all living beings.</div>
           </article>
           <article class="card">
+            <button class="copy-btn" onclick="copyMantra(this)">Copy</button>
             <h3>Grace Mantra</h3>
             <div class="mantra" lang="sa">ॐ लोकवीराय नमः ॥</div>
             <div class="transliteration">Om Lokaveeraya Namah</div>
             <div class="meaning">Salutations to the heroic protector of the universe.</div>
           </article>
           <article class="card">
+            <button class="copy-btn" onclick="copyMantra(this)">Copy</button>
             <h3>Peace & Surrender Mantra</h3>
             <div class="mantra" lang="sa">ॐ शरणागतवत्सलाय नमः ॥</div>
             <div class="transliteration">Om Saranagata Vatsalaya Namah</div>
             <div class="meaning">Salutations to the compassionate Lord who warmly embraces all who seek refuge.</div>
           </article>
           <article class="card">
+            <button class="copy-btn" onclick="copyMantra(this)">Copy</button>
             <h3>Arogya (Health) Mantra</h3>
             <div class="mantra" lang="sa">ॐ महाशास्त्रा वैद्याय नमः ॥</div>
             <div class="transliteration">Om Mahasasthree Vaidyaya Namah</div>
-            <div class="meaning">Salutations to the Supreme Healer who cures the illnesses of body, mind, and samsara.
-            </div>
+            <div class="meaning">Salutations to the Supreme Healer who cures the illnesses of body, mind, and samsara.</div>
           </article>
         </div>
       </section>
 
-      <!-- Section 3: Classical Stotrams & Ashtakam Verses -->
+      <!-- Section 3: Classical Stotrams -->
       <section id="stotrams" class="content-section" aria-labelledby="stotrams-title">
         <div class="section-heading">
           <h2 id="stotrams-title">Classical Stotrams & Ashtakams</h2>
           <p>Potent Sanskrit slokas composed for evening Aarti and temple recitations.</p>
         </div>
         <div class="grid">
+          <!-- Existing stotram cards with copy buttons -->
           <article class="card featured">
+            <button class="copy-btn" onclick="copyMantra(this)">Copy</button>
             <h3>Lokaveeram Slokam</h3>
-            <div class="slogam" lang="sa">लोकवीरं महापूज्यं सर्वरक्षाकरं विभुम् ।<br>पार्वतीहृदयानन्दं शास्तारं
-              प्रणमाम्यहम् ॥</div>
-            <div class="transliteration">Lokaveeram Maha Poojyam, Sarva Rakshakaram Vibhum<br>Parvathi Hridayanandam,
-              Sastharam Pranamaamyaham</div>
-            <div class="transliteration" lang="ta">லோகவீரம் மஹாபூஜ்யம் ஸர்வரக்ஷாகரம் விபும் ।<br>பார்வதீஹ்ருதயானந்தம்
-              சாஸ்தாரம் ப்ரணமாம்யஹம் ॥</div>
-            <div class="meaning">I bow to Lord Sastha, the hero of the worlds, deeply revered, all-protecting,
-              omnipresent, and the supreme joy of Mother Parvati's heart.</div>
+            <div class="slogam" lang="sa">लोकवीरं महापूज्यं सर्वरक्षाकरं विभुम् ।<br>पार्वतीहृदयानन्दं शास्तारं प्रणमाम्यहम् ॥</div>
+            <div class="transliteration">Lokaveeram Maha Poojyam, Sarva Rakshakaram Vibhum<br>Parvathi Hridayanandam, Sastharam Pranamaamyaham</div>
+            <div class="meaning">I bow to Lord Sastha, the hero of the worlds, deeply revered, all-protecting, omnipresent, and the supreme joy of Mother Parvati's heart.</div>
           </article>
 
           <article class="card">
+            <button class="copy-btn" onclick="copyMantra(this)">Copy</button>
             <h3>Viprapoojyam Verse</h3>
-            <div class="slogam" lang="sa">विप्रपूज्यं विश्ववन्द्यं विष्णुशम्भोः प्रियं सुतम् ।<br>क्षिप्रप्रसादनिरतं
-              शास्तारं प्रणमाम्यहम् ॥</div>
-            <div class="transliteration">Viprapoojyam Viswavandyam, Vishnu Sambhoh Priyam Sutam<br>Kshipra Prasada
-              Niratham, Sastharam Pranamaamyaham</div>
-            <div class="transliteration" lang="ta">விப்ரபூஜ்யம் விஸ்வவந்த்யம் விஷ்ணு சம்போஃ ப்ரியம் ஸுதம்
-              ।<br>க்ஷிப்ரப்ரஸாத நிரதம் சாஸ்தாரம் ப்ரணமாம்யஹம் ॥</div>
-            <div class="meaning">I revere Lord Sastha, worshipped by the wise, revered by the cosmos, dear son of Vishnu
-              and Shiva, who bestows quick grace.</div>
+            <div class="slogam" lang="sa">विप्रपूज्यं विश्ववन्द्यं विष्णुशम्भोः प्रियं सुतम् ।<br>क्षिप्रप्रसादनिरतं शास्तारं प्रणमाम्यहम् ॥</div>
+            <div class="transliteration">Viprapoojyam Viswavandyam, Vishnu Sambhoh Priyam Sutam<br>Kshipra Prasada Niratham, Sastharam Pranamaamyaham</div>
+            <div class="meaning">I revere Lord Sastha, worshipped by the wise, revered by the cosmos, dear son of Vishnu and Shiva, who bestows quick grace.</div>
           </article>
 
           <article class="card">
+            <button class="copy-btn" onclick="copyMantra(this)">Copy</button>
             <h3>Matha Mathanga Gamanam</h3>
-            <div class="slogam" lang="sa">मातामातङ्गगमनं कारुण्यामृतपूरितम् ।<br>सर्वविघ्नहरं देवं शास्तारं प्रणमाम्यहम्
-              ॥</div>
-            <div class="transliteration">Matha Mathanga Gamanam, Karunyamrutha Pooritham<br>Sarva Vigna Haram Devam,
-              Sastharam Pranamaamyaham</div>
-            <div class="transliteration" lang="ta">மாதாமாதங்ககமநம் காருண்யாம்ருதபூரிதம் ।<br>ஸர்வவிக்நஹரம் தேவம்
-              சாஸ்தாரம் ப்ரணமாம்யஹம் ॥</div>
-            <div class="meaning">I bow to Lord Sastha, whose majestic gait is like that of a mighty elephant, who is
-              filled with the nectar of compassion, and who removes every obstacle.</div>
+            <div class="slogam" lang="sa">मातामातङ्गगमनं कारुण्यामृतपूरितम् ।<br>सर्वविघ्नहरं देवं शास्तारं प्रणमाम्यहम् ॥</div>
+            <div class="transliteration">Matha Mathanga Gamanam, Karunyamrutha Pooritham<br>Sarva Vigna Haram Devam, Sastharam Pranamaamyaham</div>
+            <div class="meaning">I bow to Lord Sastha, whose majestic gait is like that of a mighty elephant, who is filled with the nectar of compassion, and who removes every obstacle.</div>
           </article>
 
           <article class="card">
+            <button class="copy-btn" onclick="copyMantra(this)">Copy</button>
             <h3>Asmad Kuleshwaram Verse</h3>
-            <div class="slogam" lang="sa">अस्मत्कुलैश्वरं देवं अस्मच्छत्रुविनाशनम् ।<br>अस्मदिष्टप्रदातारं शास्तारं
-              प्रणमाम्यहम् ॥</div>
-            <div class="transliteration">Asmad Kuleshwaram Devam, Asmad Shathru Vinasanam<br>Asmad Ishta Pradha Daram,
-              Sastharam Pranamaamyaham</div>
-            <div class="transliteration" lang="ta">அஸ்மத்குலேச்வரம் தேவம் அஸ்மச்சத்ரு விநாசனம் ।<br>அஸ்மதிஷ்ட ப்ரதாதாரம்
-              சாஸ்தாரம் ப்ரணமாம்யஹம் ॥</div>
-            <div class="meaning">I bow to Lord Sastha, the guardian of our lineage, destroyer of our enemies, and
-              granter of our cherished wishes.</div>
+            <div class="slogam" lang="sa">अस्मत्कुलैश्वरं देवं अस्मच्छत्रुविनाशनम् ।<br>अस्मदिष्टप्रदातारं शास्तारं प्रणमाम्यहम् ॥</div>
+            <div class="transliteration">Asmad Kuleshwaram Devam, Asmad Shathru Vinasanam<br>Asmad Ishta Pradha Daram, Sastharam Pranamaamyaham</div>
+            <div class="meaning">I bow to Lord Sastha, the guardian of our lineage, destroyer of our enemies, and granter of our cherished wishes.</div>
           </article>
 
           <article class="card">
+            <button class="copy-btn" onclick="copyMantra(this)">Copy</button>
             <h3>Pandyesha Vamsa Thilakam</h3>
-            <div class="slogam" lang="sa">पाण्ड्येशवंशतिलकं केरलकेलिविग्रहम् ।<br>आर्तत्राणपरं देवं शास्तारं
-              प्रणमाम्यहम् ॥</div>
-            <div class="transliteration">Pandyesha Vamsa Thilakam, Kerale Keli Vigraham<br>Artha Thrana Param Devam,
-              Sastharam Pranamaamyaham</div>
-            <div class="transliteration" lang="ta">பாண்ட்யேச வம்ச திலகம் கேரள கேளி விக்ரஹம் ।<br>ஆர்தத்ராண பரம் தேவம்
-              சாஸ்தாரம் ப்ரணமாம்யஹம் ॥</div>
-            <div class="meaning">I bow to Lord Sastha, the jewel of the Pandya lineage, who sports in Kerala and is the
-              supreme protector of those in distress.</div>
+            <div class="slogam" lang="sa">पाण्ड्येशवंशतिलकं केरलकेलिविग्रहम् ।<br>आर्तत्राणपरं देवं शास्तारं प्रणमाम्यहम् ॥</div>
+            <div class="transliteration">Pandyesha Vamsa Thilakam, Kerale Keli Vigraham<br>Artha Thrana Param Devam, Sastharam Pranamaamyaham</div>
+            <div class="meaning">I bow to Lord Sastha, the jewel of the Pandya lineage, who sports in Kerala and is the supreme protector of those in distress.</div>
           </article>
 
           <article class="card">
+            <button class="copy-btn" onclick="copyMantra(this)">Copy</button>
             <h3>Traymbaka Puradheesam</h3>
-            <div class="slogam" lang="sa">त्र्यम्बकपुराधीशं गणाधिपसमन्वितम् ।<br>गजारूढमहं वन्दे शास्तारं प्रणमाम्यहम् ॥
-            </div>
-            <div class="transliteration">Traymbaka Puradheesam, Ganadhipa Samanvitham<br>Gajaroodam Aham Vande,
-              Sastharam Pranamaamyaham</div>
-            <div class="transliteration" lang="ta">த்ர்யம்பக புராதீசம் கணாதிப ஸமன்விதம் ।<br>கஜாரூடமஹம் வந்தே சாஸ்தாரம்
-              ப்ரணமாம்யஹம் ॥</div>
-            <div class="meaning">I bow to Lord Sastha, Lord of the city of Trayambaka, accompanied by Lord Ganadhipa,
-              and mounted upon an elephant.</div>
+            <div class="slogam" lang="sa">त्र्यम्बकपुराधीशं गणाधिपसमन्वितम् ।<br>गजारूढमहं वन्दे शास्तारं प्रणमाम्यहम् ॥</div>
+            <div class="transliteration">Traymbaka Puradheesam, Ganadhipa Samanvitham<br>Gajaroodam Aham Vande, Sastharam Pranamaamyaham</div>
+            <div class="meaning">I bow to Lord Sastha, Lord of the city of Trayambaka, accompanied by Lord Ganadhipa, and mounted upon an elephant.</div>
           </article>
 
           <article class="card">
+            <button class="copy-btn" onclick="copyMantra(this)">Copy</button>
             <h3>Siva Veerya Samudbhootham</h3>
-            <div class="slogam" lang="sa">शिववीर्यसमुद्भूतं श्रीनिवासतनोद्भवम् ।<br>शिखिवाहानुजं वन्दे शास्तारं
-              प्रणमाम्यहम् ॥</div>
-            <div class="transliteration">Siva Veerya Samudbhootham, Sreenivasa Thanudbhavam<br>Siki Vahanujam Vande,
-              Sastharam Pranamaamyaham</div>
-            <div class="transliteration" lang="ta">சிவவீர்ய ஸமுத்பூதம் ஸ்ரீநிவாஸ தநோத்பவம் ।<br>சிகிவாஹாநுஜம் வந்தே
-              சாஸ்தாரம் ப்ரணமாம்யஹம் ॥</div>
-            <div class="meaning">I bow to Lord Sastha, born of Shiva's divine energy and Srinivasa, and the younger
-              brother of the peacock-mounted Lord Muruga.</div>
+            <div class="slogam" lang="sa">शिववीर्यसमुद्भूतं श्रीनिवासतनोद्भवम् ।<br>शिखिवाहानुजं वन्दे शास्तारं प्रणमाम्यहम् ॥</div>
+            <div class="transliteration">Siva Veerya Samudbhootham, Sreenivasa Thanudbhavam<br>Siki Vahanujam Vande, Sastharam Pranamaamyaham</div>
+            <div class="meaning">I bow to Lord Sastha, born of Shiva's divine energy and Srinivasa, and the younger brother of the peacock-mounted Lord Muruga.</div>
           </article>
 
           <article class="card">
+            <button class="copy-btn" onclick="copyMantra(this)">Copy</button>
             <h3>Dhanwanthari Mata Verse</h3>
-            <div class="slogam" lang="sa">यस्य धन्वन्तरिर्माता पिता देवो महेश्वरः ।<br>तं शास्तारमहं वन्दे
-              महारोगनिवारणम् ॥</div>
-            <div class="transliteration">Yasya Danwantharir Matha, Pitha Devo Maheswara<br>Tam Sastharamaham Vande, Maha
-              Roga Nivaranam</div>
-            <div class="transliteration" lang="ta">யஸ்ய தந்வந்தரிர்மாதா பிதா தேவோ மஹேஸ்வரஃ ।<br>தம் சாஸ்தாரமஹம் வந்தே
-              மஹாரோக நிவாரணம் ॥</div>
-            <div class="meaning">I bow to Lord Sastha, whose mother is Dhanwanthari and whose father is Lord Maheswara,
-              the great remover of disease.</div>
+            <div class="slogam" lang="sa">यस्य धन्वन्तरिर्माता पिता देवो महेश्वरः ।<br>तं शास्तारमहं वन्दे महारोगनिवारणम् ॥</div>
+            <div class="transliteration">Yasya Danwantharir Matha, Pitha Devo Maheswara<br>Tam Sastharamaham Vande, Maha Roga Nivaranam</div>
+            <div class="meaning">I bow to Lord Sastha, whose mother is Dhanwanthari and whose father is Lord Maheswara, the great remover of disease.</div>
           </article>
 
           <article class="card">
+            <button class="copy-btn" onclick="copyMantra(this)">Copy</button>
             <h3>Sastha Dhyana Slokam</h3>
-            <div class="slogam" lang="sa">आश्यामकोमलविशालतनोर्विचित्रं<br>वासोवसानमरुणोत्पलदामहस्तम्
-              ।<br>उत्तुङ्गरत्नमकुटं कुटिलाग्रकेशं<br>शास्तारमिष्टवरदं शरणं प्रपद्ये ॥</div>
-            <div class="transliteration">Ashyama Komala Vishala Thanum Vichithram<br>Vasoavasana Arunothphala Dama
-              Hastham<br>Uthunga Rathna Magudam, Kutilagra Kesam<br>Sastharam Ishta Varadam Saranam Prapadhye</div>
-            <div class="transliteration" lang="ta">ஆச்யாம கோமல விசால தநோர்விசித்ரம்<br>வாஸோவஸாநமருணோத்பல தாமஹஸ்தம்
-              ।<br>உத்துங்க ரத்நமகுடம் குடிலாக்ர கேசம்<br>சாஸ்தாரமிஷ்ட வரதம் சரணம் ப்ரபத்யே ॥</div>
-            <div class="meaning">I take refuge in Lord Sastha, dark, tender, and majestic, adorned in beautiful garments
-              with a red lotus garland in hand, crowned with lofty jewels and having curling locks.</div>
+            <div class="slogam" lang="sa">आश्यामकोमलविशालतनोर्विचित्रं<br>वासोवसानमरुणोत्पलदामहस्तम् ।<br>उत्तुङ्गरत्नमकुटं कुटिलाग्रकेशं<br>शास्तारमिष्टवरदं शरणं प्रपद्ये ॥</div>
+            <div class="transliteration">Ashyama Komala Vishala Thanum Vichithram<br>Vasoavasana Arunothphala Dama Hastham<br>Uthunga Rathna Magudam, Kutilagra Kesam<br>Sastharam Ishta Varadam Saranam Prapadhye</div>
+            <div class="meaning">I take refuge in Lord Sastha, dark, tender, and majestic, adorned in beautiful garments with a red lotus garland in hand, crowned with lofty jewels and having curling locks.</div>
           </article>
 
           <article class="card">
+            <button class="copy-btn" onclick="copyMantra(this)">Copy</button>
             <h3>Maha Sastha Namaskaram</h3>
-            <div class="slogam" lang="sa">भूतनाथ सदानन्द सर्वभूतदयापर ।<br>रक्ष मां करुणासिन्धो पूर्णचन्द्रनिभानन ॥
-            </div>
-            <div class="transliteration">Bhootanatha Sadananda, Sarvabhoota Dayapara<br>Raksha Maam Karunasindho,
-              Poornachandra Nibhaanana</div>
-            <div class="transliteration" lang="ta">பூதநாத ஸதானந்த ஸர்வபூத தயாபர ।<br>ரக்ஷ மாம் கருணாஸிந்தோ பூர்ணசந்த்ர
-              நிபாநந ॥</div>
-            <div class="meaning">O Lord of beings, ever blissful, full of mercy to all, ocean of compassion with a
-              moon-like face, protect me.</div>
+            <div class="slogam" lang="sa">भूतनाथ सदानन्द सर्वभूतदयापर ।<br>रक्ष मां करुणासिन्धो पूर्णचन्द्रनिभानन ॥</div>
+            <div class="transliteration">Bhootanatha Sadananda, Sarvabhoota Dayapara<br>Raksha Maam Karunasindho, Poornachandra Nibhaanana</div>
+            <div class="meaning">O Lord of beings, ever blissful, full of mercy to all, ocean of compassion with a moon-like face, protect me.</div>
           </article>
+
           <article class="card">
-            <h3>Harivarasanam (Mangala Slokam)</h3>
-            <div class="slogam" lang="sa">हरिवरासनं विश्वमोहनम् ।<br>हरिदधीश्वरम् आराध्यपादुकम् ॥</div>
-            <div class="transliteration">Harivarasanam Visvamohanam, Haridadheesvaram Aaradhyapadukam</div>
-            <div class="meaning">Repository of Hari’s boons, enchanter of the universe, whose holy lotus feet are
-              worshipped by the gods.</div>
-          </article>
-          <article class="card">
+            <button class="copy-btn" onclick="copyMantra(this)">Copy</button>
             <h3>Kshamapanam (Forgiveness)</h3>
-            <div class="slogam" lang="sa">अपराधसहस्राणि क्रियन्तेऽहर्निशं मया ।<br>दासोऽयमिति मां मत्वा क्षमस्व परमेश्वर
-              ॥</div>
-            <div class="transliteration">Aparadha Sahasrani Kriyante Aharnisam Maya<br>Daso Ayamiti Maam Matva Kshamasva
-              Parameshwara</div>
-            <div class="meaning">Thousands of faults are committed by me day and night. Knowing me as your servant,
-              forgive me, O Supreme Lord.</div>
+            <div class="slogam" lang="sa">अपराधसहस्राणि क्रियन्तेऽहर्निशं मया ।<br>दासोऽयमिति मां मत्वा क्षमस्व परमेश्वर ॥</div>
+            <div class="transliteration">Aparadha Sahasrani Kriyante Aharnisam Maya<br>Daso Ayamiti Maam Matva Kshamasva Parameshwara</div>
+            <div class="meaning">Thousands of faults are committed by me day and night. Knowing me as your servant, forgive me, O Supreme Lord.</div>
           </article>
         </div>
       </section>
 
-      <!-- Section 4: Tamil Slogams & Padi Paattu -->
-      <!-- <section id="tamil" class="content-section" aria-labelledby="tamil-title">
+      <!-- Harivarasanam Section -->
+      <section id="harivarasanam" class="content-section" aria-labelledby="harivarasanam-title">
         <div class="section-heading">
-          <h2 id="tamil-title">Ayyappan Tamil Slogams</h2>
-          <p>Traditional Tamil chants, Padi stutis, and journey invocations for Sabarimala devotees.</p>
+          <h2 id="harivarasanam-title">Harivarasanam</h2>
+          <p>The sacred lullaby sung every night at Sabarimala before closing the sanctum.</p>
         </div>
         <div class="grid">
-          <article class="card featured">
-            <img class="card-icon" src="assets/images/ayyappan-hero-figure.png" alt="" aria-hidden="true" loading="lazy">
-            <h3>Hariharaputra Slogam</h3>
-            <div class="slogam" lang="ta">ஹரிஹர சுதனே சரணம் ஐயப்பா !<br>அருள்மிகு மணிகண்டா சரணம் ஐயப்பா !<br>அகிலாண்ட
-              நாயகனே சரணம் ஐயப்பா !</div>
-            <div class="transliteration">Harihara Suthane Saranam Ayyappa, Arulmigu Manikanda Saranam Ayyappa, Akhilanda
-              Nayagane Saranam Ayyappa</div>
-            <div class="meaning">O son of Hari and Hara, O graceful Manikanta, Lord of the entire cosmos, I take refuge
-              in You.</div>
-          </article>
-          <article class="card">
-            <h3>Jyothi Darshanam</h3>
-            <div class="slogam" lang="ta">மணிகண்டா மணிகண்டா<br>மகர ஜோதியே சரணம் ஐயப்பா</div>
-            <div class="transliteration">Manikanda Manikanda, Makara Jyothiye Saranam Ayyappa</div>
-            <div class="meaning">O Manikanta, radiant Makara Jyothi upon the sacred hill, I bow in surrender.</div>
-          </article>
-          <article class="card">
-            <h3>Pathinettampadi Slogam</h3>
-            <div class="slogam" lang="ta">பதினெட்டாம் படி ஏறி<br>பகவானைத் தொழுதிடுவோம்</div>
-            <div class="transliteration">Pathinettaam Padi Yeri, Bhagavanaith Thozhudhiduvom</div>
-            <div class="meaning">Climbing the sacred eighteen steps with pure mind, let us worship the supreme Lord.
+          <article class="card featured harivarasanam-card" style="grid-column: 1 / -1;">
+            <button class="copy-btn" onclick="copyMantra(this)">Copy</button>
+            <h3>Harivarasanam – Hariharatmajam</h3>
+            <div class="mantra" lang="sa" style="white-space: pre-line; column-count: 1;">
+Harivarasanam Viswamohanam
+Haridadheeswaram Aaradhyapadukam
+Arivimardhanam Nithyanarthanam
+Hariharatmajam Devamashraye
+
+Sharanakirtanam Bakhtamanasam
+Bharanalolupam Narthanalasam
+Arunabhasuram Bhoothanayakam
+Hariharatmajam Devamashraye
+
+Pranayasatyakam Praananayakam
+Pranathakalpakam Suprabhanjitham
+Pranayamaparam Yogiparayanam
+Hariharatmajam Devamashraye
+
+Tharunaramasam Vanamohitham
+Narahareeswaram Saranagamam
+Karunyalayam Gurumayikavaram
+Hariharatmajam Devamashraye
+
+Sharanamaparam Thamabhakthim
+Karunyamrithapooritham
+Sharanamashraye Nithyanirtharam
+Hariharatmajam Devamashraye
+
+Sharanamashraye Nithyanirtharam
+Hariharatmajam Devamashraye
             </div>
-          </article>
-          <article class="card">
-            <h3>Pilgrimage Chants (Kallum Mullum)</h3>
-            <div class="slogam" lang="ta">கல்லும் முள்ளும் காலுக்கு மெத்தை<br>சுவாமியே சரணம் ஐயப்பா</div>
-            <div class="transliteration">Kallum Mullum Kaalukku Methai, Swamiye Saranam Ayyappa</div>
-            <div class="meaning">Even stones and forest thorns turn soft as cushions when chanting the Lord's name.
+            <div class="transliteration" style="margin-top: 1.2rem;">
+              Swami Saranam Ayyappa
             </div>
-          </article>
-          <article class="card">
-            <h3>Irumudi Chanting</h3>
-            <div class="slogam" lang="ta">இருமுடி தாங்கி ஒருமனதாகி<br>குருவருள் தேடி வந்தோம் ஐயப்பா</div>
-            <div class="transliteration">Irumudi Thaangi Oru Manathaagi, Guru Arul Thedi Vandhom Ayyappa</div>
-            <div class="meaning">Bearing the sacred Irumudi with single-pointed devotion, we come seeking Your divine
-              grace.</div>
-          </article>
-          <article class="card">
-            <h3>Puli Vahana Stuti</h3>
-            <div class="slogam" lang="ta">புலி வாகனனே பொன்னம்பலவாசா<br>வில்லாளி வீரனே வீரமணிகண்டா</div>
-            <div class="transliteration">Puli Vahanane Ponnambalavaasa, Villaali Veerane Veera Manikanda</div>
-            <div class="meaning">Salutations to the Lord who rides the tiger, dweller of the golden sanctum, the heroic
-              archer.</div>
+            <div class="meaning">
+              This divine lullaby is sung every night at Sabarimala as the final ritual before the sanctum closes.  
+              Devotees believe that Lord Ayyappa goes to rest after hearing Harivarasanam.
+            </div>
           </article>
         </div>
-      </section> -->
+      </section>
+
+      <!-- Ashtottara Section -->
+      <section id="ashtottara" class="content-section" aria-labelledby="ashtottara-title">
+        <div class="section-heading">
+          <h2 id="ashtottara-title">Sri Ayyappa Ashtottara Shatanamavali</h2>
+          <p>The sacred 108 names of Lord Dharma Sastha – traditionally recited with deep devotion during puja and Vratham.</p>
+        </div>
+        <div class="grid">
+          <article class="card featured" style="grid-column: 1 / -1;">
+            <button class="copy-btn" onclick="copyMantra(this)">Copy</button>
+            <h3>Sri Ayyappa Ashtottara Shatanamavali</h3>
+            <div class="meaning" style="margin-bottom: 1.5rem;">
+              Recite each name with devotion. This namavali is especially powerful when chanted 1, 3, 9 or 108 times with a pure heart.
+            </div>
+
+            <div class="mantra" style="font-size: 1.12rem; line-height: 1.9; column-count: 2; column-gap: 2.5rem;">
+              1. Om Mahashastre Namah<br>
+              2. Om Mahadevaya Namah<br>
+              3. Om Mahadevasutaya Namah<br>
+              4. Om Avyayaya Namah<br>
+              5. Om Lokakartre Namah<br>
+              6. Om Lokabhartre Namah<br>
+              7. Om Lokahartre Namah<br>
+              8. Om Paratparaya Namah<br>
+              9. Om Trilokarakshakaya Namah<br>
+              10. Om Dhanvine Namah<br>
+              11. Om Tapasvine Namah<br>
+              12. Om Bhutasainikaya Namah<br>
+              13. Om Mantravedine Namah<br>
+              14. Om Mahavedine Namah<br>
+              15. Om Marutaya Namah<br>
+              16. Om Jagadishvaraya Namah<br>
+              17. Om Lokadhyakshaya Namah<br>
+              18. Om Agraganyaya Namah<br>
+              19. Om Srimate Namah<br>
+              20. Om Aprameyaparakramaya Namah<br>
+              21. Om Simharudhaya Namah<br>
+              22. Om Gajarudhaya Namah<br>
+              23. Om Hayarudhaya Namah<br>
+              24. Om Maheshvaraya Namah<br>
+              25. Om Nanashastradharaya Namah<br>
+              26. Om Anaghaya Namah<br>
+              27. Om Nanavidyavisharadaya Namah<br>
+              28. Om Nanarupadharaya Namah<br>
+              29. Om Viraya Namah<br>
+              30. Om Nanapraninishevitaya Namah<br>
+              31. Om Bhuteshaya Namah<br>
+              32. Om Bhutidaya Namah<br>
+              33. Om Bhrityaya Namah<br>
+              34. Om Bhujangabharanojvalaya Namah<br>
+              35. Om Ikshudhanvine Namah<br>
+              36. Om Pushpabanaya Namah<br>
+              37. Om Maharupaya Namah<br>
+              38. Om Mahaprabhave Namah<br>
+              39. Om Mayadevisutaya Namah<br>
+              40. Om Manyaya Namah<br>
+              41. Om Mahaniyaya Namah<br>
+              42. Om Mahagunaya Namah<br>
+              43. Om Mahashaivaya Namah<br>
+              44. Om Maharudraya Namah<br>
+              45. Om Vaishnavaya Namah<br>
+              46. Om Vishnupujakaya Namah<br>
+              47. Om Vighneshaya Namah<br>
+              48. Om Virabhadreshaya Namah<br>
+              49. Om Bhairavaya Namah<br>
+              50. Om Shanmukhapriyaya Namah<br>
+              51. Om Merusringasamasinaya Namah<br>
+              52. Om Munisanghanishevitaya Namah<br>
+              53. Om Devaya Namah<br>
+              54. Om Bhadraya Namah<br>
+              55. Om Jagannathaya Namah<br>
+              56. Om Gananathaya Namah<br>
+              57. Om Ganeshvaraya Namah<br>
+              58. Om Mahayogine Namah<br>
+              59. Om Mahamayine Namah<br>
+              60. Om Mahajnanine Namah<br>
+              61. Om Mahasthiraya Namah<br>
+              62. Om Devashastre Namah<br>
+              63. Om Bhutashastre Namah<br>
+              64. Om Bhimahasaparakramaya Namah<br>
+              65. Om Nagaharaya Namah<br>
+              66. Om Nagakeshaya Namah<br>
+              67. Om Vyomakeshaya Namah<br>
+              68. Om Sanatanaya Namah<br>
+              69. Om Sagunaya Namah<br>
+              70. Om Nirgunaya Namah<br>
+              71. Om Nityaya Namah<br>
+              72. Om Nityatriptaya Namah<br>
+              73. Om Nirashrayaya Namah<br>
+              74. Om Lokashrayaya Namah<br>
+              75. Om Ganadhishaya Namah<br>
+              76. Om Chatushshashtikalamayaya Namah<br>
+              77. Om Rigyajussamatharvatmane Namah<br>
+              78. Om Mallakasurabhanjanaya Namah<br>
+              79. Om Trimurtaye Namah<br>
+              80. Om Daityamathanaya Namah<br>
+              81. Om Prakritaye Namah<br>
+              82. Om Purushottamaya Namah<br>
+              83. Om Kalajnanine Namah<br>
+              84. Om Mahajnanine Namah<br>
+              85. Om Kamadaya Namah<br>
+              86. Om Kamalekshanaya Namah<br>
+              87. Om Kalpavrikshaya Namah<br>
+              88. Om Mahavrikshaya Namah<br>
+              89. Om Vidyavrikshaya Namah<br>
+              90. Om Vibhutidaya Namah<br>
+              91. Om Samsaratapavichchhetre Namah<br>
+              92. Om Pashulokabhayankaraya Namah<br>
+              93. Om Rogahantre Namah<br>
+              94. Om Pranadatre Namah<br>
+              95. Om Paragarvavibhanjanaya Namah<br>
+              96. Om Sarvashastrarthatattvajnaya Namah<br>
+              97. Om Neetimate Namah<br>
+              98. Om Papabhanjanaya Namah<br>
+              99. Om Pushkalapurnasamyuktaya Namah<br>
+              100. Om Paramatmane Namah<br>
+              101. Om Satangataye Namah<br>
+              102. Om Anantadityasankashaya Namah<br>
+              103. Om Subrahmanyanujaya Namah<br>
+              104. Om Baline Namah<br>
+              105. Om Bhaktanukampine Namah<br>
+              106. Om Deveshaya Namah<br>
+              107. Om Bhagavate Namah<br>
+              108. Om Bhaktavatsalaya Namah
+            </div>
+
+            <div class="transliteration" style="margin-top: 1.75rem; font-style: italic;">
+              Iti Sri Ayyappa Ashtottara Shatanamavali Samapta
+            </div>
+            <div class="meaning" style="margin-top: 0.75rem;">
+              Thus ends the sacred 108 names of Lord Ayyappa (Dharma Sastha).  
+              May the Lord of Sabarimala bless all devotees with protection, health, and unwavering devotion.
+            </div>
+          </article>
+        </div>
+      </section>
+
     </main>
 
     <div class="section-divider" aria-hidden="true"></div>
     <footer>© <span id="year"></span> Vedic Corner — Built with care</footer>
   </div>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Japa Counter
+    let count = 0;
+    const countEl = document.getElementById('japaCount');
+
+    function incrementJapa(n = 1) {
+      count += n;
+      countEl.textContent = count;
+      // Optional: vibrate on mobile
+      if (navigator.vibrate) navigator.vibrate(30);
+    }
+
+    function resetJapa() {
+      count = 0;
+      countEl.textContent = count;
+    }
+
+    // Copy functionality
+    function copyMantra(btn) {
+      const card = btn.closest('.card');
+      const mantra = card.querySelector('.mantra, .slogam');
+      const text = mantra ? mantra.innerText.trim() : '';
+      
+      navigator.clipboard.writeText(text).then(() => {
+        const original = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.style.background = '#2e7d32';
+        btn.style.color = 'white';
+        setTimeout(() => {
+          btn.textContent = original;
+          btn.style.background = '';
+          btn.style.color = '';
+        }, 1500);
+      }).catch(err => {
+        alert('Could not copy. Please select and copy manually.');
+      });
+    }
+  </script>
   <script src="assets/js/shared-header.js"></script>
 </body>
 
